@@ -4,20 +4,27 @@ import { Link } from "react-router-dom";
 function Header(props) {
   return (
         <nav className="nav">
-            <Link to="/">
-                <div>People App</div>
-            </Link>
-            <ul>
+            <>
                 {props.user ?
-                    <li>
+                    <>
+                        <Link to="/">*Insert Icon* Welcome {user.name}</Link>
+                        &nbsp; | &nbsp;
+                        <Link to="/reviews">Reviews</Link>
+                        &nbsp; | &nbsp;
+                        <Link to="/reviews/new">Post Review</Link>
+                        &nbsp; | &nbsp;
                         <button onClick={logout}>Logout</button>
-                    </li>
+                    </>
                     :
-                    <li>
+                    <>
+                        <Link to="/">Home</Link>
+                        &nbsp; | &nbsp;
+                        <Link to="/reviews">Reviews</Link>
+                        &nbsp; | &nbsp;
                         <button onClick={login}>Login</button>
-                    </li>
+                    </>
                 }
-            </ul>
+            </>
         </nav>
     );
 }
