@@ -80,4 +80,23 @@
           opacity: 0;
           display: none;
         }
+        
+      }
+
+
+      @media (max-width: 991px) {
+        /* Tablet */
+        .con-like {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        /* Mobile */
+        .con-like {
+          width: 30px;
+          height: 30px;
+        }
+        
       }

@@ -47,6 +47,18 @@
     margin-top: auto;
   }
   
+  .card-picture {
+    position: relative;
+  }
+  
+  .like-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+  }
+  
+  
 
 
   /* Media Queries */
@@ -70,6 +82,7 @@
     .card {
       width: calc(100% / 2 - 20px);
     }
+    
   }
   
   
