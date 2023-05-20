@@ -58,6 +58,20 @@
     z-index: 1;
   }
   
+  .location {
+    display: flex;
+    align-items: center;
+  }
+  
+  .location p {
+    margin-left: 8px;
+  }
+  
+  .location-text {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  
   
 
 
