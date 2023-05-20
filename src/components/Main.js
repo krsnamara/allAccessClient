@@ -31,7 +31,7 @@ function Main(props) {
     const getReviews = async () => {
 
         const token = await props.user.getIdToken();
-            console.log(token);
+            // console.log(token);
 
         const response = await fetch(URL, {
             method: 'GET',

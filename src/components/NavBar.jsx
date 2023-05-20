@@ -2,7 +2,7 @@ import { login, logout } from "../firebase";
 import { Link } from "react-router-dom";
 
 function NavBar(props) {
-    console.log(`this is nav ${props}`)
+    // console.log(`this is nav ${props}`)
   return (
       <nav className="nav">
           <>
