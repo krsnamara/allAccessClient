@@ -28,7 +28,7 @@ function NewReview(props) {
     // component hiearchy to Main component's createPeople function
     const handleSubmit = (e) => {
         e.preventDefault(); // this prevents a page refresh
-        props.createPeople(newForm);
+        props.createReviews(newForm);
         setNewForm(formFields); // reset form to empty fields
     };
 
@@ -48,30 +48,35 @@ function NewReview(props) {
     };
 
     return (
-        <section>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    name="name" 
-                    onChange={handleChange} 
-                    value={newForm.name} 
-                />
-                <input 
-                    type="text" 
-                    name="image" 
-                    onChange={handleChange} 
-                    value={newForm.image}
-                />
-                <input 
-                    type="text" 
-                    name="title" 
-                    onChange={handleChange} 
-                    value={newForm.title} 
-                />
-                <input type="submit" value="Submit Review" />
-            </form>
-            { props.reviews ? loaded() : loading() }
-        </section>
+        <>
+            <section>
+                <form onSubmit={handleSubmit}>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        onChange={handleChange} 
+                        value={newForm.name}
+                        placeholder="Whats the Name?" 
+                        />
+                    <input 
+                        type="text" 
+                        name="image" 
+                        onChange={handleChange} 
+                        value={newForm.image}
+                        placeholder="Enter URL of Image" 
+                        />
+                    <input 
+                        type="text" 
+                        name="title" 
+                        onChange={handleChange} 
+                        value={newForm.title}
+                        placeholder="What is the title"  
+                        />
+                    <input type="submit" value="Submit Review" />
+                </form>
+                { props.reviews ? loaded() : loading() }
+            </section>
+        </>
     )
   }
 

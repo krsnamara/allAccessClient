@@ -1,9 +1,26 @@
 import { useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
-import Show from "../pages/Show";
+// import Show from "../pages/Show";
+import Home from '../pages/Home';
+import Reviews from '../pages/Reviews';
 import NewReview from "../pages/NewReview";
+import { API_URLS } from "../urls";
+import Review from "../pages/Review";
+import { auth } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 function Main(props) {
+    const [user, setUser] = useState(null);
+
+  useEffect (() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => setUser(user))
+
+    return () => {
+      // cleanup actions
+      unsubscribe();
+    }
+
+  }, []);
     
     const [ reviews, setReviews ] = useState(null);
     const getReviewsRef = useRef(null); // {current: null }
@@ -82,16 +99,13 @@ function Main(props) {
     return (
         <main>
         <Routes>
-          <Route path="/" element={
-            <NewReview reviews={reviews}
-                    createReviews={createReviews}
-            />} />
-            <Route path="/reviews/:id" element={
-                <Show 
-                    reviews={reviews} 
-                    deleteReviews={deleteReviews}
-                    updateReviews={updateReviews}
-                />} 
+            <Route exact path="/" element={<Home />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/review/new" element={<NewReview user={user} reviews={reviews} createReviews={createReviews}/>} />
+            <Route path="/reviews/:id" element={<Review reviews={reviews}  
+                                                            deleteReviews={deleteReviews}
+                                                            updateReviews={updateReviews}
+            />} 
             />
         </Routes>
       </main>

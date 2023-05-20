@@ -7,7 +7,6 @@ import Pic03 from '../assets/accessibility03.png';
 import Pic04 from '../assets/accessibility04.jpg';
 import "./Carousel.css";
 
-
 function Carousel() {
 
     // Carousel Images
