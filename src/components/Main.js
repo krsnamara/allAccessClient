@@ -1,16 +1,16 @@
 import { useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
-import Index from "../pages/Index";
 import Show from "../pages/Show";
+import NewReview from "../pages/NewReview";
 
 function Main(props) {
     
-    const [ people, setPeople ] = useState(null);
-    const getPeopleRef = useRef(null); // {current: null }
+    const [ reviews, setReviews ] = useState(null);
+    const getReviewsRef = useRef(null); // {current: null }
 
-    const URL = "http://localhost:4000/people/";
+    const URL = "http://localhost:4000/reviews/";
 
-    const getPeople = async () => {
+    const getReviews = async () => {
 
         const token = await props.user.getIdToken();
             console.log(token);
@@ -22,27 +22,27 @@ function Main(props) {
             }
         });
         const data = await response.json();
-        setPeople(data);
+        setReviews(data);
     }
 
-    const createPeople = async (person) => {
+    const createReviews = async (review) => {
         if(!props.user) return; // prevent function from executing code below if no auth
         const token = await props.user.getIdToken();
 
-        // make post request to create people
+        // make post request to create reviews
         await fetch(URL, {
             method: "POST",
             headers: {
                 "Content-type": "Application/json",
                 "Authorization": "Bearer " + token
             },
-            body: JSON.stringify(person),
+            body: JSON.stringify(review),
         });
-        // update list of people
-        getPeople();
+        // update list of reviews
+        getReviews();
     };
 
-    const updatePeople = async (id, updatedPerson) => {
+    const updateReviews = async (id, updatedReview) => {
         const token = await props.user.getIdToken();
         await fetch(URL + id, {
             method: "PUT",
@@ -50,12 +50,12 @@ function Main(props) {
                 "Content-type": "Application/json",
                 "Authorization": "Bearer " + token
             },
-            body: JSON.stringify(updatedPerson),
+            body: JSON.stringify(updatedReview),
         });
-        getPeople();
+        getReviews();
     };
 
-    const deletePeople = async (id) => {
+    const deleteReviews = async (id) => {
         const token = await props.user.getIdToken();
         await fetch(URL + id, {
             method: "DELETE",
@@ -63,18 +63,18 @@ function Main(props) {
                 "Authorization": "Bearer " + token
             }
         })
-        getPeople();
+        getReviews();
     };
 
     useEffect(() => {
-        getPeopleRef.current = getPeople;
+        getReviewsRef.current = getReviews;
     });
 
     useEffect (() => {
         if(props.user) {
-            getPeopleRef.current(); // solves useEffect getPeople warning
+            getReviewsRef.current(); // solves useEffect getReviews warning
         } else {
-            setPeople(null);
+            setReviews(null);
         }
     }, [props.user]);
 
@@ -82,14 +82,14 @@ function Main(props) {
         <main>
         <Routes>
           <Route path="/" element={
-            <Index people={people}
-                    createPeople={createPeople}
+            <NewReview reviews={reviews}
+                    createReviews={createReviews}
             />} />
-            <Route path="/people/:id" element={
+            <Route path="/reviews/:id" element={
                 <Show 
-                    people={people} 
-                    deletePeople={deletePeople}
-                    updatePeople={updatePeople}
+                    reviews={reviews} 
+                    deleteReviews={deleteReviews}
+                    updateReviews={updateReviews}
                 />} 
             />
         </Routes>
