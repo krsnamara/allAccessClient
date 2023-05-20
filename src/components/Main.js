@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
+import Home from "../pages/Home/Home";
 import Reviews from "../pages/Reviews";
 import NewReview from "../pages/NewReview";
 import { API_URLS } from "../urls";
