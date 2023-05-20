@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
-import Main from "./components/Main";
+import HomePage from "./components/Home";
+import Footer from "./components/Footer";
+import "./App.css";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -21,7 +23,8 @@ function App() {
   return (
     <div className="App">
       <NavBar user={user} />
-      <Main user={user} />
+      <HomePage />
+      <Footer />
     </div>
   )
 };
