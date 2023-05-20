@@ -70,5 +70,7 @@
   .CarouselDots .dot:hover {
     color: blue;
   }
-  
+  main {
+    text-align: center;
+  }
   

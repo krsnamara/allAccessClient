@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function NewReview(props) {
     const formFields = {
@@ -33,19 +33,19 @@ function NewReview(props) {
     };
 
     //loaded function
-    const loaded = () => {
-        return props.reviews.map(review => (
-            <div key={review._id} className="review">
-                <Link to={`/reviews/${review._id}`}>
-                    <h1>{review.name}</h1>
-                </Link>
-            </div>
-        ));
-    };
+    // const loaded = () => {
+    //     return props.reviews.map(review => (
+    //         <div key={review._id} className="review">
+    //             <Link to={`/reviews/${review._id}`}>
+    //                 <h1>{review.name}</h1>
+    //             </Link>
+    //         </div>
+    //     ));
+    // };
 
-    const loading = () => {
-        return <h1>Loading...</h1>
-    };
+    // const loading = () => {
+    //     return <h1>Loading...</h1>
+    // };
 
     return (
         <>
@@ -74,7 +74,7 @@ function NewReview(props) {
                         />
                     <input type="submit" value="Submit Review" />
                 </form>
-                { props.reviews ? loaded() : loading() }
+                {/* { props.reviews ? loaded() : loading() } */}
             </section>
         </>
     )

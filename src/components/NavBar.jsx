@@ -8,19 +8,19 @@ function NavBar(props) {
           <>
               {props.user ?
                   <>
-                      <Link to="/">Welcome</Link>
+                      <Link to="/" style={{color: 'black', textDecoration: 'none'}}>Welcome</Link>
                       &nbsp; | &nbsp;
-                      <Link to="/reviews">Reviews</Link>
+                      <Link to="/reviews" style={{color: 'black', textDecoration: 'none'}}>Reviews</Link>
                       &nbsp; | &nbsp;
-                      <Link to="/review/new">Post Review</Link>
+                      <Link to="/review/new" style={{color: 'black', textDecoration: 'none'}}>Post Review</Link>
                       &nbsp; | &nbsp;
                       <button onClick={logout}>Logout</button>
                   </>
                   :
                   <>
-                      <Link to="/">Home</Link>
+                      <Link to="/" style={{color: 'black', textDecoration: 'none'}}>Home</Link>
                       &nbsp; | &nbsp;
-                      <Link to="/reviews">Reviews</Link>
+                      <Link to="/reviews" style={{color: 'black', textDecoration: 'none'}}>Reviews</Link>
                       &nbsp; | &nbsp;
                       <button onClick={login}>Login</button>
                   </>

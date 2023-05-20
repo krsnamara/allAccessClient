@@ -1,15 +1,12 @@
 import React from 'react'
-import Navbar from '../components/NavBar'
-import Carousel from '../components/Carousel'
-import Footer from '../components/Footer'
-import ('./Home.css')
+import Carousel from '../components/Carousel';
+import './Home.css';
+import '../App.css';
 
-const Home = () => {
+function Home() {
   return (
     <div>
-        <Navbar />
-        <Carousel />
-        <Footer />
+      <Carousel />
     </div>
   )
 }
