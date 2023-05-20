@@ -19,15 +19,15 @@ function Reviews(props) {
         image: "",
     };
 
-    const person = props.reviews ? props.reviews.find(review => review._id === id) : null;
+    const person = props.people ? props.people.find(person => person._id === id) : null;
 
     const [editForm, setEditForm] = useState(formFields);
 
     useEffect(() => {
-        if(review) {
-            setEditForm(review)
+        if(person) {
+            setEditForm(person)
         } 
-    }, [review]);
+    }, [person]);
 
     const handleChange = (event) => {
         setEditForm({
@@ -38,7 +38,7 @@ function Reviews(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updateReviews(id, editForm);
+        props.updatePeople(id, editForm);
     };
 
     // console.log(navigate); // logs a function
@@ -48,11 +48,11 @@ function Reviews(props) {
         // const person = props.people.find(person => person._id === id); // before refactor
         // console.log(person);
         return (
-            <div className="review">
-                <h1>{review.name}</h1>
-                <h3>{review.title}</h3>
-                { review.image &&
-                    <img src={review.image} alt={review.name} />
+            <div className="person">
+                <h1>{person.name}</h1>
+                <h3>{person.title}</h3>
+                { person.image &&
+                    <img src={person.image} alt={person.name} />
                 }
                 <form onSubmit={handleSubmit}>
                     <input 
@@ -73,9 +73,9 @@ function Reviews(props) {
                         value={editForm.image} 
                         onChange={handleChange} 
                     />
-                    <input type="submit" value="Update Review" />
+                    <input type="submit" value="Update Person" />
                 </form>
-                <button onClick={handleDelete}>Delete This Review</button>
+                <button onClick={handleDelete}>Delete This Person</button>
             </div>
         );
 
@@ -85,16 +85,16 @@ function Reviews(props) {
     };
 
     const handleDelete = () => {
-        props.deleteReviews(id);
+        props.deletePeople(id);
         navigate('/');
     };
 
-    // return props.reviews ? loaded() : loading();
+    // return props.people ? loaded() : loading();
 
     return (
         <section>
-            {props.reviews ? loaded() : loading()}
-            {/* <button onClick={handleDelete}>Delete This Reviews</button> */}
+            {props.people ? loaded() : loading()}
+            {/* <button onClick={handleDelete}>Delete This Person</button> */}
         </section>
     );
   }

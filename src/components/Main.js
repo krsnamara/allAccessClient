@@ -102,9 +102,7 @@ function Main(props) {
             <Route exact path="/" element={<Home />} />
             <Route path="/reviews" element={<Reviews reviews={reviews} />} />
             <Route path="/review/new" element={<NewReview user={user} reviews={reviews} createReviews={createReviews}/>} />
-            <Route path="/reviews/:id" element={<Review reviews={reviews}  
-                                                            deleteReviews={deleteReviews}
-                                                            updateReviews={updateReviews}
+            <Route path="/reviews/:id" element={<Review reviews={reviews} deleteReviews={deleteReviews} updateReviews={updateReviews}
             />} 
             />
         </Routes>
