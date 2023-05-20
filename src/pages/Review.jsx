@@ -19,7 +19,7 @@ function Review(props) {
         image: "",
     };
 
-    const person = props.reviews ? props.reviews.find(review => review._id === id) : null;
+    const review = props.reviews ? props.reviews.find(review => review._id === id) : null;
 
     const [editForm, setEditForm] = useState(formFields);
 
@@ -49,10 +49,10 @@ function Review(props) {
         // console.log(person);
         return (
             <div className="review">
-                <h1>{review.name}</h1>
-                <h3>{review.title}</h3>
+                <h1>{editForm.name}</h1>
+                <h3>{editForm.title}</h3>
                 { review.image &&
-                    <img src={review.image} alt={review.name} />
+                    <img src={editForm.image} alt={editForm.name} />
                 }
                 <form onSubmit={handleSubmit}>
                     <input 
