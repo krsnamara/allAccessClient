@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import Reviews from "../pages/Reviews";
 import Review from "../pages/Review";
 import NewReview from "../pages/NewReview";
+import CreateProfile from "../pages/CreateProfile/CreateProfile";
 
 function Main(props) {
 
@@ -88,6 +89,7 @@ function Main(props) {
     <main>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/create" element={<CreateProfile user={props.user} />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />} />
         <Route path="/review/new" element={<NewReview reviews={reviews} createReviews={createReviews} />} />
         <Route path="/reviews/:id" element={<Review reviews={reviews} updateReviews={updateReviews} />} />
