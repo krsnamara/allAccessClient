@@ -5,12 +5,12 @@ import Pic01 from '../assets/accessibility01.png';
 import Pic02 from '../assets/accessibility02.png';
 import Pic03 from '../assets/accessibility03.png';
 import Pic04 from '../assets/accessibility04.jpg';
-import "./Home.css";
+import "./Carousel.css";
 
 
-function HomePage() {
+function Carousel() {
 
-    // HomePage Images
+    // Carousel Images
     const homeImgs = [
         { id: 1, src: Pic01},
         { id: 2, src: Pic02 },
@@ -42,7 +42,7 @@ function HomePage() {
             <p>Our goal is to provide a one-stop-shop for accessibility features. We want to make it easy for people with disabilities to find the features they need to make their lives easier.</p>
             
             
-            {/* HomePage Carousel */}
+            {/* Carousel */}
             <div className="MainCarousel">
                 <div 
                     style={{backgroundImage: `url(${homeImgs[currentImgIndex].src})`}} 
@@ -76,4 +76,4 @@ function HomePage() {
     )
 }
 
-export default HomePage;
+export default Carousel;

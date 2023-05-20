@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import NavBar from "./components/NavBar";
-import HomePage from "./components/Home";
-import Footer from "./components/Footer";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
-
+import Home from "./pages/Home";
+import Reviews from "./pages/Reviews";
+import Review from "./pages/Review";
+import NewReview from "./pages/NewReview";
+import "./App.css";
 
 
 function App() {
@@ -21,11 +22,12 @@ function App() {
 
   }, []);
   return (
-    <div className="App">
-      <NavBar user={user} />
-      <HomePage />
-      <Footer />
-    </div>
+    <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/reviews/:id" element={<Review />} />
+        <Route path="/newreview" element={<NewReview user={user}/>} />
+        <Route path="/reviews" element={<Reviews />} />
+      </Routes>
   )
 };
 

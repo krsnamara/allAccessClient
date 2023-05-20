@@ -8,8 +8,9 @@ function Main(props) {
     const [ reviews, setReviews ] = useState(null);
     const getReviewsRef = useRef(null); // {current: null }
 
-    const URL = "http://localhost:4000/reviews/";
-
+    // const URL = "http://localhost:4000/reviews/";
+    const URL = `${API_URLS.REVIEWS}`;
+    
     const getReviews = async () => {
 
         const token = await props.user.getIdToken();

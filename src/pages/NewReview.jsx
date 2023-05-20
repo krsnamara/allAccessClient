@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 function NewReview(props) {
     const formFields = {
         name: "",
@@ -31,13 +34,11 @@ function NewReview(props) {
 
     //loaded function
     const loaded = () => {
-        return props.people.map(person => (
-            <div key={person._id} className="person">
-                <Link to={`/people/${person._id}`}>
-                    <h1>{person.name}</h1>
+        return props.reviews.map(review => (
+            <div key={review._id} className="review">
+                <Link to={`/reviews/${review._id}`}>
+                    <h1>{review.name}</h1>
                 </Link>
-                {/* <img src={person.image} alt={person.name} />
-                <h3>{person.title}</h3> */}
             </div>
         ));
     };
@@ -46,7 +47,6 @@ function NewReview(props) {
         return <h1>Loading...</h1>
     };
 
-    // return props.people ? loaded() : loading();
     return (
         <section>
             <form onSubmit={handleSubmit}>
@@ -68,9 +68,9 @@ function NewReview(props) {
                     onChange={handleChange} 
                     value={newForm.title} 
                 />
-                <input type="submit" value="Add Person" />
+                <input type="submit" value="Submit Review" />
             </form>
-            { props.people ? loaded() : loading() }
+            { props.reviews ? loaded() : loading() }
         </section>
     )
   }
