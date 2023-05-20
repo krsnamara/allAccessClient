@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
 import {RxDotFilled} from 'react-icons/rx'
-import Pic01 from '../assets/accessibility01.png';
-import Pic02 from '../assets/accessibility02.png';
-import Pic03 from '../assets/accessibility03.png';
-import Pic04 from '../assets/accessibility04.jpg';
-import "./Carousel.css";
+import Pic01 from '../../assets/accessibility01.png';
+import Pic02 from '../../assets/accessibility02.png';
+import Pic03 from '../../assets/accessibility03.png';
+import Pic04 from '../../assets/accessibility04.jpg';
+import "../Carousel/Carousel.css";
 
 function Carousel() {
 

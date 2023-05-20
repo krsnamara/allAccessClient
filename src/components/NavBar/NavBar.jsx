@@ -1,4 +1,4 @@
-import { login, logout } from "../firebase";
+import { login, logout } from "../../firebase";
 import { Link } from "react-router-dom";
 
 function NavBar(props) {

@@ -18,10 +18,10 @@ const Footer = () => {
               <Link to="/">Your Account</Link>
             </li>
             <li className="nav-item">
-              <Link to="/signup">Sign Up</Link>
+              <Link to="/venues">Venues</Link>
             </li>
             <li className="nav-item">
-              <Link to="/login">Log In</Link>
+              <Link to="/events">Events</Link>
             </li>
             <li className="nav-item">
               <Link to="/help">Help</Link>
@@ -49,10 +49,10 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a href="#about">About</a>
+              <a href="#legal">Terms and Conditions</a>
             </li>
             <li className="nav-item">
-              <a href="#testimonials">Testimonials</a>
+              <a href="#careers">Careers</a>
             </li>
             <li className="nav-item">
               <a href="#demo">Demo</a>
