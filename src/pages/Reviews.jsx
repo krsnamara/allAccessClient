@@ -18,16 +18,19 @@ function Reviews(props) {
         title: "",
         image: "",
     };
+    
+    const review = props.reviews 
+    
+    console.log(`reviews line 22 ${JSON.stringify(review)}`)
 
-    const person = props.people ? props.people.find(person => person._id === id) : null;
 
     const [editForm, setEditForm] = useState(formFields);
 
     useEffect(() => {
-        if(person) {
-            setEditForm(person)
+        if(review) {
+            setEditForm(review)
         } 
-    }, [person]);
+    }, [review]);
 
     const handleChange = (event) => {
         setEditForm({
@@ -38,63 +41,59 @@ function Reviews(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updatePeople(id, editForm);
+        props.updateReviews(editForm);
     };
 
     // console.log(navigate); // logs a function
 
-    // use the id to find the specific person in the people array to show person
+    // use the id to find the specific review in the reviews array to show review
     const loaded = () => {
-        // const person = props.people.find(person => person._id === id); // before refactor
-        // console.log(person);
-        return (
-            <div className="person">
-                <h1>{person.name}</h1>
-                <h3>{person.title}</h3>
-                { person.image &&
-                    <img src={person.image} alt={person.name} />
-                }
-                <form onSubmit={handleSubmit}>
-                    <input 
-                        type="text"
-                        name="name"
-                        value={editForm.name} 
-                        onChange={handleChange} 
-                    />
-                    <input 
-                        type="text"
-                        name="title"
-                        value={editForm.title} 
-                        onChange={handleChange} 
-                    />
-                    <input 
-                        type="text"
-                        name="image"
-                        value={editForm.image} 
-                        onChange={handleChange} 
-                    />
-                    <input type="submit" value="Update Person" />
-                </form>
-                <button onClick={handleDelete}>Delete This Person</button>
+          return props.reviews.map(review => (
+            <div className="review">
+              <h1>{review.name}</h1>
+              <h3>{review.title}</h3>
+              {review.image && <img src={review.image} alt={review.name} />}
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  value={editForm.name}
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="title"
+                  value={editForm.title}
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="image"
+                  value={editForm.image}
+                  onChange={handleChange}
+                />
+                <input type="submit" value="Update Review" />
+              </form>
+              <button onClick={handleDelete}>Delete This Review</button>
             </div>
-        );
+          ))
+      };
 
-    };
     const loading = () => {
+      if (!review) {
+      return <div>No review found with the provided ID</div>;
+    }
         return <h2>Loading...</h2>;
     };
 
     const handleDelete = () => {
-        props.deletePeople(id);
+        props.deleteReviews(id);
         navigate('/');
     };
 
-    // return props.people ? loaded() : loading();
-
     return (
         <section>
-            {props.people ? loaded() : loading()}
-            {/* <button onClick={handleDelete}>Delete This Person</button> */}
+            {props.reviews ? loaded() : loading()}
         </section>
     );
   }
