@@ -9,17 +9,20 @@ const CreateProfile = ({ user }) => {
         city: ''
     })
 
+    // console.log(user.uid, '-- user.uid')
+
     const handleSubmit = (event) => {
         event.preventDefault()
         const formDataCopy = {...formData}
         setFormData(formDataCopy)
+        console.log(formData, 'submitted form data')
     }
 
     const handleChange = (event) => {
         console.log(event.target.id)
         setFormData({
           ...formData,
-          [event.target.id]: event.target.value,
+          [event.target.name]: event.target.value,
           error: ''
         });
         console.log("this is the form data: ", formData);
@@ -41,7 +44,7 @@ const CreateProfile = ({ user }) => {
                 { showP2 && !showP3 ? 
                 <>
                 <label>What state do you live in?</label>
-                <input id='state' value={formData.state} onChange={handleChange} />
+                <input type='text' name='state' id='state' value={formData.state} onChange={handleChange} />
                 <div>
                 <button onClick={handleShowP3}>Next</button>
                 </div>
@@ -49,7 +52,7 @@ const CreateProfile = ({ user }) => {
                 : !showP2 && showP3 ?
                 <>
                 <label>What city do you live in?</label>
-                <input id='city' value={formData.city} onChange={handleChange} />
+                <input type='text' name='city' id='city' value={formData.city} onChange={handleChange} />
                 <div>
                 <button type='submit'>Create</button>
                 </div>
@@ -57,7 +60,7 @@ const CreateProfile = ({ user }) => {
                 :
                 <>
                 <label>What is your preferred name?</label>
-                <input id='preferredName' value={formData.preferredName} onChange={handleChange} />
+                <input type='text' name='preferredName' id='preferredName' value={formData.preferredName} onChange={handleChange} />
                 <div>
                 <button onClick={handleShowP2}>Next</button>
                 </div>
