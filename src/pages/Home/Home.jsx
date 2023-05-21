@@ -1,8 +1,6 @@
 
 import React from 'react'
-// import Carousel from '../../components/Carousel/Carousel';
 import '../Home/Home.css';
-// import '../../App.css';
 import LikeButton from '../../components/LikeButton/LikeButton';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
@@ -36,7 +34,7 @@ function Home() {
                   <FaMapMarkerAlt size={24} color="green" />
                   <p className="location-text">Oakland, CA</p>
                 </div>
-                <a href="#" className="btn btn-primary">link</a>
+                <a href="/some-link" className="btn btn-primary">link</a>
               </div>
             </div>
 
@@ -54,7 +52,7 @@ function Home() {
                   <FaMapMarkerAlt size={24} color="green" />
                   <p className="location-text">Oakland, CA</p>
                 </div>
-                <a href="#" className="btn btn-primary">link</a>
+                <a href="/some-link" className="btn btn-primary">link</a>
               </div>
             </div>
 
@@ -72,7 +70,7 @@ function Home() {
                   <FaMapMarkerAlt size={24} color="green" />
                   <p className="location-text">Oakland, CA</p>
                 </div>
-                <a href="#" className="btn btn-primary">link</a>
+                <a href="/some-link" className="btn btn-primary">link</a>
               </div>
             </div>
 
@@ -90,7 +88,7 @@ function Home() {
                   <FaMapMarkerAlt size={24} color="green" />
                   <p className="location-text">Oakland, CA</p>
                 </div>
-                <a href="#" className="btn btn-primary">link</a>
+                <a href="/some-link" className="btn btn-primary">link</a>
               </div>
             </div>
 
@@ -108,7 +106,7 @@ function Home() {
                   <FaMapMarkerAlt size={24} color="green" />
                   <p className="location-text">Oakland, CA</p>
                 </div>
-                <a href="#" className="btn btn-primary">link</a>
+                <a href="/some-link" className="btn btn-primary">link</a>
               </div>
             </div>
 
@@ -126,7 +124,7 @@ function Home() {
                   <FaMapMarkerAlt size={24} color="green" />
                   <p className="location-text">Oakland, CA</p>
                 </div>
-                <a href="#" className="btn btn-primary">link</a>
+                <a href="/some-link" className="btn btn-primary">link</a>
               </div>
             </div>
 
