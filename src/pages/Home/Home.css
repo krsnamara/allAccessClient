@@ -1,11 +1,14 @@
 .buttons {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 -5px;
   }
   
   .buttons > * {
     flex: 0 0 auto;
+    padding: 0 5px;
   }
   
   .buttons button {
@@ -15,8 +18,8 @@
     border: 1px solid black;
     border-radius: 50px;
     background-color: white;
-    padding: 5px;
-    margin-right: 10px;
+    padding: 10px 20px;
+    margin: 5px;
     cursor: pointer;
     height: 35px;
     color: black;
@@ -34,7 +37,7 @@
   
   .buttons button:not(:first-child) {
     background-color: white;
-    padding: 5px 10px;
+    padding: 10px 20px;
   }
   
   .buttons button:focus {
@@ -45,6 +48,15 @@
     background-color: rgba(61, 197, 27, 0.1);
   }
   
+  @media (max-width: 767px) {
+    .buttons .mobile-hide {
+      display: none;
+    }
+    
+    .buttons button {
+      margin: 5px;
+    }
+  }
   
   
   
