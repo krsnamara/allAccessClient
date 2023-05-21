@@ -14,14 +14,6 @@ function Home() {
 
   return (
     <>
-      {/* <div className="buttons">
-        <MapToggle onToggle={handleToggleMap} />
-        <button><img src={Filter} alt="Filter" className="filter-image" /></button>
-        <button>All</button>
-        <button>Classes & Workshops</button>
-        <button>Bars</button>
-        <button>Category</button>
-      </div> */}
       <div className="buttons">
         <MapToggle onToggle={handleToggleMap} />
         <button><img src={Filter} alt="Filter" className="filter-image" /></button>
