@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import MapToggle from '../../components/MapToggle/MapToggle';
 import HomeGridView from '../../components/HomeGridView/HomeGridView';
 import HomeMapView from '../../components/HomeMapView/HomeMapView';
+import Filter from '../../assets/Navigation_Filters.png';
+import './Home.css';
 
 function Home() {
   const [showMap, setShowMap] = useState(false);
@@ -12,9 +14,15 @@ function Home() {
 
   return (
     <>
-      <div className="map-toggle">
+      <div className="buttons">
         <MapToggle onToggle={handleToggleMap} />
+        <button><img src={Filter} alt="Filter" className="filter-image" /></button>
+        <button>All</button>
+        <button>Classes & Workshops</button>
+        <button>Bars</button>
+        <button>Category</button>
       </div>
+
 
       {showMap ? (
         // Render map component
