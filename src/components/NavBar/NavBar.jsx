@@ -8,7 +8,7 @@ function NavBar(props) {
           <>
               {props.user ?
                   <>
-                      <Link to="/" style={{color: 'black', textDecoration: 'none'}}>Welcome</Link>
+                      <Link to="/" style={{color: 'black', textDecoration: 'none'}}>Welcome { props.user.email }</Link>
                       &nbsp; | &nbsp;
                       <Link to="/reviews" style={{color: 'black', textDecoration: 'none'}}>Reviews</Link>
                       &nbsp; | &nbsp;

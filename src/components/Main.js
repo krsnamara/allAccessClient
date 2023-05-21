@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import { API_URLS } from "../urls";
 import Home from "../pages/Home/Home";
@@ -10,7 +10,7 @@ import CreateProfile from "../pages/CreateProfile/CreateProfile";
 function Main(props) {
 
   const [reviews, setReviews] = useState(null);
-  // const getReviewsRef = useRef(null);
+  const getReviewsRef = useRef(null);
 
   // const URL = "http://localhost:4000/reviews/";
   const URL = `${API_URLS.REVIEWS}`;
@@ -62,28 +62,28 @@ function Main(props) {
     getReviews();
   };
 
-  // const deleteReviews = async (id) => {
-  //   const token = await props.user.getIdToken();
-  //   await fetch(URL + id, {
-  //     method: "DELETE",
-  //     headers: {
-  //       Authorization: "Bearer " + token,
-  //     },
-  //   });
-  //   getReviews();
-  // };
+  const deleteReviews = async (id) => {
+    const token = await props.user.getIdToken();
+    await fetch(URL + id, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    getReviews();
+  };
 
-  // useEffect(() => {
-  //   getReviewsRef.current = getReviews;
-  // });
+  useEffect(() => {
+    getReviewsRef.current = getReviews;
+  });
 
-  // useEffect(() => {
-  //   if (props.user) {
-  //     getReviewsRef.current(); // solves useEffect getReviews warning
-  //   } else {
-  //     setReviews(null);
-  //   }
-  // }, [props.user]);
+  useEffect(() => {
+    if (props.user) {
+      getReviewsRef.current(); // solves useEffect getReviews warning
+    } else {
+      setReviews(null);
+    }
+  }, [props.user]);
 
   return (
     <main>
