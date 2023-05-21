@@ -13,3 +13,5 @@ export default function MapToggle({ onToggle }) {
     </div>
   );
 }
+
+// https://uiverse.io/Shoh2008/average-duck-41
