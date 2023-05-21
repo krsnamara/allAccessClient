@@ -1,139 +1,28 @@
-
-import React from 'react'
-import '../Home/Home.css';
-import LikeButton from '../../components/LikeButton/LikeButton';
-import { FaMapMarkerAlt } from 'react-icons/fa';
-
+import React, { useState } from 'react';
+import MapToggle from '../../components/MapToggle/MapToggle';
+import HomeGridView from '../../components/HomeGridView/HomeGridView';
+import HomeMapView from '../../components/HomeMapView/HomeMapView';
 
 function Home() {
+  const [showMap, setShowMap] = useState(false);
+
+  const handleToggleMap = () => {
+    setShowMap(!showMap);
+  };
+
   return (
-    // <div>
-    //   <Carousel />
-    // </div>
     <>
-      <h1>
-        Popular
-      </h1>
-
-
-      <div className="container">
-        <div className="card-container">
-
-
-            <div className="card">
-              <div className="card-picture">
-                <div className="like-button">
-                  <LikeButton />
-                </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" className="card-img-top" alt="..." />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Cooking Class</h5>
-                <p className="card-text">This is a cooking class</p>
-                <div className="location">
-                  <FaMapMarkerAlt size={24} color="green" />
-                  <p className="location-text">Oakland, CA</p>
-                </div>
-                <a href="/some-link" className="btn btn-primary">link</a>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card-picture">
-                <div className="like-button">
-                  <LikeButton />
-                </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" className="card-img-top" alt="..." />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Cooking Class</h5>
-                <p className="card-text">This is a cooking class</p>
-                <div className="location">
-                  <FaMapMarkerAlt size={24} color="green" />
-                  <p className="location-text">Oakland, CA</p>
-                </div>
-                <a href="/some-link" className="btn btn-primary">link</a>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card-picture">
-                <div className="like-button">
-                  <LikeButton />
-                </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" className="card-img-top" alt="..." />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Cooking Class</h5>
-                <p className="card-text">This is a cooking class</p>
-                <div className="location">
-                  <FaMapMarkerAlt size={24} color="green" />
-                  <p className="location-text">Oakland, CA</p>
-                </div>
-                <a href="/some-link" className="btn btn-primary">link</a>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card-picture">
-                <div className="like-button">
-                  <LikeButton />
-                </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" className="card-img-top" alt="..." />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Cooking Class</h5>
-                <p className="card-text">This is a cooking class</p>
-                <div className="location">
-                  <FaMapMarkerAlt size={24} color="green" />
-                  <p className="location-text">Oakland, CA</p>
-                </div>
-                <a href="/some-link" className="btn btn-primary">link</a>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card-picture">
-                <div className="like-button">
-                  <LikeButton />
-                </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" className="card-img-top" alt="..." />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Cooking Class</h5>
-                <p className="card-text">This is a cooking class</p>
-                <div className="location">
-                  <FaMapMarkerAlt size={24} color="green" />
-                  <p className="location-text">Oakland, CA</p>
-                </div>
-                <a href="/some-link" className="btn btn-primary">link</a>
-              </div>
-            </div>
-
-            <div className="card">
-              <div className="card-picture">
-                <div className="like-button">
-                  <LikeButton />
-                </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" className="card-img-top" alt="..." />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">Cooking Class</h5>
-                <p className="card-text">This is a cooking class</p>
-                <div className="location">
-                  <FaMapMarkerAlt size={24} color="green" />
-                  <p className="location-text">Oakland, CA</p>
-                </div>
-                <a href="/some-link" className="btn btn-primary">link</a>
-              </div>
-            </div>
-
-            
-
-        </div>
+      <div className="map-toggle">
+        <MapToggle onToggle={handleToggleMap} />
       </div>
 
-
+      {showMap ? (
+        // Render map component
+        <HomeMapView />
+      ) : (
+        // Render grid component
+        <HomeGridView />
+      )}
     </>
   );
 }
