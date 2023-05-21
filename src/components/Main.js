@@ -92,7 +92,7 @@ function Main(props) {
         <Route path="/create" element={<CreateProfile user={props.user} />} />
         <Route path="/reviews" element={<Reviews reviews={reviews} />} />
         <Route path="/review/new" element={<NewReview reviews={reviews} createReviews={createReviews} />} />
-        <Route path="/reviews/:id" element={<Review reviews={reviews} updateReviews={updateReviews} />} />
+        <Route path="/reviews/:id" element={<Review deleteReviews={deleteReviews} reviews={reviews} updateReviews={updateReviews} />} />
       </Routes>
     </main>
   );
