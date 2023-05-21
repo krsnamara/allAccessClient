@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="container">
+      {/* <div className="container">
         <div className="footer-header">
           <h2>Create your own Meetup group.</h2>
           <button>Get Started</button>
         </div>
-        <hr />
+        <hr /> */}
         <div className="list-container">
           <ul>
             <li className="nav-item">
@@ -30,7 +30,7 @@ const Footer = () => {
               <Link to="/donate">Become an Affiliate</Link>
             </li>
           </ul>
-          <ul>
+          {/* <ul>
             <li className="nav-item">
               <Link to="/">Home</Link>
             </li>
@@ -57,10 +57,10 @@ const Footer = () => {
             <li className="nav-item">
               <a href="#demo">Demo</a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 

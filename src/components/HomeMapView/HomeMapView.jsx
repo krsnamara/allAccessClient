@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import Map from '../../assets/Oakland-CA.png';
 import './HomeMapView.css';
 
 export default function HomeMapView() {
@@ -75,7 +76,7 @@ export default function HomeMapView() {
 
         <div className="home-map">
           <img
-            src="https://developers.google.com/static/maps/images/landing/hero_maps_static_api.png"
+            src={Map}
             className="home-map-img"
             alt="..."
           />
