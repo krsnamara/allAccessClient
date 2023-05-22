@@ -112,11 +112,14 @@
     width: calc(100% / 5 - 20px);
   }
   .card-picture {
-    height: 43%;
+    height: 60%;
   }
   .card-body {
-    height: 57%;
+    height: 40%;
     padding: 10px;
+  }
+  .card-body h5 {
+    margin-top: 0;
   }
 }
 
