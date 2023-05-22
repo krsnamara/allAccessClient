@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import useEvnts from '../Utilities/evnts'; // Import the custom hook
 import useReviews from '../Utilities/reviews'; 
 import Home from "../pages/Home/Home";
+import HomeGridProps from "./HomeGridProps/HomeGridProps";
 import ReviewsIndex from "../pages/Reviews/ReviewsIndex/ReviewsIndex";
 import ReviewShow from "../pages/Reviews/ReviewShow/ReviewShow";
 import NewReview from "../pages/Reviews/NewReview/NewReview";
@@ -19,6 +20,7 @@ function Main(props) {
     <main>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/proto" element={<HomeGridProps evnts={evnts} />} />
         <Route path="/create" element={<CreateProfile user={props.user} />} />
         <Route path="/reviews" element={<ReviewsIndex reviews={reviews} />} />
         <Route path="/review/new" element={<NewReview reviews={reviews} createReviews={createReviews} />} />
