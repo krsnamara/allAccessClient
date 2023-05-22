@@ -1,24 +1,24 @@
 .reviewNav{
     display: none;
 }
-.navBarWrapper{
+.navBarWrapperLoggout{
     display: flex;
     justify-content: space-between;
     align-content: center;
 }
-.navBarLogo{
+.navBarLogoLoggout{
     width: 50px;
 }
-.navLangGlobe{
+.navLangGlobeLoggout{
     width: 40px;
     padding-top: 3px;
 }
-.searchBarWrapper{
+.searchBarWrapperLoggout{
     display: flex;
     justify-content: center;
     align-content: center;
 }
-.navBarSearch{
+.navBarSearchLoggout{
     display: flex;
     align-content: center;
     width: 90%;
@@ -28,10 +28,127 @@
     
     gap: 15px;
 }
-.searchIconLink{
+.searchIconLinkLoggout{
     display: flex;
     align-content: center;
     justify-content: center;
     margin-top: 10px;
     padding: 3px 0px 0px 10px;
+}
+
+.loggedOutLandingImgLoggout{
+    display: none;
+}
+.navBarGetStartedLoggout{
+    display: none;
+}
+
+@media (max-width: 580px) {
+
+.reviewNav{
+    display: none;
+}
+.navBarWrapperLoggout{
+    position: relative;
+    top: -20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.navBarLogoLoggout{
+    width: 50px;
+}
+.navLangGlobeLoggout{
+    width: 40px;
+    padding-top: 3px;
+}
+.searchBarWrapperLoggout{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: -190px;
+}
+.navBarSearchLoggout{
+    display: flex;
+    align-content: center;
+    width: 90%;
+    border: 1px solid black;;
+    border-radius: 50px;
+    
+    gap: 15px;
+}
+.searchIconLinkLoggout{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 3px 0px 0px 10px;
+}
+.loggedOutLandingImgLoggout{
+    display: block;
+    position: relative;
+    top: -210px;
+    width: 100%;
+    z-index: -1;
+}
+.navBarGetStartedLoggout{
+    display: block;
+    position: relative;
+    height: 60px;
+    top: 430px;
+    left: 60px;
+    z-index: 0;
+    object-fit: cover;
+}
+body{
+    padding: 0 !important;
+}
+}
+
+/* ------------------------ */
+.reviewNav{
+    display: none;
+}
+.navBarWrapperLogin{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.navBarLogoLogin{
+    width: 50px;
+}
+.navLangGlobeLogin{
+    width: 40px;
+    padding-top: 3px;
+}
+.searchBarWrapperLogin{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.navBarSearchLogin{
+    display: flex;
+    align-content: center;
+    width: 90%;
+    /* height: 30px; */
+    border: 1px solid black;;
+    border-radius: 50px;
+    
+    gap: 15px;
+}
+.searchIconLinkLogin{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 3px 0px 0px 10px;
+}
+
+.loggedOutLandingImgLogin{
+    display: none;
+}
+.navBarGetStartedLogin{
+    display: none;
 }
