@@ -13,7 +13,7 @@ function NavBar({ user }) {
 
   return (
     <nav className="nav">
-      <div className="mainNav">
+      <div className="mainNav"> 
         {user ? 
         <>
           <div className="navBarWrapper">
