@@ -10,6 +10,7 @@ import EvntsIndex from '../pages/Evnts/EvntsIndex/EvntsIndex'
 import EvntsShow from '../pages/Evnts/EvntShow/EvntShow'
 import NewEvnt from '../pages/Evnts/NewEvnt/NewEvnt'
 import CreateProfile from "../pages/CreateProfile/CreateProfile";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 function Main(props) {
 
@@ -20,6 +21,7 @@ function Main(props) {
     <main>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/proto" element={<HomeGridProps evnts={evnts} />} />
         <Route path="/create" element={<CreateProfile user={props.user} />} />
         <Route path="/reviews" element={<ReviewsIndex reviews={reviews} />} />
