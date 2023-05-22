@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom" 
+import './Review.css';
+
 // a hook that gives us access to the url params 
 // to allow us to find from the url params 
 
@@ -52,7 +54,7 @@ function Review(props) {
                 <h1>{editForm.name}</h1>
                 <h3>{editForm.title}</h3>
                 { review.image &&
-                    <img src={editForm.image} alt={editForm.name} />
+                    <img src={editForm.image} alt={editForm.name} className="reviewImage" />
                 }
                 <form onSubmit={handleSubmit}>
                     <input 
@@ -86,7 +88,7 @@ function Review(props) {
 
     const handleDelete = () => {
         props.deleteReviews(id);
-        navigate('/');
+        navigate('/reviews');
     };
 
     // return props.reviews ? loaded() : loading();

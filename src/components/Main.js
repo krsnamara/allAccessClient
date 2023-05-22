@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import { API_URLS } from "../urls";
 import Home from "../pages/Home/Home";
-import Reviews from "../pages/Reviews";
-import Review from "../pages/Review";
-import NewReview from "../pages/NewReview";
+import Reviews from "../pages/Reviews/Reviews";
+import Review from "../pages/Review/Review";
+import NewReview from "../pages/NewReview/NewReview";
 import CreateProfile from "../pages/CreateProfile/CreateProfile";
 
 function Main(props) {
@@ -30,7 +30,7 @@ function Main(props) {
     setReviews(data);
   };
 
-  console.log(`main.js line 32 ${JSON.stringify(reviews)}`)
+  // console.log(`main.js line 32 ${JSON.stringify(reviews)}`)
 
   const createReviews = async (review) => {
     if (!props.user) return; // prevent function from executing code below if no auth

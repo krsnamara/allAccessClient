@@ -1,0 +1,15 @@
+.reviewsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.reviewsImage{
+    max-width: 200px;
+}
+
+.reviewCard {
+    width: calc(33.33% - 20px); /* Adjust the width as needed */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

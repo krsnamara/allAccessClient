@@ -1,0 +1,11 @@
+.reviewNav{
+    display: none;
+}
+.navBarWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.navBarLogo{
+    width: 50px;
+}
