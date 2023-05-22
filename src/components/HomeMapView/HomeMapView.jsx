@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaMapMarkerAlt } from 'react-icons/fa';
-import './HomeMapView.css';
+import React from "react";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import "./HomeMapView.css";
 
 export default function HomeMapView() {
   return (
@@ -80,12 +80,7 @@ export default function HomeMapView() {
             alt="..."
           />
         </div>
-
-        
       </div>
     </>
   );
 }
-
-
-
