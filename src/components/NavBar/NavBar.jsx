@@ -18,7 +18,7 @@ function NavBar({ user }) {
         <>
           <div className="navBarWrapper">
             <div>
-              <Link to="/" style={{ color: 'black', textDecoration: 'none', backgroundColor: 'green'}}>
+              <Link to="/" style={{ color: 'black', textDecoration: 'none'}}>
                 <img src={Logo} alt="logo" className="navBarLogo" />
               </Link>
             </div>
@@ -26,7 +26,7 @@ function NavBar({ user }) {
               <LoginModal user={user} /> {/* Pass the user prop here */}
             </div>
             <div>
-              <Link to="/" style={{ color: 'black', textDecoration: 'none', backgroundColor: 'green'}}>
+              <Link to="/" style={{ color: 'black', textDecoration: 'none'}}>
                 <IoGlobeOutline size={40} />
               </Link>
             </div>

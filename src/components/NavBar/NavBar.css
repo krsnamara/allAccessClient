@@ -1,37 +1,48 @@
-.reviewNav{
-    display: none;
-}
-.navBarWrapper{
+.navBarWrapper {
     display: flex;
     justify-content: space-between;
-    align-content: center;
-}
-.navBarLogo{
+    align-items: center;
+  }
+  
+  .navBarLogo {
     width: 50px;
-}
-.navLangGlobe{
+  }
+  
+  .navLangGlobe {
     width: 40px;
     padding-top: 3px;
-}
-.searchBarWrapper{
+  }
+  
+  .loginModal {
+    position: fixed;
+    left: 40%;
+    top: 2%;
+    /* transform: translate(-50%, -50%); */
+    z-index: 100;
+  }
+  
+  .searchBarWrapper {
     display: flex;
     justify-content: center;
-    align-content: center;
-}
-.navBarSearch{
-    display: flex;
-    align-content: center;
-    width: 90%;
-    /* height: 30px; */
-    border: 1px solid black;;
-    border-radius: 50px;
-    
-    gap: 15px;
-}
-.searchIconLink{
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    align-items: center;
     margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .navBarSearch {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 50px;
+    gap: 15px;
+  }
+  
+  .searchIconLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
     padding: 3px 0px 0px 10px;
-}
+  }
+  
