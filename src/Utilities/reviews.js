@@ -3,23 +3,23 @@ import { API_URLS } from "../urls";
 
 const useReviews = (props) => {
   const [reviews, setReviews] = useState(null);
-  const getReviewsRef = useRef(null);
+  // const getReviewsRef = useRef(null);
 
   const URL = `${API_URLS.REVIEWS}`;
 
-  const getReviews = async () => {
-    const token = await props.user.getIdToken();
+  // const getReviews = async () => {
+  //   const token = await props.user.getIdToken();
 
-    const response = await fetch(URL, {
-      method: "GET",
-      headers: {
-        'Authorization': 'Bearer ' + token
+  //   const response = await fetch(URL, {
+  //     method: "GET",
+  //     headers: {
+  //       'Authorization': 'Bearer ' + token
 
-      },
-    });
-    const data = await response.json();
-    setReviews(data);
-  };
+  //     },
+  //   });
+  //   const data = await response.json();
+  //   setReviews(data);
+  // };
 
   // console.log(`main.js line 32 ${JSON.stringify(reviews)}`)
 
@@ -37,7 +37,7 @@ const useReviews = (props) => {
       body: JSON.stringify(review),
     });
     // update list of reviews
-    getReviews();
+    // getReviews();
   };
 
   const updateReviews = async (id, updatedReview) => {
@@ -50,7 +50,7 @@ const useReviews = (props) => {
       },
       body: JSON.stringify(updatedReview),
     });
-    getReviews();
+    // getReviews();
   };
 
   const deleteReviews = async (id) => {
@@ -61,26 +61,26 @@ const useReviews = (props) => {
         Authorization: "Bearer " + token,
       },
     });
-    getReviews();
+    // getReviews();
   };
 
-  useEffect(() => {
-    getReviewsRef.current = getReviews;
-  });
+  // useEffect(() => {
+  //   getReviewsRef.current = getReviews;
+  // });
 
-  useEffect(() => {
-    if (props.user) {
-      getReviewsRef.current(); // solves useEffect getReviews warning
-    } else {
-      setReviews(null);
-    }
-  }, [props.user]);
+  // useEffect(() => {
+  //   if (props.user) {
+  //     getReviewsRef.current(); // solves useEffect getReviews warning
+  //   } else {
+  //     setReviews(null);
+  //   }
+  // }, [props.user]);
 
   return {
     reviews,
     createReviews,
     updateReviews,
-    deleteReviews
+    deleteReviews,
   };
 };
 
