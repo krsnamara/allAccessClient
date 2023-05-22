@@ -21,13 +21,16 @@ const Footer = () => {
               <Link to="/venues">Venues</Link>
             </li>
             <li className="nav-item">
-              <Link to="/events">Events</Link>
+              <Link to="/evnts">Events</Link>
             </li>
             <li className="nav-item">
-              <Link to="/help">Help</Link>
+              <Link to="/evnts/new">Create Event</Link>
             </li>
             <li className="nav-item">
-            <Link to="/reviews" style={{}}>Reviews </Link>
+            <Link to="/reviews">Reviews </Link>
+            </li>
+            <li className="nav-item">
+            <Link to="/reviews/new">Create Review </Link>
             </li>
           </ul>
         </div>
