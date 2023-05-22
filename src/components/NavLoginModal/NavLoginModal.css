@@ -1,3 +1,4 @@
+
 body.active-modal {
     overflow-y: hidden;
 }
@@ -37,6 +38,7 @@ body.active-modal {
     border-radius: 10px;
     max-width: 600px;
     min-width: 300px;
+    z-index: 1000;
 }
 .Xicon{
     display: flex;
