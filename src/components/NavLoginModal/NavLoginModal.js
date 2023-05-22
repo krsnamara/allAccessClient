@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import {Link} from 'react-router-dom';
 import { logout, login } from "../../firebase";
 import LoginHamburger from '../../assets/buttons-icons/login_hamburger.png';
 import LoginIcon from '../../assets/buttons-icons/loginModalicon.png';
@@ -42,11 +43,11 @@ export default function Modal({ user }) {
                 <div className="loginLogoutWrapper">
                 <div className="profileCircleWrapper">
                     <img src={ProfileSmallCircle} alt="profileSmallCircle" className="profileSmallCircle" />
-                    <p className="loginLogout" >Profile</p>
+                    <p className="loginLogout" > <Link to="/profile" style={{ color: 'white', textDecoration: 'none'}}>Profile</Link> </p>
                 </div>
                 <div className="createEventWrapper">
                     <img src={CreateEvent} alt="createEvent" className="createEvent" />
-                    <p className="loginLogout" >Create Event</p>    
+                    <p className="loginLogout" ><Link to="/evnts/new" style={{ color: 'white', textDecoration: 'none'}}>Create Event</Link></p>    
                 </div>
                 <div className="settingsWrapper">
                 <img src={SettingsIcon} alt="settings" className="settings" />
