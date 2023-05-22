@@ -1,102 +1,63 @@
-/* .container {
+.buttons {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-  }
-  
-  .card-container {
-    display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
+    margin: 0 -5px;
   }
   
-  .card {
-    width: calc(100% / 5 - 20px);
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+  .buttons > * {
+    flex: 0 0 auto;
+    padding: 0 5px;
   }
   
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-img-top {
-    width: 100%;
-    height: auto;
-  }
-  
-  .card-body {
-    padding: 20px;
-    background-color: #fff;
-  }
-  
-  .card-title {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .card-text {
-    margin-top: 10px;
-  }
-  
-  .btn-primary {
-    margin-top: auto;
-  }
-  
-  .card-picture {
-    position: relative;
-  }
-  
-  .like-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 1;
-  }
-  
-  .location {
+  .buttons button {
     display: flex;
     align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    height: 35px;
+    color: black;
   }
   
-  .location p {
-    margin-left: 8px;
+  .buttons button:last-child {
+    margin-right: 0;
   }
   
-  .location-text {
-    margin-top: 10px;
-    padding-top: 10px;
+  .buttons button img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
   }
   
-
-
-
-  /* Media Queries */
-  
-  /* @media (max-width: 1199px) { */
-    /* Desktop */
-    /* .card {
-      width: calc(100% / 5 - 20px);
-    }
-  } */
-  
-  /* @media (max-width: 991px) { */
-    /* Tablet */
-    /* .card {
-      width: calc(100% / 3 - 20px);
-    }
+  .buttons button:not(:first-child) {
+    background-color: white;
+    padding: 10px 20px;
   }
-   */
-  /* @media (max-width: 767px) { */
-    /* Mobile */
-    /* .card {
-      width: calc(100% / 2 - 20px);
+  
+  .buttons button:focus {
+    outline: none;
+  }
+  
+  .buttons button:hover {
+    background-color: rgba(61, 197, 27, 0.1);
+  }
+  
+  @media (max-width: 767px) {
+    .buttons .mobile-hide {
+      display: none;
     }
     
+    .buttons button {
+      margin: 5px;
+    }
   }
-   */
+  
+  
+  
   

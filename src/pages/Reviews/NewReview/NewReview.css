@@ -1,0 +1,22 @@
+.reviewNav {
+    display: none;
+  }
+
+@media (max-width: 480px) {
+    /* Mobile */
+    .reviewNav {
+      display: flex;
+    }
+    .backBtnNav{
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        gap: 2px;
+    }
+    .mainNav{
+        display: none;
+    }
+    .backNavP{
+        font-size: 20px;
+    }
+  }

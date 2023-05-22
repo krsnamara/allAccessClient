@@ -1,0 +1,37 @@
+.reviewNav{
+    display: none;
+}
+.navBarWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.navBarLogo{
+    width: 50px;
+}
+.navLangGlobe{
+    width: 40px;
+    padding-top: 3px;
+}
+.searchBarWrapper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.navBarSearch{
+    display: flex;
+    align-content: center;
+    width: 90%;
+    /* height: 30px; */
+    border: 1px solid black;;
+    border-radius: 50px;
+    
+    gap: 15px;
+}
+.searchIconLink{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 3px 0px 0px 10px;
+}

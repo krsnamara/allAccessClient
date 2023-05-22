@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="container">
+      {/* <div className="container">
         <div className="footer-header">
           <h2>Create your own Meetup group.</h2>
           <button>Get Started</button>
         </div>
-        <hr />
+        <hr /> */}
         <div className="list-container">
           <ul>
             <li className="nav-item">
@@ -21,46 +21,21 @@ const Footer = () => {
               <Link to="/venues">Venues</Link>
             </li>
             <li className="nav-item">
-              <Link to="/events">Events</Link>
+              <Link to="/evnts">Events</Link>
             </li>
             <li className="nav-item">
-              <Link to="/help">Help</Link>
+              <Link to="/evnts/new">Create Event</Link>
             </li>
             <li className="nav-item">
-              <Link to="/donate">Become an Affiliate</Link>
-            </li>
-          </ul>
-          <ul>
-            <li className="nav-item">
-              <Link to="/">Home</Link>
+            <Link to="/reviews">Reviews </Link>
             </li>
             <li className="nav-item">
-              <a href="#about">About</a>
-            </li>
-            <li className="nav-item">
-              <a href="#testimonials">Testimonials</a>
-            </li>
-            <li className="nav-item">
-              <a href="#demo">Demo</a>
-            </li>
-          </ul>
-          <ul>
-            <li className="nav-item">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <a href="#legal">Terms and Conditions</a>
-            </li>
-            <li className="nav-item">
-              <a href="#careers">Careers</a>
-            </li>
-            <li className="nav-item">
-              <a href="#demo">Demo</a>
+            <Link to="/reviews/new">Create Review </Link>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
