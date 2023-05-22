@@ -1,3 +1,9 @@
 .evntImage{
     max-width: 400px;
 }
+.evntShowWrapper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
