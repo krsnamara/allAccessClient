@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom" 
-import './Review.css';
+import '../ReviewShow/ReviewShow.css';
 
 // a hook that gives us access to the url params 
 // to allow us to find from the url params 

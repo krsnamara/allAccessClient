@@ -1,0 +1,15 @@
+.eventsIndexWrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.eventsImage{
+    max-width: 200px;
+}
+
+.eventsCard {
+    width: calc(33.33% - 20px); /* Adjust the width as needed */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
