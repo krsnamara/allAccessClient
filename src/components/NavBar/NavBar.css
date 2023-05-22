@@ -1,0 +1,9 @@
+.reviewNav{
+    display: none;
+}
+.navBarWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './NewReview.css'
+
 
 function NewReview(props) {
   const formFields = {

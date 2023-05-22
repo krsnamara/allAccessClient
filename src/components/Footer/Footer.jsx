@@ -27,37 +27,9 @@ const Footer = () => {
               <Link to="/help">Help</Link>
             </li>
             <li className="nav-item">
-              <Link to="/donate">Become an Affiliate</Link>
+            <Link to="/reviews" style={{}}>Reviews </Link>
             </li>
           </ul>
-          {/* <ul>
-            <li className="nav-item">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <a href="#about">About</a>
-            </li>
-            <li className="nav-item">
-              <a href="#testimonials">Testimonials</a>
-            </li>
-            <li className="nav-item">
-              <a href="#demo">Demo</a>
-            </li>
-          </ul>
-          <ul>
-            <li className="nav-item">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <a href="#legal">Terms and Conditions</a>
-            </li>
-            <li className="nav-item">
-              <a href="#careers">Careers</a>
-            </li>
-            <li className="nav-item">
-              <a href="#demo">Demo</a>
-            </li>
-          </ul> */}
         </div>
       </div>
     // </div>
