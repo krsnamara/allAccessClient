@@ -1,7 +1,10 @@
 import { login, logout } from "../../firebase";
 import { Link } from "react-router-dom";
 import { IoChevronBackCircleOutline, IoGlobeOutline } from 'react-icons/io5'
-// import { SIGlobeOutline } from 'react-icons/si'
+import Logo from '../../assets/icon.png';
+import LoginHamburger from '../../assets/login_hamburger.png'
+import './NavBar.css';
+
 
 function NavBar(props) {
     // console.log(`this is nav ${props}`)
@@ -22,10 +25,10 @@ function NavBar(props) {
                   <div className="navBarWrapper">
                     <div>
                         <Link to="/" style={{color: 'black', textDecoration: 'none'}}>
-                            <img src="../assets/icon.png" alt="logo" />
+                            <img src={ Logo } alt="logo" className="navBarLogo" />
                         </Link>
                     </div>
-                    <button onClick={login}> Login </button>
+                    <img src={LoginHamburger} alt="loginHamburger" style={{cursor: 'pointer'}} onClick={login} />
                     <div>
                       <Link to="/" style={{color: 'black', textDecoration: 'none'}}>
                       <IoGlobeOutline size={40}/>
