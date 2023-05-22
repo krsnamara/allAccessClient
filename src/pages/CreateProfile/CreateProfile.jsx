@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const CreateProfile = ({ user }) => {
+const CreateProfile = ({ user, createProfile }) => {
     const [ showP2, setShowP2 ] = useState(false)
     const [ showP3, setShowP3 ] = useState(false)
     const [ formData, setFormData ] = useState({
@@ -11,11 +11,18 @@ const CreateProfile = ({ user }) => {
 
     // console.log(user.uid, '-- user.uid')
 
+    // e.preventDefault();
+    // props.createReviews(newForm);
+    // setNewForm(formFields);
+    // navigate("/reviews"); 
+
     const handleSubmit = (event) => {
         event.preventDefault()
         const formDataCopy = {...formData}
+        createProfile(formDataCopy)
         setFormData(formDataCopy)
         console.log(formData, 'submitted form data')
+        // navigate("/reviews"); 
     }
 
     const handleChange = (event) => {
