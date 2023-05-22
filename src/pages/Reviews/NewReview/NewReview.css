@@ -13,9 +13,9 @@
         align-content: flex-start;
         gap: 2px;
     }
-    .mainNav{
+    /* .mainNav{
         display: none;
-    }
+    } */
     .backNavP{
         font-size: 20px;
     }

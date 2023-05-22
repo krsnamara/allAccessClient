@@ -22,7 +22,7 @@ export default function Modal({ user }) {
   }
 
   return (
-    <>
+    <div className="zindexingLoginModal">
       {user ? (
         <img src={LoginHamburger} alt="logoutHamburger" style={{ cursor: 'pointer' }} onClick={toggleModal} />
       ) : (
@@ -72,6 +72,6 @@ export default function Modal({ user }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
