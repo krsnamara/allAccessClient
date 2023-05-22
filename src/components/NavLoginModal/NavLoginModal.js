@@ -42,19 +42,19 @@ export default function Modal({ user }) {
                 <div className="loginLogoutWrapper">
                 <div className="profileCircleWrapper">
                     <img src={ProfileSmallCircle} alt="profileSmallCircle" className="profileSmallCircle" />
-                    <p className="loginLogout" onClick={login} >Profile</p>
+                    <p className="loginLogout" >Profile</p>
                 </div>
                 <div className="createEventWrapper">
                     <img src={CreateEvent} alt="createEvent" className="createEvent" />
-                    <p className="loginLogout" onClick={login} >Create Event</p>    
+                    <p className="loginLogout" >Create Event</p>    
                 </div>
                 <div className="settingsWrapper">
                 <img src={SettingsIcon} alt="settings" className="settings" />
-                <p className="loginLogout" onClick={login} >Settings</p>
+                <p className="loginLogout" >Settings</p>
                 </div>
                 <div className="loginWrapper">
                     <img src={LoginLogoutIcon} alt="loginLogoutIcon" className="loginLogoutIcon" />
-                    <p className="loginLogout" onClick={login} >Log out</p>
+                    <p className="loginLogout" onClick={logout} >Log out</p>
                 </div>
                 </div>
               ) : (
