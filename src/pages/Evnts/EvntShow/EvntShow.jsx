@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom" 
+import './EvntShow.css';
+// import { events } from "../../../../../server/models/events";
+
 // a hook that gives us access to the url params 
 // to allow us to find from the url params 
 
 // useLocation programaticly nagivates user based on some condition
 
-function Review(props) {
+function Evnt(props) {
     // we need to access the id from the url params
     // const params = useParams();
     // console.log(params);
@@ -19,15 +22,15 @@ function Review(props) {
         image: "",
     };
 
-    const review = props.reviews ? props.reviews.find(review => review._id === id) : null;
+    const evnt = props.evnts ? props.evnts.find(evnt => evnt._id === id) : null;
 
     const [editForm, setEditForm] = useState(formFields);
 
     useEffect(() => {
-        if(review) {
-            setEditForm(review)
+        if(evnt) {
+            setEditForm(evnt)
         } 
-    }, [review]);
+    }, [evnt]);
 
     const handleChange = (event) => {
         setEditForm({
@@ -38,7 +41,7 @@ function Review(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.updateReviews(id, editForm);
+        props.updateEvnts(id, editForm);
     };
 
     // console.log(navigate); // logs a function
@@ -48,11 +51,11 @@ function Review(props) {
         // const person = props.people.find(person => person._id === id); // before refactor
         // console.log(person);
         return (
-            <div className="review">
+            <div className="evnt">
                 <h1>{editForm.name}</h1>
-                <h3>{editForm.title}</h3>
-                { review.image &&
-                    <img src={editForm.image} alt={editForm.name} />
+                <h3>{editForm.eventType}</h3>
+                { evnt.image &&
+                    <img src={editForm.image} alt={editForm.name} className="evntImage" />
                 }
                 <form onSubmit={handleSubmit}>
                     <input 
@@ -64,7 +67,7 @@ function Review(props) {
                     <input 
                         type="text"
                         name="title"
-                        value={editForm.title} 
+                        value={editForm.eventType} 
                         onChange={handleChange} 
                     />
                     <input 
@@ -73,9 +76,9 @@ function Review(props) {
                         value={editForm.image} 
                         onChange={handleChange} 
                     />
-                    <input type="submit" value="Update Review" />
+                    <input type="submit" value="Update Event" />
                 </form>
-                <button onClick={handleDelete}>Delete This Review</button>
+                <button onClick={handleDelete}>Delete This Event</button>
             </div>
         );
 
@@ -85,18 +88,15 @@ function Review(props) {
     };
 
     const handleDelete = () => {
-        props.deleteReviews(id);
-        navigate('/');
+        props.deleteEvnts(id);
+        navigate('/evnts');
     };
-
-    // return props.reviews ? loaded() : loading();
 
     return (
         <section>
-            {props.reviews ? loaded() : loading()}
-            {/* <button onClick={handleDelete}>Delete This Reviews</button> */}
+            {props.evnts ? loaded() : loading()}
         </section>
     );
   }
 
-export default Review;
+export default Evnt;

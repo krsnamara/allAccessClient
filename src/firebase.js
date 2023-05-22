@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { 
-    GoogleAuthProvider, 
+    GoogleAuthProvider,
+    GithubAuthProvider, 
     getAuth, 
     signInWithPopup, 
     signOut } from "firebase/auth";
@@ -19,13 +20,23 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+// eslint-disable-next-line 
 const app = initializeApp(firebaseConfig);
 
-// Instantiate Providers
 const provider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider(); // Add GitHub provider
 
-// get current auth instance
+// Get the current auth instance
 export const auth = getAuth();
+
+// Set up auth functions
+export function loginWithGoogle() {
+  signInWithPopup(auth, provider);
+}
+
+export function loginWithGitHub() {
+  signInWithPopup(auth, githubProvider);
+}
 
 // set up auth funcitons
 export function login() {

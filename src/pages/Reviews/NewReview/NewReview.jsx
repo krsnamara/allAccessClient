@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./NewReview.css";
 
 function NewReview(props) {
   const formFields = {
     name: "",
     image: "",
-    title: ""
+    title: "",
   };
 
   const [newForm, setNewForm] = useState(formFields);
@@ -14,7 +15,7 @@ function NewReview(props) {
   const handleChange = (event) => {
     setNewForm({
       ...newForm,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 

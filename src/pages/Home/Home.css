@@ -1,76 +1,62 @@
 
-.MainCarousel {
+.buttons {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 50%;
-    height: 700px;
-    width: 100%;
-    margin: auto;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: relative;
+    flex-wrap: wrap;
+    margin: 0 -5px;
   }
   
-  .CarouselPictures {
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
-    background-position: center;
-    background-size: cover;
-    transition-duration: 500ms;
+  .buttons > * {
+    flex: 0 0 auto;
+    padding: 0 5px;
   }
   
-  .LeftButton,
-  .RightButton {
-    position: absolute;
-    top: 50%;
-    transform: translate(-0%, -50%);
-    font-size: 2rem;
-    margin: 7px;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    border-radius: 5px;
-    display: none;
-  }
-  
-  .MainCarousel:hover .LeftButton,
-  .MainCarousel:hover .RightButton {
-    display: block;
-  }
-  
-  .LeftButton {
-    left: 10px;
-  }
-  
-  .RightButton {
-    right: 10px;
-  }
-  
-  .CarouselDots {
+  .buttons button {
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding-top: 2px;
-  }
-  
-  .CarouselDots .dot {
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: white;
+    padding: 10px 20px;
+    margin: 5px;
     cursor: pointer;
-    font-size: 20px;
-    color: white;
+    height: 35px;
+    color: black;
   }
   
-  .CarouselDots .dot.active {
-    color: blue;
+  .buttons button:last-child {
+    margin-right: 0;
   }
   
-  .CarouselDots .dot:hover {
-    color: blue;
+  .buttons button img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
   }
-  main {
-    text-align: center;
+  
+  .buttons button:not(:first-child) {
+    background-color: white;
+    padding: 10px 20px;
   }
+  
+  .buttons button:focus {
+    outline: none;
+  }
+  
+  .buttons button:hover {
+    background-color: rgba(61, 197, 27, 0.1);
+  }
+  
+  @media (max-width: 767px) {
+    .buttons .mobile-hide {
+      display: none;
+    }
+    
+    .buttons button {
+      margin: 5px;
+    }
+  }
+
   
