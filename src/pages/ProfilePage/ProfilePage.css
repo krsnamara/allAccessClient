@@ -1,0 +1,68 @@
+.profileBody {
+    min-height: 100vh;
+}
+
+.editCont {
+    height: 5vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 15%;
+}
+
+.picCont {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.reviewsCont {
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.totalReview, .reviewsSaved {
+    min-width: 30%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black; 
+    border-radius: 20px;
+    text-align: center;
+}
+
+.reviewBtn {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7%;
+}
+
+.eventsCont {
+    height: 5vh;
+}
+
+.eventBtn {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileBtn {
+    border-radius: 30px;
+    min-width: 20%;
+    background-color: rgb(248,206,118);
+    color: rgb(20, 20, 20);
+    padding: 2%;
+}
