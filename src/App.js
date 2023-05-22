@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { Routes, Route, Navigate } from "react-router-dom";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import NavBar from "./components/NavBar/NavBar";

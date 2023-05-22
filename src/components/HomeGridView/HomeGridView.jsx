@@ -11,7 +11,7 @@ import WineTasting from '../../assets/Wine-Tasting.png';
 import ArcadePlayDay from '../../assets/Arcade-Play-Day.png';
 
 
-export default function HomeGridView() {
+export default function HomeGridView({ evnt }) {
 
     return (
         <>
