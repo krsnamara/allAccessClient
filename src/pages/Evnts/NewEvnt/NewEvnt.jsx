@@ -32,7 +32,7 @@ function NewEvnt(props) {
     <>
       <section className="new-event-form-container">
         <div className="back-button-container">
-          <Link className="back-button-link">
+          <Link to="/evnts" className="back-button-link">
             <IoChevronBackCircleOutline className="back-link" />
             Back
           </Link>
