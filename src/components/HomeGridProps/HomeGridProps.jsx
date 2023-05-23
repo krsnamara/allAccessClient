@@ -6,32 +6,81 @@ import './HomeGridProps.css'
 
 
 function HomeGridProps(props) {
-
     const loaded = () => {
-        return props.evnts.map(evnt => (
-                <div key={evnt._id} className="card">
-                <div className="card-picture">
-                    <div className="like-button">
-                    <LikeButton />
+        const firstFour = props.evnts.slice(0, 4).map((evnt) => (
+            <>
+                <div key={evnt._id} className="evntsIndexWrapper">
+                    <div className="evntcard">
+                        <div className="evntcard-picture">
+                            <div className="like-button">
+                                <LikeButton />
+                            </div>
+                            <img src={evnt.image} className="evntcard-img-top" alt={evnt.name} />
+                        </div>
+                        <Link to={`/evnts/${evnt._id}`}>
+                            <div className="evntcard-body">
+                                <h5 className="evntcard-title">{evnt.eventType}</h5>
+                                <div className="location">
+                                    <FaMapMarkerAlt size={24} color="green" />
+                                    <p className="location-text">{evnt.address}</p>
+                                </div>
+                                <div className="Rating">
+                                    <p className="rating-text">Rating: 4.0</p>
+                                    <p className="rating-amount">{"(487)"}</p>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
-                    <img src={evnt.image} alt={evnt.name} className="card-img-top" />
                 </div>
-                <div className="card-body">
-                    <Link to={'/'}>
-                    <h5 className="card-title">{evnt.name}</h5>
-                    </Link>
-                    <div className="location">
-                        <FaMapMarkerAlt size={24} color="green" />
-                        <p className="location-text">{evnt.address}</p>
-                    </div>
-                    <div className="Rating">
-                        <p className="rating-text">Rating: 4.0</p>
-                        <p className="rating-amount">{"(487)"}</p>
+            </>
+        ));
+
+        const lastFour = props.evnts.slice(-4).map((evnt) => (
+            <>
+                <div key={evnt._id} className="evntsIndexWrapper">
+                    <div className="evntcard">
+                        <div className="evntcard-picture">
+                            <div className="like-button">
+                                <LikeButton />
+                            </div>
+                            <img src={evnt.image} className="evntcard-img-top" alt={evnt.name} />
+                        </div>
+                        <Link to={`/evnts/${evnt._id}`}>
+                            <div className="evntcard-body">
+                                <h5 className="evntcard-title">{evnt.eventType}</h5>
+                                <div className="location">
+                                    <FaMapMarkerAlt size={24} color="green" />
+                                    <p className="location-text">{evnt.address}</p>
+                                </div>
+                                <div className="Rating">
+                                    <p className="rating-text">Rating: 4.0</p>
+                                    <p className="rating-amount">{"(487)"}</p>
+                                </div>
+                            </div>
+                        </Link>
                     </div>
                 </div>
-            </div>
-        ))
-    };
+            </>
+        ));
+
+        return (
+            <>
+            <h1>
+                Upcoming
+            </h1>
+                <div className="container">
+                    <div className="card-container">
+                            {firstFour}
+                    </div>
+                </div>  
+                <div className="container">
+                    <div className="card-container">
+                        {lastFour}
+                    </div>
+                </div>       
+            </>
+        )
+      };
 
     const loading = () => {
         return <h1>Loading...</h1>
@@ -45,3 +94,5 @@ function HomeGridProps(props) {
 }
 
 export default HomeGridProps;
+
+            

@@ -1,4 +1,4 @@
-import './HomeGridView.css'
+import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import LikeButton from '../../components/LikeButton/LikeButton';
 import CookingClass from '../../assets/Cooking-Class.png';
@@ -9,6 +9,7 @@ import GroupHiking from '../../assets/Group-Hiking.png';
 import HistoricTour from '../../assets/Historic-Tour.png';
 import WineTasting from '../../assets/Wine-Tasting.png';
 import ArcadePlayDay from '../../assets/Arcade-Play-Day.png';
+import './HomeGridView.css'
 
 
 export default function HomeGridView({ evnt }) {
@@ -24,6 +25,7 @@ export default function HomeGridView({ evnt }) {
                 <div className="card-container">
 
                     <div className="card">
+                        <Link to='/evnts/646bb873ef48516f06a4421f' style={{ color: 'black', textDecoration: 'none'}}>
                         <div className="card-picture">
                             <div className="like-button">
                             <LikeButton />
@@ -41,6 +43,7 @@ export default function HomeGridView({ evnt }) {
                                 <p className="rating-amount">{"(487)"}</p>
                             </div>
                         </div>
+                        </Link>
                     </div>
 
                     <div className="card">
