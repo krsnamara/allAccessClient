@@ -44,34 +44,34 @@ UX/UI Developers:
 ## Screenshots
 Mobile Screenshot
 </br>
-<img src="src/assets/screenshot-mobile.png" width="30%" height="30%">
+<img src="src/assets/readme/screenshot-mobile.png" width="30%" height="30%">
 </br>
 Tablet Screenshot
 </br>
-<img src="src/assets/screenshot-tablet.png" width="30%" height="30%">
+<img src="src/assets/readme/screenshot-tablet.png" width="30%" height="30%">
 </br>
 Desktop Screenshot
 </br>
-<img src="src/assets/screenshot-desktop.png" width="30%" height="30%">
+<img src="src/assets/readme/screenshot-desktop.png" width="30%" height="30%">
 </br>
 ***
 ### Wireframes
 Low-Fidelity Wireframe
 </br>
-<img src="src/assets/lofi-wireframe.png"  width="60%" height="30%">
+<img src="src/assets/readme/lofi-wireframe.png"  width="60%" height="30%">
 </br>
 Mid-Fidelity Wireframe
 </br>
-<img src="src/assets/midfi-wireframe.png"  width="60%" height="30%">
+<img src="src/assets/readme/midfi-wireframe.png"  width="60%" height="30%">
 </br>
 High-Fidelity Wireframe
 </br>
-<img src="src/assets/hifi-wireframe.png"  width="60%" height="30%">
+<img src="src/assets/readme/hifi-wireframe.png"  width="60%" height="30%">
 </br>
 ***
 ## Deployed Website
 <a href="https://all-access-client.vercel.app/">
-<img src="src/assets/homepage-logged-out.jpg"  width="60%" height="30%">
+<img src="src/assets/readme/homepage-logged-out.jpg"  width="60%" height="30%">
 </a>
 
 ***
