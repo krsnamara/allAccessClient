@@ -1,9 +1,10 @@
-<a href="https://all-access-client.vercel.app/">
 
 # Access-City: Find accessible events and venues near you.
-</a>
-General Assembly Hackathon starting May 18th 2023
+General Assembly Hackathon May 18th - 22nd 2023
 </br>
+<a href="https://all-access-client.vercel.app/">
+Live site
+</a>
 
 ## Description
 ***
