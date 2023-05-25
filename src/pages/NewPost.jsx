@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-
+import { API_URLS } from "../urls";
 
 export default function NewPost() {  
 
@@ -9,6 +9,7 @@ export default function NewPost() {
   const [caption, setCaption] = useState("")
 
   const navigate = useNavigate()
+  const URL = `${API_URLS.IMAGE_POST}`;
 
   const submit = async event => {
     event.preventDefault()
@@ -16,7 +17,7 @@ export default function NewPost() {
     const formData = new FormData();
     formData.append("image", file)
     formData.append("caption", caption)
-    await axios.post("/", formData, { headers: {'Content-Type': 'multipart/form-data'}})
+    await axios.post('https://localhost:4000/posts/', formData, { headers: {'Content-Type': 'multipart/form-data'}})
 
     navigate("/evnts")
   }
