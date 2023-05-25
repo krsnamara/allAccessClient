@@ -1,5 +1,9 @@
-# Access-All: Ramping up the bass
+<a href="https://all-access-client.vercel.app/">
+
+# Access-City: Find accessible events and venues near you.
+</a>
 General Assembly Hackathon starting May 18th 2023
+</br>
 
 ## Description
 ***
@@ -37,17 +41,38 @@ UX/UI Developers:
 - Netlify
 - Vercel
 ## Screenshots
+Mobile Screenshot
+</br>
+<img src="src/assets/screenshot-mobile.png" width="30%" height="30%">
+</br>
+Tablet Screenshot
+</br>
+<img src="src/assets/screenshot-tablet.png" width="30%" height="30%">
+</br>
+Desktop Screenshot
+</br>
+<img src="src/assets/screenshot-desktop.png" width="30%" height="30%">
+</br>
 ***
-
 ### Wireframes
-
-***
-### Production version
-
+Low-Fidelity Wireframe
+</br>
+<img src="src/assets/lofi-wireframe.png"  width="60%" height="30%">
+</br>
+Mid-Fidelity Wireframe
+</br>
+<img src="src/assets/midfi-wireframe.png"  width="60%" height="30%">
+</br>
+High-Fidelity Wireframe
+</br>
+<img src="src/assets/hifi-wireframe.png"  width="60%" height="30%">
+</br>
 ***
 ## Deployed Website
-on its way..
-![Alt Text](https://media.giphy.com/media/tBvPFCFQHSpEI/giphy.gif)
+<a href="https://all-access-client.vercel.app/">
+<img src="src/assets/homepage-logged-out.jpg"  width="60%" height="30%">
+</a>
+
 ***
 ## Future Enhancements
 - Where do we go from here?
