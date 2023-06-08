@@ -2,28 +2,11 @@
   display: none;
 }
 
-@media (max-width: 480px) {
-  /* Mobile */
-  .reviewNav {
-    display: flex;
-  }
-  .backBtnNav {
-    display: flex;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 2px;
-  }
-  .mainNav {
-    display: none;
-  }
-  .backNavP {
-    font-size: 20px;
-  }
-}
 /* NEW EVENT FORM */
 .new-event-form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .create-new-event-title {
   text-align: center;
@@ -62,6 +45,9 @@
   font-size: 2vh;
   font-weight: bold;
 }
+.input-submit-button:hover {
+  background-color: #f2a916;
+}
 .back-button-container {
   display: flex;
 }
@@ -73,4 +59,31 @@
 .back-link {
   height: 40px;
   width: 40px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+input[type="file"] {
+  text-decoration: none;
+  /* border: none; */
+}
+
+@media (max-width: 480px) {
+  /* Mobile */
+  .reviewNav {
+    display: flex;
+  }
+  .backBtnNav {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 2px;
+  }
+  .mainNav {
+    display: none;
+  }
+  .backNavP {
+    font-size: 20px;
+  }
 }
