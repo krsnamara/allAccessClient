@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./NewEvnt.css";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 
@@ -8,11 +8,22 @@ function NewEvnt(props) {
   const formFields = {
     name: "",
     image: "",
-    title: "",
+    type: "",
+    description: "",
+    reservation: "",
+    website: "",
+    address: "",
   };
 
   const [newForm, setNewForm] = useState(formFields);
   const navigate = useNavigate(); // access the navigate function
+
+  const handleSelectChange = (event) => {
+    setNewForm({
+      ...newForm,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const handleChange = (event) => {
     setNewForm({
@@ -21,24 +32,56 @@ function NewEvnt(props) {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [file, setFile] = useState();
+
+  const submit = async (event) => {
+    event.preventDefault();
     props.createEvnts(newForm);
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("name", newForm.name);
+    formData.append("type", newForm.type);
+    formData.append("description", newForm.description);
+    formData.append("reservation", newForm.reservation);
+    formData.append("website", newForm.website);
+    formData.append("address", newForm.address);
+
     setNewForm(formFields);
-    navigate("/evnts"); // redirect to the evnts page after successful submission
+
+    try {
+      await axios.post("http://localhost:4000/events", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      window.alert("New Event has been successfully created");
+      navigate("/evnts");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fileSelected = (event) => {
+    const file = event.target.files[0];
+    setFile(file);
   };
 
   return (
     <>
       <section className="new-event-form-container">
         <div className="back-button-container">
-          <Link to="/evnts" className="back-button-link">
+          <Link
+            to="/evnts"
+            className="back-button-link"
+          >
             <IoChevronBackCircleOutline className="back-link" />
             Back
           </Link>
         </div>
         <h2 className="create-new-event-title">Create New Event</h2>
-        <form onSubmit={handleSubmit} className="new-event-form">
+        <form
+          onSubmit={submit}
+          className="new-event-form"
+        >
           <h4 className="input-title">Event Name*</h4>
           <input
             className="create-new-event-input"
@@ -50,47 +93,41 @@ function NewEvnt(props) {
             required
           />
           <h4 className="input-title">Event Type*</h4>
-          <input
-            className="create-new-event-input"
-            type="text"
-            name="name"
-            onChange={handleChange}
-            value={newForm.eventType}
-            placeholder="Enter event type"
-            required
-          />
-          {/* TODO: Change to Drop Down*/}
-          {/* <select
-            className="create-new-event-input"
-            id="event-types" 
+          <select
+            id="event-types"
             name="event-types"
-          >
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="fiat">Fiat</option>
-            <option value="audi">Audi</option>
-          </select>
-          <input
-            type="submit"
-            name="eventType"
-            onSubmit={handleChange}
-            value={newForm.eventType}
-            placeholder="Enter event type"
-            required */}
-          <h4 className="input-title">Add photo URL</h4>
-          <input
             className="create-new-event-input"
-            type="text"
-            name="image"
-            onChange={handleChange}
-            value={newForm.image}
+            required
+            onChange={handleSelectChange}
+          >
+            <option
+              value=""
+              disabled
+              selected
+            >
+              Enter event type
+            </option>
+            <option value="arts-culture">Arts & Culture</option>
+            <option value="classes-workshops">Classes & Workshops</option>
+            <option value="seasonal-occasions">Seasonal Occasions</option>
+            <option value="outdoor-activities">Outdoor Activities</option>
+            <option value="sightseeing">Sightseeing</option>
+            <option value="uniquie-experiences">Uniquie Experiences</option>
+          </select>
+          <h4 className="input-title">Add photo</h4>
+          <input
+            onChange={fileSelected}
+            type="file"
+            name="imageName"
+            accept="image/*"
+            className="create-new-event-input"
             placeholder="Enter URL of Image"
           />
           <h4 className="input-title">Event Description*</h4>
           <textarea
             className="create-new-event-textarea"
             type="text"
-            name="name"
+            name="description"
             onChange={handleChange}
             value={newForm.description}
             placeholder="A few details about your event"
@@ -101,15 +138,25 @@ function NewEvnt(props) {
           />
           {/* TODO: change to drop down */}
           <h4 className="input-title">Reservation Required*</h4>
-          <input
-            className="create-new-event-input"
-            type="text"
+          <select
+            id="reservation"
             name="reservation"
-            onChange={handleChange}
             value={newForm.reservation}
-            placeholder="Are reservations required?"
+            className="create-new-event-input"
             required
-          />
+            onChange={handleSelectChange}
+          >
+            <option
+              value=""
+              disabled
+              selected
+            >
+              Are reservations required?
+            </option>
+            <option value="no">No</option>
+            <option value="yes-purchase">Yes (Purchase ticket)</option>
+            <option value="yes-free">Yes (Free event)</option>
+          </select>
           <h4 className="input-title">Event Website*</h4>
           <input
             className="create-new-event-input"
@@ -120,11 +167,22 @@ function NewEvnt(props) {
             placeholder="Please enter http://format"
             required
           />
+          <h4 className="input-title">Location*</h4>
           <input
-            className="input-submit-button"
-            type="submit"
-            value="Create Event"
+            className="create-new-event-input"
+            type="text"
+            name="address"
+            onChange={handleChange}
+            value={newForm.address}
+            placeholder="Enter event Location"
+            required
           />
+          <button
+            type="submit"
+            className="input-submit-button cursor-pointer"
+          >
+            Submit
+          </button>
 
           {/* STREtCH GOALS */}
           {/* <input
