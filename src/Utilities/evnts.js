@@ -1,71 +1,58 @@
 import { useState, useEffect, useRef } from "react";
 import { API_URLS } from "../urls";
-import axios from "axios";
 
 const useEvnts = (props) => {
   const [evnts, setEvnts] = useState(null);
+
   const getEvntsRef = useRef(null);
 
-  const URL = `${API_URLS.EVNTS}`;
+  const URL = API_URLS.EVNTS;
 
   const getEvnts = async () => {
-    try {
-      const token = await props.user.getIdToken();
-      const response = await axios.get(URL, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setEvnts(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await fetch(URL);
+    const data = await response.json();
+    setEvnts(data);
   };
 
-  const createEvnts = async (event) => {
-    if (!props.user) return;
+  // console.log(`main.js line 17 ${JSON.stringify(evnts)}`);
+  // console.log(`main.js line 18 ${URL}`);
 
-    try {
-      const token = await props.user.getIdToken();
-      await axios.post(URL, event, {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      getEvnts();
-    } catch (error) {
-      console.log(error);
-    }
+  const createEvnts = async (evnts) => {
+    if (!props.user) return;
+    const token = await props.user.getIdToken();
+    await fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify(evnts),
+    });
+    getEvnts();
   };
 
   const updateEvnts = async (id, updatedEvnt) => {
-    try {
-      const token = await props.user.getIdToken();
-      await axios.put(`${URL}/${id}`, updatedEvnt, {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      getEvnts();
-    } catch (error) {
-      console.log(error);
-    }
+    const token = await props.user.getIdToken();
+    await fetch(URL + id, {
+      method: "PUT",
+      headers: {
+        "Content-type": "Application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify(updatedEvnt),
+    });
+    getEvnts();
   };
 
   const deleteEvnts = async (id) => {
-    try {
-      const token = await props.user.getIdToken();
-      await axios.delete(`${URL}/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      getEvnts();
-    } catch (error) {
-      console.log(error);
-    }
+    const token = await props.user.getIdToken();
+    await fetch(URL + id, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    getEvnts();
   };
 
   useEffect(() => {

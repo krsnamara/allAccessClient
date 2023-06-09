@@ -1,25 +1,34 @@
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt } from 'react-icons/fa';
-import LikeButton from '../../../components/LikeButton/LikeButton';
-import EvntShow from '../EvntShow/EvntShow';
-import './EvntsIndex.css';
+import { FaMapMarkerAlt } from "react-icons/fa";
+import LikeButton from "../../../components/LikeButton/LikeButton";
+import "./EvntsIndex.css";
 
 function EvntsIndex(props) {
   const loaded = () => {
     return props.evnts.map((evnt) => (
-      <div key={evnt._id} className="evntsIndexWrapper">
-        <Link to={`/evnts/${evnt._id}`}>
+      <div
+        key={evnt._id}
+        className="evntsIndexWrapper"
+      >
+        <Link to={`/events/${evnt._id}`}>
           <div className="evntcard">
             <div className="evntcard-picture">
               <div className="like-button">
                 <LikeButton />
               </div>
-              <img src={evnt.image} className="evntcard-img-top" alt={evnt.name} />
+              <img
+                src={evnt.image}
+                className="evntcard-img-top"
+                alt={evnt.name}
+              />
             </div>
             <div className="evntcard-body">
               <h5 className="evntcard-title">{evnt.eventType}</h5>
               <div className="location">
-                <FaMapMarkerAlt size={24} color="green" />
+                <FaMapMarkerAlt
+                  size={24}
+                  color="green"
+                />
                 <p className="location-text">{evnt.address}</p>
               </div>
               <div className="Rating">
@@ -40,7 +49,6 @@ function EvntsIndex(props) {
   return (
     <section className="flex-container">
       {props.evnts ? loaded() : loading()}
-      {props.evnts && <EvntShow evnts={props.evnts} />}
     </section>
   );
 }
