@@ -11,13 +11,13 @@ import EvntsShow from "../pages/Evnts/EvntShow/EvntShow";
 import NewEvnt from "../pages/Evnts/NewEvnt/NewEvnt";
 import CreateProfile from "../pages/CreateProfile/CreateProfile";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
+import MapAPI from "./MapAPI/MapAPI";
 
 function Main(props) {
-  const { evnts, createEvnts, updateEvnts, deleteEvnts } = useEvnts(props); // Use the custom hook
-  const { reviews, createReviews, updateReviews, deleteReviews } =
-    useReviews(props); // Use the custom hook
-  console.log(evnts);
-  console.log(useEvnts(props));
+  const { evnts, createEvnts } = useEvnts(props); // Use the custom hook
+  const { reviews, createReviews } = useReviews(props); // Use the custom hook
+  // console.log(evnts);
+  // console.log(useEvnts(props));
   return (
     <main>
       <Routes>
@@ -33,6 +33,10 @@ function Main(props) {
         <Route
           path="/proto"
           element={<HomeGridProps evnts={evnts} />}
+        />
+        <Route
+          path="/map"
+          element={<MapAPI />}
         />
         <Route
           path="/create"
