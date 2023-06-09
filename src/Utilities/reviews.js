@@ -3,25 +3,19 @@ import { API_URLS } from "../urls";
 
 const useReviews = (props) => {
   const [reviews, setReviews] = useState(null);
+
   const getReviewsRef = useRef(null);
 
-  const URL = `${API_URLS.REVIEWS}`;
+  const URL = API_URLS.REVIEWS;
 
   const getReviews = async () => {
-    const token = await props.user.getIdToken();
-
-    const response = await fetch(URL, {
-      method: "GET",
-      headers: {
-        'Authorization': 'Bearer ' + token
-
-      },
-    });
+    const response = await fetch(URL);
     const data = await response.json();
     setReviews(data);
   };
 
-  // console.log(`main.js line 32 ${JSON.stringify(reviews)}`)
+  // console.log(`main.js line 17 ${JSON.stringify(reviews)}`);
+  // console.log(`main.js line 18 ${URL}`);
 
   const createReviews = async (review) => {
     if (!props.user) return; // prevent function from executing code below if no auth

@@ -12,29 +12,29 @@ const Footer = () => {
           <button>Get Started</button>
         </div>
         <hr /> */}
-        <div className="list-container">
-          <ul>
-            <li className="nav-item">
-              <Link to="/">Your Account</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/venues">Venues</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/evnts">Events</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/evnts/new">Create Event</Link>
-            </li>
-            <li className="nav-item">
+      <div className="list-container">
+        <ul>
+          <li className="nav-item">
+            <Link to="/">Your Account</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/venues">Venues</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/events">Events</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/events/new">Create Event</Link>
+          </li>
+          <li className="nav-item">
             <Link to="/reviews">Reviews </Link>
-            </li>
-            <li className="nav-item">
+          </li>
+          <li className="nav-item">
             <Link to="/reviews/new">Create Review </Link>
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
       </div>
+    </div>
     // </div>
   );
 };

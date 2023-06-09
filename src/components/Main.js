@@ -16,7 +16,8 @@ function Main(props) {
   const { evnts, createEvnts, updateEvnts, deleteEvnts } = useEvnts(props); // Use the custom hook
   const { reviews, createReviews, updateReviews, deleteReviews } =
     useReviews(props); // Use the custom hook
-
+  console.log(evnts);
+  console.log(useEvnts(props));
   return (
     <main>
       <Routes>
@@ -42,6 +43,19 @@ function Main(props) {
           element={<ReviewsIndex reviews={reviews} />}
         />
         <Route
+          path="/events"
+          element={<EvntsIndex evnts={evnts} />}
+        />
+        <Route
+          path="/events/new"
+          element={
+            <NewEvnt
+              evnts={evnts}
+              createEvnts={createEvnts}
+            />
+          }
+        />
+        <Route
           path="/review/new"
           element={
             <NewReview
@@ -52,36 +66,11 @@ function Main(props) {
         />
         <Route
           path="/reviews/:id"
-          element={
-            <ReviewShow
-              deleteReviews={deleteReviews}
-              reviews={reviews}
-              updateReviews={updateReviews}
-            />
-          }
+          element={<ReviewShow reviews={reviews} />}
         />
         <Route
-          path="/evnts"
-          element={<EvntsIndex evnts={evnts} />}
-        />
-        <Route
-          path="/evnts/new"
-          element={
-            <NewEvnt
-              evnts={evnts}
-              createEvnts={createEvnts}
-            />
-          }
-        />
-        <Route
-          path="/evnts/:id"
-          element={
-            <EvntsShow
-              deleteEvnts={deleteEvnts}
-              evnts={evnts}
-              updateEvnts={updateEvnts}
-            />
-          }
+          path="/events/:id"
+          element={<EvntsShow evnts={evnts} />}
         />
       </Routes>
     </main>

@@ -149,7 +149,6 @@ function NewEvnt(props) {
             <option
               value=""
               disabled
-              selected
             >
               Are reservations required?
             </option>
