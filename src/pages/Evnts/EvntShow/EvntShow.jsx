@@ -18,17 +18,10 @@ function Evnt(props) {
         <h1>{evnt.name}</h1>
         <h3>{evnt.eventType}</h3>
         {evnt.image && (
-          <img
-            src={evnt.image}
-            alt={evnt.name}
-            className="evntImage"
-          />
+          <img src={evnt.image} alt={evnt.name} className="evntImage" />
         )}
         <button onClick={() => navigate(-1)}>Go Back</button>
-        <img
-          src={StaticRender}
-          alt="StaticRender"
-        />
+        <img src={StaticRender} alt="StaticRender" className="staticRender" />
       </div>
     );
   };
