@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
+import { useState } from "react";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import "./MapAPI.css";
 // useJsApiLoader is a hook that loads the Google Maps JavaScript API in the background.
 // useLoadScript is a hook that loads the Google Maps JavaScript API in the background.
@@ -10,25 +10,50 @@ import "./MapAPI.css";
 
 // https://developers.google.com/maps/documentation/javascript/examples/map-simple
 
-export default function MapAPI() {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+const containerStyle = {
+  width: "100%",
+  height: "80vh",
+};
+
+const center = {
+  lat: 37.806,
+  lng: -122.27,
+};
+
+function MapAPI() {
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    version: "weekly",
+    googleMapsApiKey: googleMapsApiKey,
   });
-  //   console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
-  if (!isLoaded) return <div>Loading...</div>;
-  return <Map />;
-}
 
-function Map() {
-  const center = useMemo(() => ({ lat: 44, lng: -80 }), []);
+  const [map, setMap] = useState(null);
 
-  return (
-    <GoogleMap
-      zoom={10}
-      center={center}
-      mapContainerClassName="map-container"
-    >
-      <MarkerF position={{ lat: 44, lng: -80 }} />
-    </GoogleMap>
+  return isLoaded ? (
+    <div className="wrapper">
+      <div>
+        <GoogleMap
+          center={center}
+          zoom={12.25}
+          mapContainerStyle={containerStyle}
+          options={{
+            zoomControl: false,
+            streetViewControl: false,
+            mapTypeControl: false,
+            fullscreenControl: false,
+            clickableIcons: true,
+          }}
+          onLoad={(map) => setMap(map)}
+        >
+          <Marker position={center} />
+        </GoogleMap>
+      </div>
+    </div>
+  ) : (
+    <></>
   );
 }
+
+export default MapAPI;
