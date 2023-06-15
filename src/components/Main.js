@@ -19,7 +19,7 @@ import MapAPI from "./MapAPI/MapAPI";
 function Main(props) {
   const { evnts, createEvnts } = useEvnts(props); // Use the custom hook
   const { reviews, createReviews } = useReviews(props);
-  const { images } = useImages(props);
+  const { images, deleteImages } = useImages(props);
   // console.log(evnts);
   // console.log(useEvnts(props));
   return (
@@ -45,7 +45,10 @@ function Main(props) {
         />
         <Route path="/reviews/:id" element={<ReviewShow reviews={reviews} />} />
         <Route path="/events/:id" element={<EvntsShow evnts={evnts} />} />
-        <Route path="/images/:id" element={<ImagesShow images={images} />} />
+        <Route
+          path="/images/:id"
+          element={<ImagesShow images={images} deleteImages={deleteImages} />}
+        />
       </Routes>
     </main>
   );

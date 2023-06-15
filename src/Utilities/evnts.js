@@ -6,7 +6,7 @@ const useEvnts = (props) => {
 
   const getEvntsRef = useRef(null);
 
-  const URL = API_URLS.EVNTS;
+  const URL = API_URLS.IMAGES;
 
   const getEvnts = async () => {
     const response = await fetch(URL);

@@ -21,7 +21,7 @@ const Footer = () => {
             <Link to="/venues">Venues</Link>
           </li>
           <li className="nav-item">
-            <Link to="/events">Events</Link>
+            <Link to="/images">Events</Link>
           </li>
           <li className="nav-item">
             <Link to="/events/new">Create Event</Link>

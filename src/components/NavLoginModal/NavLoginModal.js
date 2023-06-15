@@ -42,28 +42,18 @@ export default function Modal({ user }) {
 
       {modal && (
         <div className="modal">
-          <div
-            onClick={toggleModal}
-            className="overlay"
-          ></div>
+          <div onClick={toggleModal} className="overlay"></div>
           <div className="modal-content">
             <div className="Xicon">
-              <p
-                className="closingX"
-                onClick={toggleModal}
-              >
+              <p className="closingX" onClick={toggleModal}>
                 X
               </p>
-              <img
-                src={LoginIcon}
-                alt="loginIcon"
-                className="loginIcon"
-              />
+              <img src={LoginIcon} alt="loginIcon" className="loginIcon" />
             </div>
             <div className="navBarModalWrapper">
               {user ? (
                 <div className="loginLogoutWrapper">
-                  <div className="profileCircleWrapper">
+                  <div className="profileCircleWrapper" onClick={toggleModal}>
                     <img
                       src={ProfileSmallCircle}
                       alt="profileSmallCircle"
@@ -79,7 +69,7 @@ export default function Modal({ user }) {
                       </Link>{" "}
                     </p>
                   </div>
-                  <div className="createEventWrapper">
+                  <div className="createEventWrapper" onClick={toggleModal}>
                     <img
                       src={CreateEvent}
                       alt="createEvent"
@@ -94,7 +84,7 @@ export default function Modal({ user }) {
                       </Link>
                     </p>
                   </div>
-                  <div className="settingsWrapper">
+                  <div className="settingsWrapper" onClick={toggleModal}>
                     <img
                       src={SettingsIcon}
                       alt="settings"
@@ -102,32 +92,26 @@ export default function Modal({ user }) {
                     />
                     <p className="loginLogout">Settings</p>
                   </div>
-                  <div className="loginWrapper">
+                  <div className="loginWrapper" onClick={toggleModal}>
                     <img
                       src={LoginLogoutIcon}
                       alt="loginLogoutIcon"
                       className="loginLogoutIcon"
                     />
-                    <p
-                      className="loginLogout"
-                      onClick={logout}
-                    >
+                    <p className="loginLogout" onClick={logout}>
                       Log out
                     </p>
                   </div>
                 </div>
               ) : (
-                <div className="loginLogoutWrapper">
+                <div className="loginLogoutWrapper" onClick={toggleModal}>
                   <div className="loginWrapper">
                     <img
                       src={LoginLogoutIcon}
                       alt="loginLogoutIcon"
                       className="loginLogoutIcon"
                     />
-                    <p
-                      className="loginLogout"
-                      onClick={login}
-                    >
+                    <p className="loginLogout" onClick={login}>
                       Login
                     </p>
                   </div>
