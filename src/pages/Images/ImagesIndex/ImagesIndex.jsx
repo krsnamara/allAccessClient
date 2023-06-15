@@ -4,7 +4,7 @@ import LikeButton from "../../../components/LikeButton/LikeButton";
 import "./ImagesIndex.css";
 
 function imagesIndex(props) {
-  console.log("props:", props);
+  // console.log("props:", props);
   const loaded = () => {
     return props.images.map((image) => (
       <div key={image._id} className="imagesIndexWrapper">
