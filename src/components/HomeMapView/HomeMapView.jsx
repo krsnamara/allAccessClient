@@ -15,7 +15,7 @@ export default function HomeMapView() {
               <img
                 src="https://i.imgur.com/dX7f3DJ.jpg"
                 className="home-card-img-top"
-                alt="..."
+                alt="cardImage"
               />
             </div>
             <div className="home-card-body">
@@ -25,6 +25,7 @@ export default function HomeMapView() {
                 <FaMapMarkerAlt size={24} color="green" />
                 <p className="home-location-text">Denver, CO</p>
               </div>
+              {/* eslint-disable-next-line */}
               <a href="#" className="home-btn btn-primary">
                 link
               </a>
@@ -46,6 +47,7 @@ export default function HomeMapView() {
                 <FaMapMarkerAlt size={24} color="green" />
                 <p className="home-location-text">Oakland, CA</p>
               </div>
+              {/* eslint-disable-next-line */}
               <a href="#" className="home-btn btn-primary">
                 link
               </a>
@@ -73,6 +75,7 @@ export default function HomeMapView() {
                 <FaMapMarkerAlt size={24} color="green" />
                 <p className="home-location-text">E</p>
               </div>
+              {/* eslint-disable-next-line */}
               <a href="#" className="home-btn btn-primary">
                 link
               </a>
