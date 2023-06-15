@@ -17,3 +17,14 @@
   width: 60%;
   max-width: 500px;
 }
+
+.imageImage {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  /* max-height: 400px; */
+}

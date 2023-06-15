@@ -88,13 +88,13 @@ function NewEvnt(props) {
           />
           <h4 className="input-title">Event Type*</h4>
           <select
-            id="event-types"
-            name="event-types"
+            id="eventTypes"
+            name="eventTypes"
             className="create-new-event-input"
             required
             onChange={handleSelectChange}
           >
-            <option value="" disabled selected>
+            <option value="" disabled>
               Enter event type
             </option>
             <option value="arts-culture">Arts & Culture</option>
