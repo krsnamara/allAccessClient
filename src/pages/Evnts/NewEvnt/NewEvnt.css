@@ -80,9 +80,6 @@ input[type="file"] {
     align-content: flex-start;
     gap: 2px;
   }
-  .mainNav {
-    display: none;
-  }
   .backNavP {
     font-size: 20px;
   }
