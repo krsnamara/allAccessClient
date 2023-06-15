@@ -29,6 +29,7 @@ function MapAPI() {
     googleMapsApiKey: googleMapsApiKey,
   });
 
+  // eslint-disable-next-line
   const [map, setMap] = useState(null);
 
   return isLoaded ? (

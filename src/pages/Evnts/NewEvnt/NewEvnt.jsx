@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./NewEvnt.css";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
+import "./NewEvnt.css";
 
 function NewEvnt(props) {
   const formFields = {
@@ -49,12 +49,12 @@ function NewEvnt(props) {
     setNewForm(formFields);
 
     try {
-      await axios.post("http://localhost:4000/events", formData, {
+      await axios.post("http://localhost:4000/images", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
       window.alert("New Event has been successfully created");
-      navigate("/evnts");
+      navigate("/images");
     } catch (error) {
       console.log(error);
     }
@@ -69,19 +69,13 @@ function NewEvnt(props) {
     <>
       <section className="new-event-form-container">
         <div className="back-button-container">
-          <Link
-            to="/evnts"
-            className="back-button-link"
-          >
+          <Link to="/evnts" className="back-button-link">
             <IoChevronBackCircleOutline className="back-link" />
             Back
           </Link>
         </div>
         <h2 className="create-new-event-title">Create New Event</h2>
-        <form
-          onSubmit={submit}
-          className="new-event-form"
-        >
+        <form onSubmit={submit} className="new-event-form">
           <h4 className="input-title">Event Name*</h4>
           <input
             className="create-new-event-input"
@@ -100,11 +94,7 @@ function NewEvnt(props) {
             required
             onChange={handleSelectChange}
           >
-            <option
-              value=""
-              disabled
-              selected
-            >
+            <option value="" disabled selected>
               Enter event type
             </option>
             <option value="arts-culture">Arts & Culture</option>
@@ -146,10 +136,7 @@ function NewEvnt(props) {
             required
             onChange={handleSelectChange}
           >
-            <option
-              value=""
-              disabled
-            >
+            <option value="" disabled>
               Are reservations required?
             </option>
             <option value="no">No</option>
@@ -176,10 +163,7 @@ function NewEvnt(props) {
             placeholder="Enter event Location"
             required
           />
-          <button
-            type="submit"
-            className="input-submit-button cursor-pointer"
-          >
+          <button type="submit" className="input-submit-button cursor-pointer">
             Submit
           </button>
 
