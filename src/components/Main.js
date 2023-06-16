@@ -23,7 +23,7 @@ function Main(props) {
   // console.log(evnts);
   // console.log(useEvnts(props));
   return (
-    <main>
+    <main style={{ marginTop: "73px" }}>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/profile" element={<ProfilePage />} />
