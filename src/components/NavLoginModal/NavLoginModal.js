@@ -4,6 +4,8 @@ import { logout, login } from "../../firebase";
 import LoginHamburger from "../../assets/buttons-icons/login_hamburger.png";
 import LoginIcon from "../../assets/buttons-icons/loginModalicon.png";
 import ProfileSmallCircle from "../../assets/buttons-icons/profileSmallCircle.png";
+import GalleryView from "../../assets/buttons-icons/galleryView.svg";
+import MapView from "../../assets/buttons-icons/mapView.svg";
 import CreateEvent from "../../assets/buttons-icons/mdi_events.png";
 import SettingsIcon from "../../assets/buttons-icons/settings.png";
 import LoginLogoutIcon from "../../assets/buttons-icons/loginLogOutIcon.png";
@@ -67,6 +69,32 @@ export default function Modal({ user }) {
                       >
                         Profile
                       </Link>{" "}
+                    </p>
+                  </div>
+                  <div className="createEventWrapper" onClick={toggleModal}>
+                    <img
+                      src={GalleryView}
+                      alt="galleryView"
+                      className="createEvent"
+                    />
+                    <p className="loginLogout">
+                      <Link
+                        to="/images"
+                        style={{ color: "white", textDecoration: "none" }}
+                      >
+                        Gallery View Events
+                      </Link>
+                    </p>
+                  </div>
+                  <div className="createEventWrapper" onClick={toggleModal}>
+                    <img src={MapView} alt="mapView" className="createEvent" />
+                    <p className="loginLogout">
+                      <Link
+                        to="/"
+                        style={{ color: "white", textDecoration: "none" }}
+                      >
+                        Map View Events
+                      </Link>
                     </p>
                   </div>
                   <div className="createEventWrapper" onClick={toggleModal}>

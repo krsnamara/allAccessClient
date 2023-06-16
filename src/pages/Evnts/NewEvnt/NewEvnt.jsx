@@ -89,7 +89,7 @@ function NewEvnt(props) {
           <h4 className="input-title">Event Type*</h4>
           <select
             id="eventTypes"
-            name="eventTypes"
+            name="type"
             className="create-new-event-input"
             required
             onChange={handleSelectChange}

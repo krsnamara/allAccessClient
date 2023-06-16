@@ -1,116 +1,131 @@
-
-body.active-modal {
-    overflow-y: hidden;
+.zindexingLoginModal {
+  position: relative;
+  z-index: 100;
 }
 
-.btn-modal {
-    padding: 10px 20px;
-    display: block;
-    /* margin: 100px auto 0; */
-    font-size: 18px;
-}
-
-.modal{
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: sticky;
-}
-
-.overlay {
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: sticky;
+.modal {
+  position: fixed;
+  top: 21%;
+  left: 83.2%;
+  transform: translate(-50%, -50%);
 }
 
 /* .overlay {
-    background: rgba(49,49,49,0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 } */
+
 .modal-content {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    top: 18%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    line-height: 2;
-    background: #393535;
-    padding: 14px 28px;
-    border-radius: 10px;
-    max-width: 300px;
-    min-width: 250px;
-    z-index: 1000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #393535;
+  padding: 14px 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  min-width: 250px;
+  z-index: 1000;
 }
-.Xicon{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    gap: 20px;
+
+.Xicon {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
 }
+
 .closingX {
-    cursor: pointer;
-    color: white;
-    font-weight: 300;
-    font-size: 20px;
-    padding: 0 !important;
-    margin: 0 !important;
+  cursor: pointer;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
 }
+
 .loginIcon {
-    width: 32px;
-    height: 30px;
+  width: 32px;
+  height: 30px;
 }
-.loginLogoutWrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    gap: 20px;
+
+.loginLogoutWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
-.loginLogoutIcon{
-    width: 16px;
-    height: 20px;
+
+.loginLogoutIcon {
+  width: 16px;
+  height: 20px;
 }
-.profileSmallCircle{
-    width: 20px;
-    height: 20px;
+
+.profileSmallCircle {
+  width: 20px;
+  height: 20px;
 }
-.createEvent{
-    width: 18px;
-    height: 18px;
+
+.createEvent {
+  width: 18px;
+  height: 18px;
 }
-.settings{
-    width: 18px;
-    height: 18px;
+
+.settings {
+  width: 18px;
+  height: 18px;
 }
+
 .loginLogout {
-    cursor: pointer;
-    color: white;
-    font-weight: 300;
-    font-size: 20px;
-    padding: 0 !important;
-    margin: 0 !important;
+  cursor: pointer;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
 }
-.profileCircleWrapper{
-    display: flex;
-    gap: 10px;
+
+.profileCircleWrapper,
+.createEventWrapper,
+.settingsWrapper,
+.loginWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.createEventWrapper{
-    display: flex;
-    gap: 10px;
+
+@media (max-width: 780px) {
+  .modal {
+    top: 21%;
+    left: 82.2%;
+    transform: translate(-50%, -50%);
+  }
 }
-.settingsWrapper{
-    display: flex;
-    gap: 10px;
+@media (max-width: 700px) {
+  .modal {
+    top: 21%;
+    left: 80.2%;
+    transform: translate(-50%, -50%);
+  }
 }
-.loginWrapper{
-    display: flex;
-    gap: 10px;
+@media (max-width: 620px) {
+  .modal {
+    top: 21%;
+    left: 78.2%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 480px) {
+  .modal {
+    top: 21%;
+    left: 70.2%;
+    transform: translate(-50%, -50%);
+  }
 }
