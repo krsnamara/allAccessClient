@@ -1,0 +1,9 @@
+.mainJs {
+  margin-top: 73px;
+}
+
+@media screen and (max-width: 480px) {
+  .mainJs {
+    margin-top: 130px;
+  }
+}

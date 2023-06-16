@@ -15,6 +15,7 @@ import NewEvnt from "../pages/Evnts/NewEvnt/NewEvnt";
 import CreateProfile from "../pages/CreateProfile/CreateProfile";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import MapAPI from "./MapAPI/MapAPI";
+import "./Main.css";
 
 function Main(props) {
   const { evnts, createEvnts } = useEvnts(props); // Use the custom hook
@@ -23,7 +24,7 @@ function Main(props) {
   // console.log(evnts);
   // console.log(useEvnts(props));
   return (
-    <main style={{ marginTop: "73px" }}>
+    <main className="mainJs">
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/profile" element={<ProfilePage />} />

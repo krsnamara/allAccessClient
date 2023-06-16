@@ -63,3 +63,9 @@
   margin-top: 0px;
   padding: 3px 0px 0px 10px;
 }
+
+@media (max-width: 480px) {
+  .searchBarWrapper {
+    display: none;
+  }
+}
