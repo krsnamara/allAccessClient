@@ -1,14 +1,14 @@
 .expCard-img {
-  /* width: 100%;
-  height: 166px; */
-  /* object-fit: fill; */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   object-position: top;
 }
 
 .expCard {
   margin: 10px;
-  border-radius: 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  border-radius: 40px;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   transition: transform 5s, box-shadow 0.3s;
 }
@@ -76,6 +76,13 @@
   font-weight: 600;
 }
 
+.like-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
 /* Media Queries */
 
 @media (max-width: 1600px) {
@@ -103,7 +110,7 @@
   .like-button {
     margin-left: 10px;
   }
-  .expCard-picture {
+  /* .expCard-picture {
     height: 43%;
   }
   .expCard-body {
@@ -115,17 +122,45 @@
   }
   .expCard-body p {
     margin-top: 0;
-  }
+  } */
 }
 
 @media (max-width: 767px) {
   /* Mobile */
   .expCard {
     width: calc(100% / 2 - 20px);
-    height: 280px;
+    height: auto;
   }
   .like-button {
-    margin-left: 10px;
+    margin-left: 12px;
     margin-top: 10px;
+  }
+}
+@media (max-width: 450px) {
+  /* Mobile */
+  .expCard {
+    width: calc(100% / 2 - 20px);
+    height: auto;
+  }
+  .like-button {
+    margin-left: 12px;
+    margin-top: 10px;
+  }
+  .expCard p {
+    font-size: 0.8rem;
+  }
+  .expLocationIcon {
+    width: 15px;
+    height: 15px;
+  }
+  .ratingWrapper {
+    gap: 18px;
+  }
+  .expLocation-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 5px;
+    margin-left: -5px;
   }
 }
