@@ -10,10 +10,12 @@ function MapView({ images }) {
       window.alert("You have loaded all available for this section");
     };
 
+    const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
     return (
       <>
         <div className="home-map">
-          <MapAPI className="home-map-img" />
+          <MapAPI apiKey={googleMapsApiKey} className="home-map-img" />
         </div>
         <div className="home-map-container">
           <div className="home-card-container">
