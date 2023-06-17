@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { logout, login } from "../../firebase";
-import LoginHamburger from "../../assets/buttons-icons/login_hamburger.png";
+import LoginHamburger from "../../assets/buttons-icons/login_hamburger.svg";
 import LoginIcon from "../../assets/buttons-icons/loginModalicon.png";
 import ProfileSmallCircle from "../../assets/buttons-icons/profileSmallCircle.png";
 import GalleryView from "../../assets/buttons-icons/galleryView.svg";
@@ -30,7 +30,7 @@ export default function Modal({ user }) {
         <img
           src={LoginHamburger}
           alt="logoutHamburger"
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", marginTop: "10px" }}
           onClick={toggleModal}
         />
       ) : (
