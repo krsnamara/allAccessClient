@@ -1,0 +1,44 @@
+.nav-all {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-svg {
+  cursor: pointer;
+}
+
+.nav-all-checkbox {
+  display: none;
+}
+
+.nav-all-icon {
+  display: flex;
+  align-items: center;
+}
+
+.nav-rect {
+  fill: #f7f7f7;
+  stroke: #17bd17;
+}
+
+.nav-all-line {
+  /* stroke: #000000; */
+  fill: black;
+  /* stroke-linecap: round; */
+}
+
+.nav-all-path {
+  fill: #f7f7f7;
+  stroke: #000000;
+}
+
+.nav-all-checkbox:checked ~ .nav-all-icon .nav-all-rect,
+.nav-all-checkbox:checked ~ .nav-all-icon .nav-all-path {
+  fill: #000000;
+  stroke: #f7f7f7;
+}
+
+.nav-all-checkbox:checked ~ .nav-all-icon .nav-all-line {
+  fill: #f7f7f7;
+}

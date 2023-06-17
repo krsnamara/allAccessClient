@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { IoChevronBackCircleOutline, IoSearchOutline } from "react-icons/io5";
-import Logo from "../../assets/buttons-icons/icon.png";
+import Logo from "../../assets/buttons-icons/logo.svg";
 import LoginModal from "../NavLoginModal/NavLoginModal";
 import "./NavBar.css";
 
