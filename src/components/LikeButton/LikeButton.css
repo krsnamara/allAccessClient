@@ -2,7 +2,7 @@
 .con-like {
   --white: rgb(255, 255, 255, 0.8);
   --softYellow: #ffcc66;
-  --softYellowLite: rgb(255, 204, 102);
+  --softYellowLite: rgb(255, 204, 102, 0.8);
   --red: #ff6666;
   position: relative;
   width: 50px;
@@ -28,6 +28,8 @@
 
 .con-like .outline {
   fill: var(--white);
+  stroke: var(--white);
+  stroke-width: 1px;
   position: absolute;
   transition: fill 0.3s; /* Add transition for smooth color change */
 }
