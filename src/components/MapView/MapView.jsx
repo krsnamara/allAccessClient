@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import MapAPI from "../MapAPI/MapAPI";
 import LocationIcon from "../../assets/buttons-icons/location.svg";
 import "./MapView.css";
 
 function MapView({ images }) {
+  const [visibleCards, setVisibleCards] = useState(3);
+
+  const handleLoadMore = () => {
+    setVisibleCards((prevVisibleCards) => prevVisibleCards + 3);
+  };
+
   const loaded = () => {
     const handleAlert = () => {
       window.alert("You have loaded all available for this section");
@@ -20,7 +26,7 @@ function MapView({ images }) {
         <div className="home-map-container">
           <div className="home-card-container">
             <h1 className="mapResults">Results</h1>
-            {images.map((image) => (
+            {images.slice(0, visibleCards).map((image) => (
               <div key={image._id} className="home-card">
                 <div className="home-card-picture">
                   <img
@@ -53,9 +59,11 @@ function MapView({ images }) {
                 </div>
               </div>
             ))}
-            <p onClick={handleAlert} className="mapLoadMore">
-              Load more
-            </p>
+            {visibleCards < images.length && (
+              <p onClick={handleLoadMore} className="mapLoadMore">
+                Load more
+              </p>
+            )}
           </div>
         </div>
       </>
