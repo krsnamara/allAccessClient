@@ -3,7 +3,7 @@ import useEvnts from "../Utilities/evnts"; // Import the custom hook
 import useReviews from "../Utilities/reviews";
 import useImages from "../Utilities/images";
 import Home from "../pages/Home/Home";
-import DynamicHome from "./DynamicHome/DynamicHome";
+// import DynamicHome from "./DynamicHome/DynamicHome";
 import ReviewsIndex from "../pages/Reviews/ReviewsIndex/ReviewsIndex";
 import ReviewShow from "../pages/Reviews/ReviewShow/ReviewShow";
 import NewReview from "../pages/Reviews/NewReview/NewReview";
@@ -26,9 +26,9 @@ function Main(props) {
   return (
     <main className="mainJs">
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home images={images} />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/home" element={<DynamicHome images={images} />} />
+        {/* <Route path="/home" element={<DynamicHome images={images} />} /> */}
         <Route path="/map" element={<MapAPI />} />
         <Route path="/create" element={<CreateProfile user={props.user} />} />
         <Route path="/reviews" element={<ReviewsIndex reviews={reviews} />} />

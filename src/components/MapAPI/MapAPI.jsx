@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import MapMarker from "../../assets/buttons-icons/mapMarker.svg";
+import mapStyles from "../../mapStyles";
 import "./MapAPI.css";
 // useJsApiLoader is a hook that loads the Google Maps JavaScript API in the background.
 // useLoadScript is a hook that loads the Google Maps JavaScript API in the background.
@@ -14,13 +16,19 @@ const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const containerStyle = {
   width: "100%",
-  height: "80vh",
+  height: "50vh",
 };
 
 const center = {
   lat: 37.806,
   lng: -122.27,
 };
+const markers = [
+  { lat: 37.805, lng: -122.29 },
+  { lat: 37.819, lng: -122.277 },
+  { lat: 37.817, lng: -122.23 },
+  { lat: 37.794, lng: -122.24 },
+];
 
 function MapAPI() {
   const { isLoaded } = useJsApiLoader({
@@ -37,18 +45,33 @@ function MapAPI() {
       <div>
         <GoogleMap
           center={center}
-          zoom={12.25}
+          zoom={12.97}
           mapContainerStyle={containerStyle}
           options={{
             zoomControl: false,
             streetViewControl: false,
             mapTypeControl: false,
             fullscreenControl: false,
-            clickableIcons: true,
+            clickableIcons: false,
+            disableDefaultUI: true,
+            zoomControl: true,
+            styles: mapStyles,
           }}
           onLoad={(map) => setMap(map)}
         >
-          <Marker position={center} />
+          {markers.map((marker, index) => (
+            <Marker
+              key={index}
+              position={marker}
+              title="testing"
+              options={{
+                icon: {
+                  url: MapMarker,
+                  scaledSize: { width: 40, height: 40 },
+                },
+              }}
+            />
+          ))}
         </GoogleMap>
       </div>
     </div>
