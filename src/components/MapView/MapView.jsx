@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MapAPI from "../MapAPI/MapAPI";
 import LocationIcon from "../../assets/buttons-icons/location.svg";
 import "./MapView.css";
@@ -27,19 +28,26 @@ function MapView({ images }) {
                   />
                 </div>
                 <div className="home-card-body">
-                  <h5 className="home-card-title">{image.name}</h5>
-                  <div className="expLocation-wrapper">
-                    <img
-                      src={LocationIcon}
-                      alt="locationIcon"
-                      className="expLocationIcon"
-                    />
-                    <p className="expLocationText">{image.address}</p>
-                  </div>
-                  <div className="ratingWrapper">
-                    <p className="ratingText">4.0</p>
-                    <p className="rating-amount">{"(487)"}</p>
-                  </div>
+                  <Link
+                    to={`/images/${image._id}`}
+                    style={{ color: "black", textDecoration: "none" }}
+                  >
+                    <h5 className="home-card-title">{image.name}</h5>
+                    <div className="mapLocationRating">
+                      <div className="mapLocation-wrapper">
+                        <img
+                          src={LocationIcon}
+                          alt="locationIcon"
+                          className="mapLocationIcon"
+                        />
+                        <p className="mapLocationText">{image.address}</p>
+                      </div>
+                      <div className="mapRatingWrapper">
+                        <p className="mapRatingText">4.0</p>
+                        <p className="mapRating-amount">{"(487)"}</p>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
             ))}
