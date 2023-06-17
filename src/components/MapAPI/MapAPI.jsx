@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import MapMarker from "../../assets/buttons-icons/mapMarker.svg";
-import mapStyles from "./mapStyles";
+// import mapStyles from "./mapStyles";
 import "./MapAPI.css";
 // useJsApiLoader is a hook that loads the Google Maps JavaScript API in the background.
 // useLoadScript is a hook that loads the Google Maps JavaScript API in the background.
@@ -54,7 +54,7 @@ function MapAPI() {
             clickableIcons: false,
             disableDefaultUI: false,
             zoomControl: true,
-            styles: mapStyles,
+            // styles: mapStyles,
           }}
           onLoad={(map) => setMap(map)}
         >
