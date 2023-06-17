@@ -4,8 +4,8 @@
   top: 0%;
   left: 0%;
   z-index: 100;
-  border-top: 5px solid white;
-  border-bottom: 5px solid white;
+  /* border-top: 5px solid white; */
+  border: 5px solid white;
 }
 
 .navBarWrapper {
@@ -17,7 +17,7 @@
   top: 0;
   background-color: white; /* Set a background color for the navbar */
   z-index: 100;
-  margin: 0px 10px;
+  /* margin: 0px 10px; */
 }
 
 .navBarLogo {
@@ -30,9 +30,9 @@
 }
 
 .loginModal {
-  /* position: sticky;
-  top: 0%; */
-  /* transform: translate(-50%, -50%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 100;
 }
 

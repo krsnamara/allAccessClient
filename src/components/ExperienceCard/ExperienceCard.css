@@ -1,8 +1,13 @@
-.imagesImage {
+/* .imagesIndexWrapper{
+    display: flex;
+    flex-wrap: wrap;
+} */
+.imagecard-img-top {
   max-width: 200px;
 }
 
 .imagesCard {
+  /* width: calc(100% / 5 - 20px); */
   margin: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -12,6 +17,7 @@
 
 .flex-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -23,6 +29,7 @@
 }
 
 .imagecard {
+  /* width: calc(100% / 5 - 20px); */
   margin: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
