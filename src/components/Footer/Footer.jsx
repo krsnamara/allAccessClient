@@ -6,19 +6,13 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer">
-      {/* <div className="container">
-        <div className="footer-header">
-          <h2>Create your own Meetup group.</h2>
-          <button>Get Started</button>
-        </div>
-        <hr /> */}
       <div className="list-container">
         <ul>
           <li className="nav-item">
-            <Link to="/">Your Account</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li className="nav-item">
-            <Link to="/venues">Venues</Link>
+            <Link to="/profile">Your Account</Link>
           </li>
           <li className="nav-item">
             <Link to="/images">Events</Link>

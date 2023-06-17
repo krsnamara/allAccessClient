@@ -3,7 +3,7 @@ import useEvnts from "../Utilities/evnts"; // Import the custom hook
 import useReviews from "../Utilities/reviews";
 import useImages from "../Utilities/images";
 import Home from "../pages/Home/Home";
-import HomeGridProps from "./HomeGridProps/HomeGridProps";
+import DynamicHome from "./DynamicHome/DynamicHome";
 import ReviewsIndex from "../pages/Reviews/ReviewsIndex/ReviewsIndex";
 import ReviewShow from "../pages/Reviews/ReviewShow/ReviewShow";
 import NewReview from "../pages/Reviews/NewReview/NewReview";
@@ -28,7 +28,7 @@ function Main(props) {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/proto" element={<HomeGridProps evnts={evnts} />} />
+        <Route path="/home" element={<DynamicHome images={images} />} />
         <Route path="/map" element={<MapAPI />} />
         <Route path="/create" element={<CreateProfile user={props.user} />} />
         <Route path="/reviews" element={<ReviewsIndex reviews={reviews} />} />
