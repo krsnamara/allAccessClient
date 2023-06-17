@@ -1,3 +1,9 @@
 .dynoHomeContainer {
-  margin: 90px 20px 0px 20px;
+  margin: 20px 20px 0px 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .dynoHomeContainer {
+    margin: 0px 0px 0px 20px !important;
+  }
 }
