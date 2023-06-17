@@ -1,0 +1,45 @@
+.nav-bars {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-bars-svg {
+  height: 40px;
+  cursor: pointer;
+}
+
+.nav-bars-checkbox {
+  display: none;
+}
+
+.nav-bars-icon {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bars-rect {
+  fill: #f7f7f7;
+  stroke: #2b2c2b;
+}
+
+.nav-bars-line {
+  stroke: #2b2c2b;
+  stroke-linecap: round;
+}
+
+.nav-path {
+  fill: #f7f7f7;
+  stroke: #2b2c2b;
+}
+
+.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-rect,
+.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-line,
+.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-path {
+  fill: #2b2c2b;
+}
+
+.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-rect,
+.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-heart {
+  stroke: #f7f7f7;
+}

@@ -1,121 +1,44 @@
-/* Like Button */
-.con-like {
-  --white: rgb(255, 255, 255, 0.8);
-  --black: black;
-  --softYellowLite: rgb(255, 204, 102, 0.8);
-  --red: #ff6666;
-  position: relative;
-  width: 50px;
-  height: 50px;
-}
-
-.con-like .like {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 20;
+.nav-all {
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
-.con-like .checkmark {
-  width: 100%;
-  height: 100%;
+.nav-svg {
+  cursor: pointer;
+}
+
+.nav-all-checkbox {
+  display: none;
+}
+
+.nav-all-icon {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.con-like .outline {
-  fill: var(--white);
-  stroke: var(--white);
-  stroke-width: 1px;
-  position: absolute;
-  transition: fill 0.3s; /* Add transition for smooth color change */
+.nav-rect {
+  fill: #f7f7f7;
+  stroke: #17bd17;
 }
 
-.con-like:hover .outline,
-.con-like .like:checked ~ .checkmark .outline {
-  fill: var(--softYellowLite);
+.nav-all-line {
+  /* stroke: #000000; */
+  fill: black;
+  /* stroke-linecap: round; */
 }
 
-.con-like .filled {
-  fill: var(--black);
-  position: absolute;
+.nav-all-path {
+  fill: #f7f7f7;
+  stroke: #000000;
 }
 
-.con-like .filled {
-  fill: var(--black);
-  stroke: var(--white); /* Add stroke property with desired color */
-  stroke-width: 1px; /* Adjust stroke width as needed */
-  position: absolute;
+.nav-all-checkbox:checked ~ .nav-all-icon .nav-all-rect,
+.nav-all-checkbox:checked ~ .nav-all-icon .nav-all-path {
+  fill: #000000;
+  stroke: #f7f7f7;
 }
 
-.con-like .filled {
-  animation: kfr-filled 0.5s;
-  display: none;
-}
-
-.con-like .celebrate {
-  position: absolute;
-  animation: kfr-celebrate 0.5s;
-  animation-fill-mode: forwards;
-  display: none;
-}
-
-.con-like .poly {
-  stroke: var(--red);
-  fill: var(--softYellow);
-}
-
-.con-like .like:checked ~ .checkmark .filled {
-  display: block;
-}
-
-.con-like .like:checked ~ .checkmark .celebrate {
-  display: block;
-}
-
-@keyframes kfr-filled {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes kfr-celebrate {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-
-  100% {
-    transform: scale(1.2);
-    opacity: 0;
-    display: none;
-  }
-}
-
-@media (max-width: 991px) {
-  /* Tablet */
-  .con-like {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-@media (max-width: 767px) {
-  /* Mobile */
-  .con-like {
-    width: 30px;
-    height: 30px;
-  }
+.nav-all-checkbox:checked ~ .nav-all-icon .nav-all-line {
+  fill: #f7f7f7;
 }

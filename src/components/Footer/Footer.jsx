@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="list-container">
         <ul>
           <li className="nav-item">
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className="nav-item">
             <Link to="/profile">Your Account</Link>
@@ -17,6 +17,8 @@ const Footer = () => {
           <li className="nav-item">
             <Link to="/images">Events</Link>
           </li>
+        </ul>
+        <ul>
           <li className="nav-item">
             <Link to="/events/new">Create Event</Link>
           </li>

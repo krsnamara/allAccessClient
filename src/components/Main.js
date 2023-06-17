@@ -19,8 +19,7 @@ function Main(props) {
   const { evnts, createEvnts } = useEvnts(props); // Use the custom hook
   const { reviews, createReviews } = useReviews(props);
   const { images, deleteImages } = useImages(props);
-  // console.log(evnts);
-  // console.log(useEvnts(props));
+
   return (
     <main className="mainJs">
       <Routes>
