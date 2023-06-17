@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./MapToggle.css";
-import Grid from "../../assets/Grid_View.png";
-import Map from "../../assets/map_view.png";
+import Grid from "../../assets/buttons-icons/grid-view.svg";
+import Map from "../../assets/buttons-icons//map-view.svg";
 
 export default function MapToggle({ onToggle }) {
   const [isChecked, setIsChecked] = useState(false);
@@ -22,8 +22,8 @@ export default function MapToggle({ onToggle }) {
       />
       <label htmlFor="cb3-8" className="tgl-btn">
         <img
-          src={isChecked ? Grid : Map}
-          alt={isChecked ? "Grid" : "Map"}
+          src={isChecked ? Map : Grid}
+          alt={isChecked ? "Map" : "Grid"}
           className="toggle-image"
         />
       </label>

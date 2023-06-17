@@ -1,14 +1,12 @@
 /* Like Button */
 .con-like {
   --white: rgb(255, 255, 255, 0.8);
-  --softYellow: #ffcc66;
+  --black: black;
   --softYellowLite: rgb(255, 204, 102, 0.8);
   --red: #ff6666;
   position: relative;
-  top: 5px;
-  left: 5px;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
 }
 
 .con-like .like {
@@ -42,12 +40,12 @@
 }
 
 .con-like .filled {
-  fill: var(--softYellow);
+  fill: var(--black);
   position: absolute;
 }
 
 .con-like .filled {
-  fill: var(--softYellow);
+  fill: var(--black);
   stroke: var(--white); /* Add stroke property with desired color */
   stroke-width: 1px; /* Adjust stroke width as needed */
   position: absolute;
@@ -109,10 +107,8 @@
 @media (max-width: 991px) {
   /* Tablet */
   .con-like {
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }
 

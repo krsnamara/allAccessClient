@@ -11,8 +11,8 @@ import EvntsShow from "../pages/Evnts/EvntShow/EvntShow";
 import ImagesIndex from "../pages/Images/ImagesIndex/ImagesIndex";
 import ImagesShow from "../pages/Images/ImagesShow/ImageShow";
 import NewEvnt from "../pages/Evnts/NewEvnt/NewEvnt";
-import CreateProfile from "../pages/CreateProfile/CreateProfile";
-import ProfilePage from "../pages/ProfilePage/ProfilePage";
+import CreateProfile from "../pages/Profile/CreateProfile/CreateProfile";
+import ProfilePage from "../pages/Profile/ProfilePage/ProfilePage";
 import "./Main.css";
 
 function Main(props) {

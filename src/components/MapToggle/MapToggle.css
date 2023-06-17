@@ -34,20 +34,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-  border-radius: 50px;
-  background-color: white;
-  padding: 5px;
-  margin-right: 10px;
   cursor: pointer;
-  height: 35px;
   color: black;
 }
 
 .checkbox-wrapper-8 .tgl + .tgl-btn img {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
+  height: 35px;
 }
 
 .checkbox-wrapper-8 .tgl + .tgl-btn:not(:first-child) {
@@ -59,14 +51,12 @@
   outline: none;
 }
 
-.checkbox-wrapper-8 .tgl + .tgl-btn:hover {
+/* .checkbox-wrapper-8 .tgl + .tgl-btn:hover {
   background-color: rgba(61, 197, 27, 0.1);
-}
+} */
 
 .toggle-image {
-  width: 70%;
-  height: 70%;
-  border-radius: 50%;
+  /* width: 70%; */
   transition: all 0.5s ease;
 }
 
@@ -77,5 +67,3 @@
 .checkbox-wrapper-8 .tgl:checked + .tgl-btn .toggle-image-Grid {
   background-color: green;
 }
-
-

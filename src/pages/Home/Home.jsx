@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import MapToggle from "../../components/MapToggle/MapToggle";
 import DynamicHome from "../../components/DynamicHome/DynamicHome";
 import MapView from "../../components/MapView/MapView";
-import Filter from "../../assets/Navigation_Filters.png";
+import Filter from "../../assets/buttons-icons/nav-filters.svg";
+import All from "../../assets/buttons-icons/nav-filters-all.svg";
+import Classses from "../../assets/buttons-icons/nav-filters-classes.svg";
+import Bars from "../../assets/buttons-icons/nav-filters-bars.svg";
+import Next from "../../assets/buttons-icons/nav-filters-next.svg";
 import "./Home.css";
 
 function Home(props) {
@@ -19,10 +23,18 @@ function Home(props) {
         <button>
           <img src={Filter} alt="Filter" className="filter-image" />
         </button>
-        <button>All</button>
-        <button className="mobile-hide">Classes & Workshops</button>
-        <button className="mobile-hide">Bars</button>
-        <button className="mobile-hide">Category</button>
+        <button>
+          <img src={All} alt="All" className="filter-image" />
+        </button>
+        <button className="mobile-hide">
+          <img src={Classses} alt="Classses" className="filter-image" />
+        </button>
+        <button className="mobile-hide">
+          <img src={Bars} alt="Bars" className="filter-image" />
+        </button>
+        <button className="mobile-hide">
+          <img src={Next} alt="Next" className="filter-image" />
+        </button>
       </div>
 
       {showMap ? (

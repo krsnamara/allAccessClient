@@ -108,12 +108,12 @@ label {
 }
 
 input {
-  padding: 1vmin;
-  font-size: 2vmin;
+  padding: 3vmin;
+  height: 40px;
+  font-size: 4vmin;
   border: 0.1vmin solid var(--tan-3);
   border-radius: 0.5vmin;
   color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
   outline: none;
 }
 
@@ -121,18 +121,16 @@ input:focus {
   border-color: var(--orange);
 }
 
-button,
+/* button,
 a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: 0.1vmin solid var(--tan-2);
-  border-radius: 0.5vmin;
+  border: none;
   outline: none;
   cursor: pointer;
 }
@@ -145,7 +143,7 @@ button.btn-sm {
 button.btn-xs {
   font-size: 1vmin;
   padding: 0.4vmin 0.5vmin;
-}
+} */
 
 button:disabled,
 form:invalid button[type="submit"] {

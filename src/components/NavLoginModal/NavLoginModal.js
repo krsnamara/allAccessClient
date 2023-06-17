@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { logout, login } from "../../firebase";
-import LoginHamburger from "../../assets/buttons-icons/login_hamburger.svg";
-import LoginIcon from "../../assets/buttons-icons/loginModalicon.png";
-import ProfileSmallCircle from "../../assets/buttons-icons/profileSmallCircle.png";
-import GalleryView from "../../assets/buttons-icons/galleryView.svg";
-import MapView from "../../assets/buttons-icons/mapView.svg";
-import CreateEvent from "../../assets/buttons-icons/mdi_events.png";
-import SettingsIcon from "../../assets/buttons-icons/settings.png";
-import LoginLogoutIcon from "../../assets/buttons-icons/loginLogOutIcon.png";
+import LoginHamburger from "../../assets/buttons-icons/login-hamburger.svg";
+import LoginIcon from "../../assets/buttons-icons/logout.svg";
+import ProfileSmallCircle from "../../assets/buttons-icons/profile-img.svg";
+import GalleryView from "../../assets/buttons-icons/grid-view.svg";
+import MapView from "../../assets/buttons-icons/map-view.svg";
+import CreateEvent from "../../assets/buttons-icons/create-event.svg";
+import SettingsIcon from "../../assets/buttons-icons/settings.svg";
+import LoginLogoutIcon from "../../assets/buttons-icons/logout.svg";
 import "./NavLoginModal.css";
 
 export default function Modal({ user }) {
