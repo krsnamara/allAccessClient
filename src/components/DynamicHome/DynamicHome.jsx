@@ -13,13 +13,13 @@ function DynamicHome(props) {
 
     return (
       <div className="dynoHomeContainer">
-        <h1>Upcoming</h1>
-        <div className="container">
-          <div className="card-container">{firstFour}</div>
+        <h1>Upcoming Events</h1>
+        <div className="expContainer">
+          <div className="expCard-container">{firstFour}</div>
         </div>
-        <h1>Highest Ratings</h1>
-        <div className="container">
-          <div className="card-container">{lastFour}</div>
+        <h1>Highest Rated Venues</h1>
+        <div className="expContainer">
+          <div className="expCard-container">{lastFour}</div>
         </div>
       </div>
     );
