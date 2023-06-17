@@ -27,7 +27,7 @@ function Home(props) {
 
       {showMap ? (
         // Render map component
-        <MapView />
+        <MapView images={props.images} />
       ) : (
         // Render grid component
         <DynamicHome images={props.images} />

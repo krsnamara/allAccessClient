@@ -1,43 +1,62 @@
-.home-map-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 500px;
-}
-
 .home-map {
   flex: 1 1 60%;
-  height: 300px;
+  height: 370px;
 }
 
-.home-map-img{
+.home-map-img {
   width: 100%;
   max-height: 616px;
   border-radius: 10px;
   object-fit: cover;
 }
 
-.home-card-container {
+.home-map-container {
   display: flex;
-  flex-direction: column;
-  flex: 1 1 40%;
-  padding-right: 10px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  border: 1px solid black;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
+/* TEXT STYLING */
+
+.mapResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.mapLoadMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.home-card-container {
+  display: flex;
+  flex: 1 1 80%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 5px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  border-top: 1px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 7;
+}
 
 .home-card {
   display: flex;
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-bottom: 1px solid #ccc;
 }
 
-.home-card-picture {
-  width: 150px;
+.home-card-picture img {
+  border-radius: 10px;
 }
 
 .home-card-img-top {
@@ -65,10 +84,9 @@
 @media (max-width: 920px) {
   .home-map-container {
     flex-direction: column;
-
   }
 
-  .home-map-img{
+  .home-map-img {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
@@ -86,7 +104,3 @@
     padding-right: 0;
   }
 }
-
-  
-  
-  

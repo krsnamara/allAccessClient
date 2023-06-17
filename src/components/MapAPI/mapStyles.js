@@ -1,4 +1,4 @@
-export default [
+const mapStyles = [
   {
     featureType: "administrative",
     elementType: "labels",
@@ -81,3 +81,5 @@ export default [
     stylers: [{ color: "#75cff0" }],
   },
 ];
+
+export default mapStyles;
