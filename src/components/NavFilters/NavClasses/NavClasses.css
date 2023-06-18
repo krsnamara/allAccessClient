@@ -1,0 +1,37 @@
+.nav-classes {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-svg {
+  cursor: pointer;
+}
+
+.nav-classes-checkbox {
+  display: none;
+}
+
+.nav-classes-icon {
+  display: flex;
+  align-items: center;
+}
+
+.nav-classes-line {
+  fill: black;
+}
+
+.nav-classes-path {
+  fill: #f7f7f7;
+  stroke: #000000;
+}
+
+.nav-classes-checkbox:checked ~ .nav-classes-icon .nav-classes-rect,
+.nav-classes-checkbox:checked ~ .nav-classes-icon .nav-classes-path {
+  fill: #000000;
+  stroke: #f7f7f7;
+}
+
+.nav-classes-checkbox:checked ~ .nav-classes-icon .nav-classes-line {
+  fill: #f7f7f7;
+}

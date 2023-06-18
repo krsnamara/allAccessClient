@@ -5,8 +5,7 @@ import MapView from "../../components/MapView/MapView";
 import Filter from "../../assets/buttons-icons/nav-filters.svg";
 import NavAll from "../../components/NavFilters/NavAll/NavAll.jsx";
 import NavBars from "../../components/NavFilters/NavBars/NavBars.jsx";
-import Classses from "../../assets/buttons-icons/nav-filters-classes.svg";
-import Bars from "../../assets/buttons-icons/nav-filters-bars.svg";
+import NavClasses from "../../components/NavFilters/NavClasses/NavClasses.jsx";
 import Next from "../../assets/buttons-icons/nav-filters-next.svg";
 import "./Home.css";
 
@@ -25,10 +24,10 @@ function Home(props) {
           <img src={Filter} alt="Filter" className="filter-image" />
         </button>
         <button>
-          <NavAll />
+          <NavAll style={{ height: "35px" }} />
         </button>
         <button className="mobile-hide">
-          <img src={Classses} alt="Classses" className="filter-image" />
+          <NavClasses />
         </button>
         <button className="mobile-hide">
           <NavBars />

@@ -117,15 +117,15 @@
 }
 @media (max-width: 620px) {
   .modal {
-    top: 21%;
-    left: 78.2%;
+    top: 22%;
+    left: 73.2%;
     transform: translate(-50%, -50%);
   }
 }
 @media (max-width: 480px) {
   .modal {
-    top: 21%;
-    left: 70.2%;
+    top: 24%;
+    left: 63.2%;
     transform: translate(-50%, -50%);
   }
 }
