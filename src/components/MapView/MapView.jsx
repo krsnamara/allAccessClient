@@ -35,7 +35,7 @@ function MapView({ images }) {
                     to={`/images/${image._id}`}
                     style={{ color: "black", textDecoration: "none" }}
                   >
-                    <p className="home-card-title">{image.name}</p>
+                    <h5 className="home-card-title">{image.name}</h5>
                     <div className="mapLocationRating">
                       <div className="mapLocation-wrapper">
                         <img

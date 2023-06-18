@@ -1,68 +1,112 @@
 .profileBody {
-    min-height: 100vh;
-}
-
-.editCont {
-    height: 5vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 15%;
+  margin-top: 100px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
 }
 
 .picCont {
-    height: 25vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profileImg {
+  position: absolute;
+  left: 35%;
 }
 
 .profileInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .reviewsCont {
-    height: 20vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px;
 }
 
-.totalReview, .reviewsSaved {
-    min-width: 30%;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black; 
-    border-radius: 20px;
-    text-align: center;
+.statsBox {
+  width: 100px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border: 1px solid black;
+  border-radius: 20px;
+  text-align: center;
 }
 
 .reviewBtn {
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 7%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7%;
 }
 
 .eventsCont {
-    height: 5vh;
+  height: 5vh;
 }
 
 .eventBtn {
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profileBtn {
-    border-radius: 30px;
-    min-width: 20%;
-    background-color: rgb(248,206,118);
-    color: rgb(20, 20, 20);
-    padding: 2%;
+  border-radius: 30px;
+  background-color: var(--soft-yellow);
+  padding: 12px;
+  margin: 0px;
+  border: none;
+  cursor: pointer;
+}
+
+.profileBtnEdit {
+  position: absolute;
+  left: 65%;
+  border-radius: 30px;
+  background-color: var(--soft-yellow);
+  padding: 12px;
+  margin: 0px;
+  border: none;
+  cursor: pointer;
+}
+
+.profileP {
+  font-size: 1.2rem;
+  margin: 0px;
+}
+
+.statsP {
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.numbersP {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.eventsP {
+  font-weight: 700;
+}
+
+.createEventWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
