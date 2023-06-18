@@ -12,20 +12,15 @@ function MapView({ images }) {
   };
 
   const loaded = () => {
-    const handleAlert = () => {
-      window.alert("You have loaded all available for this section");
-    };
-
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
     return (
       <>
-        <div className="home-map">
-          <MapAPI apiKey={googleMapsApiKey} className="home-map-img" />
-        </div>
         <div className="home-map-container">
+          <div className="home-map">
+            <MapAPI apiKey={googleMapsApiKey} className="home-map-img" />
+          </div>
           <div className="home-card-container">
-            <h1 className="mapResults">Results</h1>
             {images.slice(0, visibleCards).map((image) => (
               <div key={image._id} className="home-card">
                 <div className="home-card-picture">
@@ -40,7 +35,7 @@ function MapView({ images }) {
                     to={`/images/${image._id}`}
                     style={{ color: "black", textDecoration: "none" }}
                   >
-                    <h5 className="home-card-title">{image.name}</h5>
+                    <p className="home-card-title">{image.name}</p>
                     <div className="mapLocationRating">
                       <div className="mapLocation-wrapper">
                         <img

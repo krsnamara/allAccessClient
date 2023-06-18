@@ -24,22 +24,20 @@
 }
 
 .nav-bars-line {
-  stroke: #2b2c2b;
-  stroke-linecap: round;
+  fill: #2b2c2b;
 }
 
-.nav-path {
+.nav-bars-path {
   fill: #f7f7f7;
   stroke: #2b2c2b;
 }
 
 .nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-rect,
-.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-line,
 .nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-path {
   fill: #2b2c2b;
+  stroke: #f7f7f7;
 }
 
-.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-rect,
-.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-heart {
-  stroke: #f7f7f7;
+.nav-bars-checkbox:checked ~ .nav-bars-icon .nav-bars-line {
+  fill: #f7f7f7;
 }

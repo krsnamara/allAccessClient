@@ -17,15 +17,8 @@
   align-items: center;
 }
 
-.nav-rect {
-  fill: #f7f7f7;
-  stroke: #17bd17;
-}
-
 .nav-all-line {
-  /* stroke: #000000; */
   fill: black;
-  /* stroke-linecap: round; */
 }
 
 .nav-all-path {

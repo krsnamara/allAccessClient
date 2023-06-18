@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import MapMarker from "../../assets/buttons-icons/mapMarker.svg";
 // import mapStyles from "./mapStyles";
@@ -14,14 +14,14 @@ import "./MapAPI.css";
 
 const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
-const containerStyle = {
-  width: "100%",
-  height: "50vh",
-};
+// const containerStyle = {
+//   width: "100%",
+//   height: "80vh",
+// };
 
 const center = {
   lat: 37.806,
-  lng: -122.27,
+  lng: -122.267,
 };
 const markers = [
   { lat: 37.805, lng: -122.29 },
@@ -36,6 +36,32 @@ function MapAPI() {
     version: "weekly",
     googleMapsApiKey: googleMapsApiKey,
   });
+
+  const [containerStyle, setContainerStyle] = useState({
+    width: "100%",
+    height: "80vh",
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      // eslint-disable-next-line
+      const height = window.innerHeight;
+
+      if (width < 800) {
+        setContainerStyle({ width: "100%", height: "40vh" });
+      } else if (width < 1200) {
+        setContainerStyle({ width: "100%", height: "90vh" });
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // eslint-disable-next-line
   const [map, setMap] = useState(null);
