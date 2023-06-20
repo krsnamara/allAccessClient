@@ -14,8 +14,8 @@ const useEvnts = (props) => {
     setEvnts(data);
   };
 
-  console.log(`evnts.js line 17 ${JSON.stringify(evnts)}`);
-  console.log(`evnts.js line 18 ${URL}`);
+  // console.log(`evnts.js line 17 ${JSON.stringify(evnts)}`);
+  // console.log(`evnts.js line 18 ${URL}`);
 
   const createEvnts = async (evnts) => {
     if (!props.user) return;

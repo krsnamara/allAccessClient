@@ -17,7 +17,7 @@ export default function SinglePost({ image }) {
         />
       </div>
       <Link
-        to={`/images/${image._id}`}
+        to={`/events/${image._id}`}
         style={{ color: "black", textDecoration: "none" }}
       >
         <div className="expCard-body">

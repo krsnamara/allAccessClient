@@ -12,7 +12,7 @@ import "./Main.css";
 
 function Main(props) {
   // Invoke custom hooks
-  const { evnts, createEvnts } = useEvnts(props);
+  const { createEvnts } = useEvnts(props);
   const { images, deleteImages } = useImages(props);
 
   return (
@@ -24,10 +24,10 @@ function Main(props) {
         <Route path="/images" element={<ImagesIndex images={images} />} />
         <Route
           path="/events/new"
-          element={<NewEvnt evnts={evnts} createEvnts={createEvnts} />}
+          element={<NewEvnt createEvnts={createEvnts} />}
         />
         <Route
-          path="/images/:id"
+          path="/events/:id"
           element={<ImagesShow images={images} deleteImages={deleteImages} />}
         />
       </Routes>

@@ -11,45 +11,22 @@ function NavBar({ user }) {
   return (
     <nav className="nav">
       <div className="navBarWrapper">
-        {user ? (
-          <>
-            <div>
-              <Link to="/" style={{ color: "black", textDecoration: "none" }}>
-                <img src={Logo} alt="logo" className="navBarLogo" />
-              </Link>
+        <div>
+          <Link to="/" style={{ color: "black", textDecoration: "none" }}>
+            <img src={Logo} alt="logo" className="navBarLogo" />
+          </Link>
+        </div>
+        <div className="searchBarWrapper">
+          <div className="navBarSearch">
+            <div className="searchIconLink">
+              <IoSearchOutline size={25} />
             </div>
-            <div className="searchBarWrapper">
-              <div className="navBarSearch">
-                <div className="searchIconLink">
-                  <IoSearchOutline size={25} />
-                </div>
-                <p>Location, landmark, or address</p>
-              </div>
-            </div>
-            <div className="loginModal">
-              <LoginModal user={user} />
-            </div>
-          </>
-        ) : (
-          <div>
-            <div>
-              <Link to="/" style={{ color: "black", textDecoration: "none" }}>
-                <img src={Logo} alt="logo" className="navBarLogo" />
-              </Link>
-            </div>
-            <div className="searchBarWrapper">
-              <div className="navBarSearch">
-                <div className="searchIconLink">
-                  <IoSearchOutline size={25} />
-                </div>
-                <p>Location, landmark, or address</p>
-              </div>
-            </div>
-            <div className="loginModal">
-              <LoginModal user={user} />
-            </div>
+            <p>Location, landmark, or address</p>
           </div>
-        )}
+        </div>
+        <div className="loginModal">
+          <LoginModal user={user} />
+        </div>
       </div>
       {isNewReviewPage && (
         <div className="reviewNav">

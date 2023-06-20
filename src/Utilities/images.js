@@ -16,7 +16,7 @@ const useImages = (props) => {
     setImages(data);
   };
 
-  console.log(`images.js line 17 ${JSON.stringify(images)}`);
+  // console.log(`images.js line 17 ${JSON.stringify(images)}`);
   // console.log(`main.js line 18 ${URL}`);
 
   const createImages = async (images) => {
