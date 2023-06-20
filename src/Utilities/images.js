@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { API_URLS } from "../urls";
 
-const useImages = (props) => {
+const useImages = () => {
   const [images, setImages] = useState(null);
 
   const getImagesRef = useRef(null);
 
   const URL = API_URLS.IMAGES;
-
-  console.log(URL);
 
   const getImages = async () => {
     const response = await fetch(URL);
@@ -16,45 +14,39 @@ const useImages = (props) => {
     setImages(data);
   };
 
-  // console.log(`images.js line 17 ${JSON.stringify(images)}`);
-  // console.log(`main.js line 18 ${URL}`);
-
   const createImages = async (images) => {
-    if (!props.user) return;
-    const token = await props.user.getIdToken();
-    await fetch(URL, {
+    const response = await fetch(URL, {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
-        Authorization: "Bearer " + token,
       },
       body: JSON.stringify(images),
     });
-    getImages();
+    if (response.ok) {
+      getImages();
+    }
   };
 
   const updateImages = async (id, updatedImage) => {
-    const token = await props.user.getIdToken();
-    await fetch(URL + id, {
+    const response = await fetch(URL + id, {
       method: "PUT",
       headers: {
         "Content-type": "Application/json",
-        Authorization: "Bearer " + token,
       },
       body: JSON.stringify(updatedImage),
     });
-    getImages();
+    if (response.ok) {
+      getImages();
+    }
   };
 
   const deleteImages = async (id) => {
-    const token = await props.user.getIdToken();
-    await fetch(URL + id, {
+    const response = await fetch(URL + id, {
       method: "DELETE",
-      headers: {
-        Authorization: "Bearer " + token,
-      },
     });
-    getImages();
+    if (response.ok) {
+      getImages();
+    }
   };
 
   useEffect(() => {
@@ -62,12 +54,8 @@ const useImages = (props) => {
   });
 
   useEffect(() => {
-    if (props.user) {
-      getImagesRef.current();
-    } else {
-      setImages(null);
-    }
-  }, [props.user]);
+    getImagesRef.current();
+  }, []);
 
   return {
     images,
