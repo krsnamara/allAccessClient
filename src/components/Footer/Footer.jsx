@@ -36,21 +36,9 @@ const Footer = () => {
                   Events
                 </Link>
               </li>
-            </ul>
-            <ul>
               <li className="nav-item">
                 <Link to="/events/new" onClick={handleLinkClick}>
                   Create Event
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/reviews" onClick={handleLinkClick}>
-                  Reviews
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/reviews/new" onClick={handleLinkClick}>
-                  Create Review
                 </Link>
               </li>
             </ul>
@@ -61,7 +49,7 @@ const Footer = () => {
         className={`footer-tab ${isCollapsed ? "" : "collapsed"}`}
         onClick={toggleFooter}
       >
-        <span>{isCollapsed ? "Show" : "Hide"}</span>
+        <span>{isCollapsed ? "_" : "V"}</span>
       </div>
     </div>
   );
