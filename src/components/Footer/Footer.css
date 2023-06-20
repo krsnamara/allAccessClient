@@ -3,10 +3,10 @@
   color: #eee;
   position: fixed;
   width: 100%;
-  right: 20px;
-  bottom: 20px;
+  right: 0px;
+  bottom: 0px;
   z-index: 999;
-  border-radius: 10px 0px 0 10px;
+  margin: 0;
   transition: bottom 0.3s, transform 0.3s;
 }
 
@@ -73,12 +73,16 @@
 
 .footer-tab {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
   right: 0;
   top: -30px;
   background-color: #000;
   color: #eee;
   padding: 10px 10px 1px 10px;
-  border-radius: 10px 10px 0 0;
+  border-radius: 50px 0px 0 0;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -92,5 +96,9 @@
 }
 
 .footer.collapsed {
-  transform: translateY(100%);
+  transform: translateY(200%);
 }
+
+/* .footer.open {
+  transform: translateY(100%);
+} */

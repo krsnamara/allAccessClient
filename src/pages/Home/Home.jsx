@@ -33,7 +33,7 @@ function Home(props) {
           <NavBars />
         </button>
         <button className="mobile-hide">
-          <img src={Next} alt="Next" className="filter-image" />
+          <img src={Next} alt="next" className="filter-image" />
         </button>
       </div>
 

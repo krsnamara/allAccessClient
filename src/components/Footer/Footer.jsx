@@ -16,7 +16,7 @@ const Footer = () => {
   };
 
   return (
-    <div className={`footer ${isCollapsed ? "collapsed" : ""}`}>
+    <div className={`footer ${isCollapsed ? "collapsed" : "open"}`}>
       {!isCollapsed && (
         <div className="footer-content">
           <div className="list-container">
@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
       )}
       <div
-        className={`footer-tab ${isCollapsed ? "" : "collapsed"}`}
+        className={`footer-tab ${isCollapsed ? "open" : "collapsed"}`}
         onClick={toggleFooter}
       >
         <span>{isCollapsed ? "_" : "V"}</span>
