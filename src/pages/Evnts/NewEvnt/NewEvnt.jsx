@@ -54,7 +54,7 @@ function NewEvnt(props) {
       });
 
       window.alert("New Event has been successfully created");
-      navigate("/images");
+      navigate("/profile");
     } catch (error) {
       console.log(error);
     }
@@ -69,7 +69,7 @@ function NewEvnt(props) {
     <>
       <section className="new-event-form-container">
         <div className="back-button-container">
-          <Link to="/evnts" className="back-button-link">
+          <Link to="/" className="back-button-link">
             <IoChevronBackCircleOutline className="back-link" />
             Back
           </Link>
