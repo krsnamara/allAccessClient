@@ -10,7 +10,6 @@ export default function NavClasses() {
       />
       <label htmlFor="nav-classes-checkbox" className="nav-classes-icon">
         <svg
-          svg
           width="144"
           height="35"
           viewBox="0 0 144 28"

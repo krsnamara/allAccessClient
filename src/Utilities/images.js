@@ -8,13 +8,15 @@ const useImages = (props) => {
 
   const URL = API_URLS.IMAGES;
 
+  console.log(URL);
+
   const getImages = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     setImages(data);
   };
 
-  // console.log(`main.js line 17 ${JSON.stringify(images)}`);
+  console.log(`images.js line 17 ${JSON.stringify(images)}`);
   // console.log(`main.js line 18 ${URL}`);
 
   const createImages = async (images) => {

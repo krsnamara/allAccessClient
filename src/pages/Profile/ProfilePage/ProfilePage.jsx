@@ -1,4 +1,5 @@
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
+import { Link } from "react-router-dom";
 import "./ProfilePage.css";
 
 const ProfilePage = () => {
@@ -39,9 +40,11 @@ const ProfilePage = () => {
         <div className="createEventWrapper">
           <p className="eventsP">Events</p>
           <div className="eventBtn">
-            <button className="profileBtn">
-              <p className="profileP">Create Event</p>
-            </button>
+            <Link to="/events/new">
+              <button className="profileBtn">
+                <p className="profileP">Create Event</p>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
