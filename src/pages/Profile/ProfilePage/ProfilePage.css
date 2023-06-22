@@ -145,7 +145,6 @@
   position: relative;
   left: 85%;
   top: 50%;
-  /* padding-right: 5px; */
   border-radius: 30px;
   background-color: var(--black-col);
   color: var(--off-white);
@@ -214,4 +213,12 @@
 
 .moreDetailsHref:hover {
   color: var(--text-dark);
+}
+
+@media (max-width: 370px) {
+  .eventsBtnEdit {
+    left: 75%;
+    top: 50%;
+    /* transform: translate(-50%, -50%); */
+  }
 }
