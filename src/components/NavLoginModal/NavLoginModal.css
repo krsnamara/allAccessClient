@@ -91,32 +91,3 @@
   align-items: center;
   gap: 10px;
 }
-
-/* @media (max-width: 780px) {
-  .modal {
-    top: 21%;
-    left: 82.2%;
-    transform: translate(-50%, -50%);
-  }
-}
-@media (max-width: 700px) {
-  .modal {
-    top: 21%;
-    left: 80.2%;
-    transform: translate(-50%, -50%);
-  }
-}
-@media (max-width: 620px) {
-  .modal {
-    top: 22%;
-    left: 73.2%;
-    transform: translate(-50%, -50%);
-  }
-}
-@media (max-width: 480px) {
-  .modal {
-    top: 24%;
-    left: 63.2%;
-    transform: translate(-50%, -50%);
-  }
-} */
