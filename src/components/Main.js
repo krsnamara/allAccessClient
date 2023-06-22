@@ -19,7 +19,7 @@ function Main(props) {
     <main className="mainJs">
       <Routes>
         <Route exact path="/" element={<Home images={images} />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/profile" element={<ProfilePage images={images} />} />
         <Route path="/create" element={<CreateProfile user={props.user} />} />
         <Route path="/images" element={<ImagesIndex images={images} />} />
         <Route

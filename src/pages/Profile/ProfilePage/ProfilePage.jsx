@@ -1,14 +1,24 @@
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
 import { Link } from "react-router-dom";
+import LocationIcon from "../../../assets/buttons-icons/location.svg";
 import "./ProfilePage.css";
 
-const ProfilePage = () => {
+const ProfilePage = (images) => {
+  const handleEdit = (e) => {
+    e.preventDefault();
+    alert("This feature coming soon!");
+  };
+  const handleMore = (e) => {
+    e.preventDefault();
+    alert("More details coming soon!");
+  };
+
   return (
     <div className="profilePage">
       <div className="profileBody">
         <div className="picCont">
           <img src={ProfileImg} alt="profile" className="profileImg" />
-          <button className="profileBtnEdit">
+          <button className="profileBtnEdit" onClick={handleEdit}>
             <p className="profileP">Edit</p>
           </button>
         </div>
@@ -32,13 +42,44 @@ const ProfilePage = () => {
           </div>
         </div>
         <div className="reviewBtn">
-          <button className="profileBtn">
+          <button className="profileBtn" onClick={handleEdit}>
             <p className="profileP">Create a Review</p>
           </button>
         </div>
         <hr style={{ width: "90%", maxWidth: "600px", textAlign: "center" }} />
         <div className="createEventWrapper">
           <p className="eventsP">Events</p>
+          <div className="eventsMapWrapper">
+            {images.images.slice(-4).map((image) => (
+              <div className="eventsMap">
+                <button className="eventsBtnEdit" onClick={handleEdit}>
+                  <p className="editBtnP">Edit</p>
+                </button>
+                <p className="eventNameP">{image.name}</p>
+                <p className="eventVenueP">@ Avenger Studio</p>
+                <div className="eventLocation-wrapper">
+                  <img
+                    src={LocationIcon}
+                    alt="eventIcon"
+                    className="eventIcon"
+                  />
+                  <p className="eventAddress">
+                    {" "}
+                    123 Main Street {image.address}
+                  </p>
+                </div>
+                <div className="moreDetails">
+                  <a
+                    href="/profile"
+                    className="moreDetailsHref"
+                    onClick={handleMore}
+                  >
+                    More Details
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="eventBtn">
             <Link to="/events/new">
               <button className="profileBtn">

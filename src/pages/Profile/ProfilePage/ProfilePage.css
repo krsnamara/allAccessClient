@@ -1,9 +1,9 @@
 .profileBody {
   margin-top: 100px;
-  max-width: 600px;
   display: flex;
   flex-direction: column;
-  margin-left: 5%;
+  justify-content: center;
+  align-items: center;
 }
 
 .picCont {
@@ -15,7 +15,6 @@
 }
 
 .profileImg {
-  position: absolute;
   left: 35%;
 }
 
@@ -32,6 +31,7 @@
   justify-content: space-around;
   align-items: center;
   margin: 30px;
+  gap: 45px;
 }
 
 .statsBox {
@@ -50,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 7%;
+  margin-bottom: 20px;
 }
 
 .eventsCont {
@@ -61,6 +61,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 .profileBtn {
@@ -74,7 +75,7 @@
 
 .profileBtnEdit {
   position: absolute;
-  left: 65%;
+  left: 110%;
   border-radius: 30px;
   background-color: var(--soft-yellow);
   padding: 12px;
@@ -100,6 +101,8 @@
 }
 
 .eventsP {
+  position: relative;
+  left: -45%;
   font-weight: 700;
 }
 
@@ -109,4 +112,106 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.createEventWrapper {
+  display: flex;
+  align-items: center;
+  /* gap: 8px; */
+  /* margin-top: 0; */
+  /* margin-left: -5px; */
+}
+
+.eventsMapWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.eventsMap {
+  background-color: var(--mint-green);
+  max-width: 550px;
+  width: 80vw;
+  padding: 20px;
+  border-radius: 40px;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 5s, box-shadow 0.3s;
+}
+
+.eventsBtnEdit {
+  position: relative;
+  left: 85%;
+  top: 50%;
+  /* padding-right: 5px; */
+  border-radius: 30px;
+  background-color: var(--black-col);
+  color: var(--off-white);
+  padding: 5px 15px 5px 15px;
+  margin: 0px;
+  border: none;
+  cursor: pointer;
+  z-index: 7;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.eventsBtnEdit:hover {
+  background-color: var(--soft-yellow);
+  color: var(--black-col);
+}
+
+.editBtnP {
+  font-size: 0.8rem;
+  padding: 0px;
+  margin: 0;
+}
+
+.eventNameP {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.eventVenueP {
+  margin: 8px 0 8px 0;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.eventLocation-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.eventIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.eventAddress {
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+  margin: 5px;
+}
+
+.moreDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.moreDetailsHref {
+  font-weight: 700;
+  font-size: 0.8rem;
+  justify-self: center;
+  align-self: center;
+  color: var(--black-col);
+  margin: 10px 0 10px 0;
+}
+
+.moreDetailsHref:hover {
+  color: var(--text-dark);
 }
