@@ -70,7 +70,7 @@ export default function Modal({ user }) {
                       </Link>{" "}
                     </p>
                   </div>
-                  <div className="createEventWrapper" onClick={toggleModal}>
+                  <div className="settingsWrapper" onClick={toggleModal}>
                     <img src={MapView} alt="mapView" className="createEvent" />
                     <p className="loginLogout">
                       <Link
@@ -81,7 +81,7 @@ export default function Modal({ user }) {
                       </Link>
                     </p>
                   </div>
-                  <div className="createEventWrapper" onClick={toggleModal}>
+                  <div className="settingsWrapper" onClick={toggleModal}>
                     <img
                       src={CreateEvent}
                       alt="createEvent"
