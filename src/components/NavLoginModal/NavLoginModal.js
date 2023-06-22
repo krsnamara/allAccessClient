@@ -4,7 +4,6 @@ import { logout, login } from "../../firebase";
 import LoginHamburger from "../../assets/buttons-icons/login-hamburger.svg";
 import LoginIcon from "../../assets/buttons-icons/logout.svg";
 import ProfileSmallCircle from "../../assets/buttons-icons/profile-img.svg";
-import GalleryView from "../../assets/buttons-icons/grid-view.svg";
 import MapView from "../../assets/buttons-icons/map-view.svg";
 import CreateEvent from "../../assets/buttons-icons/create-event.svg";
 import SettingsIcon from "../../assets/buttons-icons/settings.svg";
@@ -72,28 +71,13 @@ export default function Modal({ user }) {
                     </p>
                   </div>
                   <div className="createEventWrapper" onClick={toggleModal}>
-                    <img
-                      src={GalleryView}
-                      alt="galleryView"
-                      className="createEvent"
-                    />
-                    <p className="loginLogout">
-                      <Link
-                        to="/images"
-                        style={{ color: "white", textDecoration: "none" }}
-                      >
-                        Gallery View Events
-                      </Link>
-                    </p>
-                  </div>
-                  <div className="createEventWrapper" onClick={toggleModal}>
                     <img src={MapView} alt="mapView" className="createEvent" />
                     <p className="loginLogout">
                       <Link
                         to="/"
                         style={{ color: "white", textDecoration: "none" }}
                       >
-                        Map View Events
+                        View Events
                       </Link>
                     </p>
                   </div>
