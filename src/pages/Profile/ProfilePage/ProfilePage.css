@@ -67,6 +67,7 @@
 .profileBtn {
   border-radius: 30px;
   background-color: var(--soft-yellow);
+  color: var(--black-col);
   padding: 12px;
   margin: 0px;
   border: none;
@@ -78,6 +79,7 @@
   left: 110%;
   border-radius: 30px;
   background-color: var(--soft-yellow);
+  color: var(--black-col);
   padding: 12px;
   margin: 0px;
   border: none;
