@@ -1,86 +1,106 @@
-.reviewNav {
-  display: none;
+/* NEW EVENT FORM */
+.newEventContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* NEW EVENT FORM */
 .new-event-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 10px;
+  max-width: 500px;
 }
+
 .create-new-event-title {
   text-align: center;
-  margin: 0;
+  margin-bottom: 20px;
 }
+
 .input-title {
   margin: 0;
   color: #000;
+  text-align: left;
+  width: 80%;
+  margin-top: 10px;
 }
+
 .create-new-event-input {
   width: 80%;
   margin: auto;
-  border: 3px solid #ccc;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
   border-radius: 45px;
+  color: var(--text-light);
+  border: 1px solid #000;
 }
+
 .create-new-event-textarea {
   width: 80%;
   margin: auto;
-  border: 3px solid #ccc;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  outline: none;
-  border-radius: 45px;
-  padding: 3%;
+  border-radius: 30px;
+  padding: 15px;
 }
+
+select {
+  font-size: 0.8rem;
+  padding: 12px 12px 12px 12px;
+}
+
 .input-submit-button {
-  border-radius: 45px;
-  width: 25%;
-  height: 13%;
-  margin: 3vh auto;
-  padding: 4%;
-  background-color: #ffcc66;
-  font-size: 2vh;
-  font-weight: bold;
+  border-radius: 30px;
+  background-color: var(--soft-yellow);
+  color: var(--black-col);
+  padding: 12px;
+  margin: 20px;
+  border: none;
+  cursor: pointer;
 }
+
 .input-submit-button:hover {
   background-color: #f2a916;
 }
-.back-button-container {
-  display: flex;
-}
-.back-button-link {
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-}
-.back-link {
-  height: 40px;
-  width: 40px;
+
+.createEventP {
+  font-size: 1rem;
+  padding: 2px 12px 2px 12px;
+  margin: 0px;
+  font-weight: 600;
 }
 
 .cursor-pointer {
   cursor: pointer;
 }
+
 input[type="file"] {
-  text-decoration: none;
-  /* border: none; */
+  position: relative;
+  text-align: right;
+  opacity: 0;
+  z-index: 2;
 }
 
-@media (max-width: 480px) {
-  /* Mobile */
-  .reviewNav {
-    display: flex;
-  }
-  .backBtnNav {
-    display: flex;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 2px;
-  }
-  .backNavP {
-    font-size: 20px;
-  }
+.addPhoto {
+  display: flex;
+  margin-right: 100%;
+  padding: 20px 0px;
+  cursor: pointer;
+}
+
+.addPhotoInner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.addPhotoP {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black-col);
+  margin: 0;
+  padding-left: 5px;
 }
