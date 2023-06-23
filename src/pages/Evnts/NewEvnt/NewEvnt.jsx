@@ -9,8 +9,8 @@ import "./NewEvnt.css";
 function NewEvnt(props) {
   const formFields = {
     name: "",
-    imageName: "",
-    eventType: [],
+    image: "",
+    eventType: "",
     description: "",
     reservation: "",
     website: "",
@@ -21,18 +21,10 @@ function NewEvnt(props) {
 
   const [newForm, setNewForm] = useState(formFields);
   const [isHovered, setIsHovered] = useState(false);
-  const navigate = useNavigate(); // access the navigate function
+  const [isPhotoSelected, setIsPhotoSelected] = useState(false);
+  const [file, setFile] = useState();
 
-  // const handleSelectEventChange = (event) => {
-  //   const selectedOptions = Array.from(
-  //     event.target.selectedOptions,
-  //     (option) => option.value
-  //   );
-  //   setNewForm({
-  //     ...newForm,
-  //     eventType: selectedOptions,
-  //   });
-  // };
+  const navigate = useNavigate();
 
   const handleSelectChange = (event) => {
     setNewForm({
@@ -48,23 +40,25 @@ function NewEvnt(props) {
     });
   };
 
-  // Function to handle mouse enter event
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    setIsHovered(!isPhotoSelected);
   };
 
-  // Function to handle mouse leave event
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
 
-  const [file, setFile] = useState();
+  const fileSelected = (event) => {
+    const file = event.target.files[0];
+    setFile(file);
+    setIsPhotoSelected(true);
+  };
 
   const submit = async (event) => {
     event.preventDefault();
     props.createEvnts(newForm);
     const formData = new FormData();
-    formData.append("imageName", file);
+    formData.append("image", file);
     formData.append("name", newForm.name);
     formData.append("eventType", newForm.eventType);
     formData.append("description", newForm.description);
@@ -84,11 +78,6 @@ function NewEvnt(props) {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const fileSelected = (event) => {
-    const file = event.target.files[0];
-    setFile(file);
   };
 
   return (
@@ -125,7 +114,7 @@ function NewEvnt(props) {
             <option value="sightseeing">Sightseeing</option>
             <option value="uniquie-experiences">Unique Experiences</option>
           </select>
-          <div
+          <label
             className="addPhoto"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -133,20 +122,20 @@ function NewEvnt(props) {
             <input
               onChange={fileSelected}
               type="file"
-              name="imageName"
+              name="image"
               accept="image/*"
               className="addPhotoInput"
               placeholder="Enter URL of Image"
             />
             <div className="addPhotoInner">
               <img
-                src={isHovered ? AddPhotoHover : AddPhoto}
+                src={isHovered || isPhotoSelected ? AddPhotoHover : AddPhoto}
                 alt="addPhoto"
                 className="addPhotoImg"
               />
               <p className="addPhotoP">Add photo(s)</p>
             </div>
-          </div>
+          </label>
           <h4 className="input-title">Event Description*</h4>
           <textarea
             className="create-new-event-textarea"
