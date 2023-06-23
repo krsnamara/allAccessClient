@@ -29,7 +29,6 @@
 
 .create-new-event-input {
   width: 80%;
-  margin: auto;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
@@ -39,12 +38,15 @@
 }
 
 .create-new-event-textarea {
+  text-decoration: none;
   width: 80%;
   margin: auto;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   border-radius: 30px;
   padding: 15px;
+  border: 1px solid #000;
+  outline: none;
 }
 
 select {
@@ -94,7 +96,7 @@ input[type="file"] {
 .addPhotoInner {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .addPhotoP {
@@ -102,5 +104,14 @@ input[type="file"] {
   font-weight: 700;
   color: var(--black-col);
   margin: 0;
-  padding-left: 5px;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.addPhotoImg {
+  transition: transform 0.2s ease-in-out;
+}
+
+.addPhotoImg:hover {
+  transform: scale(1.1);
 }

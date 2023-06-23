@@ -95,7 +95,7 @@ label {
 
 input {
   text-decoration: none;
-  padding: 3vmin;
+  padding: 12px 12px 12px 12px;
   max-width: 500px;
   height: 40px;
   font-size: 0.8rem;
@@ -109,6 +109,14 @@ input::placeholder {
 }
 
 input:focus {
+  border-color: var(--orange);
+}
+
+select:focus {
+  border-color: var(--orange);
+}
+
+textarea:focus {
   border-color: var(--orange);
 }
 

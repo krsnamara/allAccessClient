@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_URLS } from "../../../urls";
 import AddPhoto from "../../../assets/buttons-icons/add-photo.svg";
+import AddPhotoHover from "../../../assets/buttons-icons/add-photo-hover.svg";
 import "./NewEvnt.css";
 
 function NewEvnt(props) {
@@ -19,6 +20,7 @@ function NewEvnt(props) {
   const URL = API_URLS.IMAGES;
 
   const [newForm, setNewForm] = useState(formFields);
+  const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate(); // access the navigate function
 
   // const handleSelectEventChange = (event) => {
@@ -44,6 +46,16 @@ function NewEvnt(props) {
       ...newForm,
       [event.target.name]: event.target.value,
     });
+  };
+
+  // Function to handle mouse enter event
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  // Function to handle mouse leave event
+  const handleMouseLeave = () => {
+    setIsHovered(false);
   };
 
   const [file, setFile] = useState();
@@ -113,7 +125,11 @@ function NewEvnt(props) {
             <option value="sightseeing">Sightseeing</option>
             <option value="uniquie-experiences">Unique Experiences</option>
           </select>
-          <div className="addPhoto">
+          <div
+            className="addPhoto"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <input
               onChange={fileSelected}
               type="file"
@@ -123,7 +139,11 @@ function NewEvnt(props) {
               placeholder="Enter URL of Image"
             />
             <div className="addPhotoInner">
-              <img src={AddPhoto} alt="addPhoto" />
+              <img
+                src={isHovered ? AddPhotoHover : AddPhoto}
+                alt="addPhoto"
+                className="addPhotoImg"
+              />
               <p className="addPhotoP">Add photo(s)</p>
             </div>
           </div>
