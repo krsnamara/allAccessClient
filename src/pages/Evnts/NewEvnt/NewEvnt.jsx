@@ -1,22 +1,36 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { IoChevronBackCircleOutline } from "react-icons/io5";
+import { API_URLS } from "../../../urls";
+import AddPhoto from "../../../assets/buttons-icons/add-photo.svg";
 import "./NewEvnt.css";
 
 function NewEvnt(props) {
   const formFields = {
     name: "",
-    image: "",
-    type: "",
+    imageName: "",
+    eventType: [],
     description: "",
     reservation: "",
     website: "",
     address: "",
   };
 
+  const URL = API_URLS.IMAGES;
+
   const [newForm, setNewForm] = useState(formFields);
   const navigate = useNavigate(); // access the navigate function
+
+  // const handleSelectEventChange = (event) => {
+  //   const selectedOptions = Array.from(
+  //     event.target.selectedOptions,
+  //     (option) => option.value
+  //   );
+  //   setNewForm({
+  //     ...newForm,
+  //     eventType: selectedOptions,
+  //   });
+  // };
 
   const handleSelectChange = (event) => {
     setNewForm({
@@ -38,9 +52,9 @@ function NewEvnt(props) {
     event.preventDefault();
     props.createEvnts(newForm);
     const formData = new FormData();
-    formData.append("image", file);
+    formData.append("imageName", file);
     formData.append("name", newForm.name);
-    formData.append("type", newForm.type);
+    formData.append("eventType", newForm.eventType);
     formData.append("description", newForm.description);
     formData.append("reservation", newForm.reservation);
     formData.append("website", newForm.website);
@@ -49,7 +63,7 @@ function NewEvnt(props) {
     setNewForm(formFields);
 
     try {
-      await axios.post("http://localhost:4000/images", formData, {
+      await axios.post(URL, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -67,13 +81,7 @@ function NewEvnt(props) {
 
   return (
     <>
-      <section className="new-event-form-container">
-        <div className="back-button-container">
-          <Link to="/" className="back-button-link">
-            <IoChevronBackCircleOutline className="back-link" />
-            Back
-          </Link>
-        </div>
+      <section className="newEventContainer">
         <h2 className="create-new-event-title">Create New Event</h2>
         <form onSubmit={submit} className="new-event-form">
           <h4 className="input-title">Event Name*</h4>
@@ -89,7 +97,8 @@ function NewEvnt(props) {
           <h4 className="input-title">Event Type*</h4>
           <select
             id="eventTypes"
-            name="type"
+            name="eventType"
+            value={newForm.eventType}
             className="create-new-event-input"
             required
             onChange={handleSelectChange}
@@ -102,17 +111,22 @@ function NewEvnt(props) {
             <option value="seasonal-occasions">Seasonal Occasions</option>
             <option value="outdoor-activities">Outdoor Activities</option>
             <option value="sightseeing">Sightseeing</option>
-            <option value="uniquie-experiences">Uniquie Experiences</option>
+            <option value="uniquie-experiences">Unique Experiences</option>
           </select>
-          <h4 className="input-title">Add photo</h4>
-          <input
-            onChange={fileSelected}
-            type="file"
-            name="imageName"
-            accept="image/*"
-            className="create-new-event-input"
-            placeholder="Enter URL of Image"
-          />
+          <div className="addPhoto">
+            <input
+              onChange={fileSelected}
+              type="file"
+              name="imageName"
+              accept="image/*"
+              className="addPhotoInput"
+              placeholder="Enter URL of Image"
+            />
+            <div className="addPhotoInner">
+              <img src={AddPhoto} alt="addPhoto" />
+              <p className="addPhotoP">Add photo(s)</p>
+            </div>
+          </div>
           <h4 className="input-title">Event Description*</h4>
           <textarea
             className="create-new-event-textarea"
@@ -126,7 +140,6 @@ function NewEvnt(props) {
             cols="30"
             align="middle"
           />
-          {/* TODO: change to drop down */}
           <h4 className="input-title">Reservation Required*</h4>
           <select
             id="reservation"
@@ -164,7 +177,7 @@ function NewEvnt(props) {
             required
           />
           <button type="submit" className="input-submit-button cursor-pointer">
-            Submit
+            <p className="createEventP">Create Event</p>
           </button>
 
           {/* STREtCH GOALS */}

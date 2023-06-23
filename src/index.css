@@ -73,36 +73,18 @@ code {
   cursor: pointer;
 }
 
-.section-heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--tan-1);
-  color: var(--text-dark);
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-  padding: 0.6vmin;
-  text-align: center;
-  font-size: 2vmin;
-}
-
-.form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 1vmin;
-}
-
 p.error-message {
   color: var(--orange);
   text-align: center;
 }
 
 form {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
-  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--black-col);
+  max-width: 500px;
 }
 
 label {
@@ -112,50 +94,38 @@ label {
 }
 
 input {
+  text-decoration: none;
   padding: 3vmin;
+  max-width: 500px;
   height: 40px;
-  font-size: 4vmin;
-  border: 0.1vmin solid var(--tan-3);
-  border-radius: 0.5vmin;
-  color: var(--text-dark);
-  outline: none;
+  font-size: 0.8rem;
+  border: 1px solid var(--black-col);
+  color: var(--black-col);
+}
+
+input::placeholder {
+  color: var(--text-light);
+  padding-left: 5px;
 }
 
 input:focus {
   border-color: var(--orange);
 }
 
-/* button,
-a.button {
-  margin: 1vmin;
-  padding: 1vmin;
-  color: var(--white);
-  font-size: 2vmin;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: 0.6vmin 0.8vmin;
-}
-
-button.btn-xs {
-  font-size: 1vmin;
-  padding: 0.4vmin 0.5vmin;
-} */
-
 button:disabled,
 form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: var(--soft-yellow);
 }
 
 button[type="submit"] {
-  grid-column: span 2;
-  margin: 1vmin 0 0;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--soft-yellow);
+  color: var(--black-col);
+  padding: 12px;
+  margin: 20px;
+  border: none;
+  cursor: pointer;
 }
