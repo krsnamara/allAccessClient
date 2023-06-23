@@ -4,7 +4,8 @@ import useEvnts from "../Utilities/evnts";
 import useImages from "../Utilities/images";
 import Home from "../pages/Home/Home";
 import ImagesIndex from "../pages/Images/ImagesIndex/ImagesIndex";
-import ImagesShow from "../pages/Images/ImagesShow/ImageShow";
+// import ImagesShow from "../pages/Images/ImagesShow/ImageShow";
+import EventShow from "../pages/Evnts/ShowEvent/EventShow";
 import NewEvnt from "../pages/Evnts/NewEvnt/NewEvnt";
 import CreateProfile from "../pages/Profile/CreateProfile/CreateProfile";
 import ProfilePage from "../pages/Profile/ProfilePage/ProfilePage";
@@ -12,23 +13,28 @@ import "./Main.css";
 
 function Main(props) {
   // Invoke custom hooks
-  const { createEvnts } = useEvnts(props);
-  const { images, deleteImages } = useImages(props);
+  const { evnts, deleteEvnts, createEvnts } = useEvnts(props);
+  const { images } = useImages(props);
 
   return (
     <main className="mainJs">
       <Routes>
         <Route exact path="/" element={<Home images={images} />} />
-        <Route path="/profile" element={<ProfilePage images={images} />} />
+        <Route path="/profile" element={<ProfilePage evnts={evnts} />} />
         <Route path="/create" element={<CreateProfile user={props.user} />} />
-        <Route path="/images" element={<ImagesIndex images={images} />} />
         <Route
           path="/events/new"
           element={<NewEvnt createEvnts={createEvnts} />}
         />
         <Route
           path="/events/:id"
-          element={<ImagesShow images={images} deleteImages={deleteImages} />}
+          element={
+            <EventShow
+              evnts={evnts}
+              deleteEvnts={deleteEvnts}
+              user={props.user}
+            />
+          }
         />
       </Routes>
     </main>

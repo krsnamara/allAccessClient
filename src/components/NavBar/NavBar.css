@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .navBarSearch {
@@ -60,6 +60,15 @@
 /* CSS for Back Btn */
 
 .eventsNewNav {
+  margin-top: 80px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noNavStyle {
+  margin: 5px 0 -10px 0;
   padding: 0px;
   display: flex;
   justify-content: center;
@@ -67,16 +76,18 @@
 }
 
 .backBtnNav {
+  border: none;
+  background-color: none;
+  all: unset;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   color: black;
   text-decoration: none;
   max-width: 500px;
-  width: 80%;
 }
 
 .backNavP {
-  margin-left: 5px;
   width: 80%;
 }
 

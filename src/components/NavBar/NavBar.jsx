@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoChevronBackCircleOutline, IoSearchOutline } from "react-icons/io5";
 import Logo from "../../assets/buttons-icons/logo.svg";
 import LoginModal from "../NavLoginModal/NavLoginModal";
@@ -6,7 +6,10 @@ import "./NavBar.css";
 
 function NavBar({ user }) {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const isNewEventsPage = location.pathname === "/events/new";
+  const isShowEventPage = location.pathname.includes("/events/");
 
   return (
     <div className={`app ${isNewEventsPage ? "events-page" : ""}`}>
@@ -30,12 +33,12 @@ function NavBar({ user }) {
           </div>
         </div>
       </nav>
-      {isNewEventsPage && (
-        <div className="eventsNewNav">
-          <Link to="/" className="backBtnNav">
+      {(isNewEventsPage || isShowEventPage) && (
+        <div className={`eventsNewNav ${isNewEventsPage ? "noNavStyle" : ""}`}>
+          <button onClick={() => navigate(-1)} className="backBtnNav">
             <IoChevronBackCircleOutline size={40} />
-            <p className="backNavP">Back</p>
-          </Link>
+          </button>
+          <p className="backNavP">Back</p>
         </div>
       )}
     </div>
