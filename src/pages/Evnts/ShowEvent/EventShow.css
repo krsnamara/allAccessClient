@@ -1,0 +1,140 @@
+.eventShowWrapper {
+  /* margin-top: 90px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  overflow: hidden;
+  transition: transform 5s, box-shadow 0.3s;
+}
+
+.heartLikeShow {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 10px 0 10px;
+}
+
+.eventImage {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.showLikeButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.eventInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  max-width: 500px;
+}
+
+.eventShowName {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.locationTypeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.locationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.typeWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.eventTypeIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.innerP {
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.eventDescriptionP {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.imageContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 500px; /* Adjust the value based on your requirements */
+}
+
+.eventShowDescription {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  letter-spacing: 0.3vw;
+}
+
+.showBtnWebsite {
+  border-radius: 30px;
+  background-color: var(--soft-yellow);
+  color: var(--black-col);
+  padding: 12px;
+  margin: 0px;
+  border: none;
+  cursor: pointer;
+}
+
+.showBtnP {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0px;
+  padding: 0px 20px;
+}
+
+.buttonFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 350px) {
+  .eventShowWrapper {
+    margin-top: 90px;
+    padding: 20px;
+  }
+  .locationTypeWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    gap: 1px;
+  }
+}

@@ -60,13 +60,13 @@
 
 .con-like .celebrate {
   position: absolute;
-  animation: kfr-celebrate 0.5s;
+  animation: kfr-celebrate 0.7s;
   animation-fill-mode: forwards;
   display: none;
 }
 
 .con-like .poly {
-  stroke: var(--red);
+  stroke: var(--softYellow);
   fill: var(--softYellow);
 }
 
@@ -76,6 +76,10 @@
 
 .con-like .like:checked ~ .checkmark .celebrate {
   display: block;
+}
+
+.poly {
+  stroke-width: 4px; /* Increase the stroke width to make the lines thicker */
 }
 
 @keyframes kfr-filled {

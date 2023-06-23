@@ -45,14 +45,16 @@ const useEvnts = (props) => {
   };
 
   const deleteEvnts = async (id) => {
-    const token = await props.user.getIdToken();
-    await fetch(URL + id, {
+    // const token = await props.user.getIdToken();
+    const response = await fetch(URL + id, {
       method: "DELETE",
-      headers: {
-        Authorization: "Bearer " + token,
-      },
+      // headers: {
+      //   Authorization: "Bearer " + token,
+      // },
     });
-    getEvnts();
+    if (response.ok) {
+      getEvnts();
+    }
   };
 
   useEffect(() => {
@@ -60,12 +62,17 @@ const useEvnts = (props) => {
   });
 
   useEffect(() => {
-    if (props.user) {
-      getEvntsRef.current();
-    } else {
-      setEvnts(null);
-    }
-  }, [props.user]);
+    getEvntsRef.current();
+  }, []);
+
+  // with user
+  // useEffect(() => {
+  //   if (props.user) {
+  //     getEvntsRef.current();
+  //   } else {
+  //     setEvnts(null);
+  //   }
+  // }, [props.user]);
 
   return {
     evnts,

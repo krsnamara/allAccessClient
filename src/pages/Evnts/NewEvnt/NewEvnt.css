@@ -113,11 +113,11 @@ input[type="file"] {
 }
 
 .addPhotoImg {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.08s ease-in-out;
 }
 
 .addPhotoImg:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Media Queries for screens smaller than 360px */
