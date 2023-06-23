@@ -119,3 +119,20 @@ input[type="file"] {
 .addPhotoImg:hover {
   transform: scale(1.1);
 }
+
+/* Media Queries for screens smaller than 360px */
+@media only screen and (max-width: 360px) {
+  .new-event-form {
+    width: 100%;
+  }
+
+  .create-new-event-input,
+  .create-new-event-textarea,
+  select {
+    width: 100%;
+  }
+
+  .input-title {
+    width: 100%;
+  }
+}
