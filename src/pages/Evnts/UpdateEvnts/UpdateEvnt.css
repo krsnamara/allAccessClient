@@ -120,57 +120,6 @@ input[type="file"] {
   transform: scale(1.05);
 }
 
-/* CHECKBOX STYLING FOR MULTIPLE SELECTIONS */
-.checkboxGroupings {
-  display: flex;
-  justify-content: space-evenly;
-  width: 92%;
-}
-.checkbox-group {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  max-width: 500px;
-  width: 80%;
-}
-
-.checkbox {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.checkbox input[type="checkbox"] {
-  display: none; /* Hide the default checkbox */
-}
-
-.checkbox label {
-  display: inline-block;
-  position: relative;
-  padding: 8px 16px;
-  border: 1px solid black;
-  border-radius: 20px;
-  color: black;
-  background-color: white;
-  cursor: pointer;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.checkbox input[type="checkbox"]:checked + label {
-  color: white;
-  background-color: black;
-}
-
-.downBracket {
-  transition: transform 0.3s ease;
-}
-
-.downBracket.expanded {
-  transform: rotate(-90deg);
-}
-
 /* Media Queries for screens smaller than 360px */
 @media only screen and (max-width: 360px) {
   .new-event-form {

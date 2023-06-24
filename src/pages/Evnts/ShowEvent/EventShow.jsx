@@ -13,7 +13,8 @@ function Evnt(props) {
       .deleteEvnts(id)
       .then(() => {
         // Handle successful deletion, such as showing a success message or navigating back to a different page
-        navigate("/events"); // Navigates back to the EventsIndex page
+        navigate("/"); // Navigates back to the EventsIndex page
+        window.location.reload(); // Refresh the page
       })
       .catch((error) => {
         // Handle error during deletion, such as displaying an error message
@@ -84,9 +85,22 @@ function Evnt(props) {
           <hr
             style={{ width: "100%", maxWidth: "500px", textAlign: "center" }}
           />
+          <div className="hostedAtWrapper">
+            <div className="hostedStartingP">
+              <p className="eventDescriptionP">Hosted At:</p>
+              <p className="eventShowName">Wheelies Kitchen</p>
+              <div className="showLocation-wrapper">
+                <img src={LocationIcon} alt="eventIcon" className="eventIcon" />
+                <p className="eventAddress"> 123 Main Street, {evnt.address}</p>
+              </div>
+            </div>
+            <div className="accessibilityScore">
+              <p className="accessibilityP">Accessibility Score:</p>
+              <p className="accessibilityNumber">4.0</p>
+            </div>
+          </div>
         </section>
         {props.user && <button onClick={handleDelete}>Delete</button>}
-        <h4>Here is where the ratings and location will be built out static</h4>
       </div>
     );
   };
