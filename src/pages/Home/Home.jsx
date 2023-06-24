@@ -39,10 +39,10 @@ function Home(props) {
 
       {showMap ? (
         // Render map component
-        <MapView images={props.images} />
+        <MapView evnts={props.evnts} />
       ) : (
         // Render grid component
-        <DynamicHome images={props.images} />
+        <DynamicHome evnts={props.evnts} />
       )}
     </>
   );

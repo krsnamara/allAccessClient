@@ -1,16 +1,38 @@
+import { Link, useNavigate, useParams } from "react-router-dom";
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
-import { Link } from "react-router-dom";
 import LocationIcon from "../../../assets/buttons-icons/location.svg";
 import "./ProfilePage.css";
 
-const ProfilePage = (evnts) => {
+const ProfilePage = ({ evnts, user, deleteEvnts }) => {
+  // console.log(evnts);
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  if (evnts === null) {
+    return <p>Loading...</p>; // Display a loading state
+  }
+
+  const handleDelete = (evntId) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this event?"
+    );
+    if (confirmDelete) {
+      deleteEvnts(evntId)
+        .then(() => {
+          // Handle successful deletion, such as showing a success message or navigating back to a different page
+          navigate("/profile"); // Navigates back to the EventsIndex page
+          window.location.reload(); // Refresh the page
+        })
+        .catch((error) => {
+          // Handle error during deletion, such as displaying an error message
+          console.error("Error deleting event:", error);
+        });
+    }
+  };
+
   const handleEdit = (e) => {
     e.preventDefault();
     alert("This feature coming soon!");
-  };
-  const handleMore = (e) => {
-    e.preventDefault();
-    alert("More details coming soon!");
   };
 
   return (
@@ -50,11 +72,21 @@ const ProfilePage = (evnts) => {
         <div className="createEventWrapper">
           <p className="eventsP">Events</p>
           <div className="eventsMapWrapper">
-            {evnts.evnts.slice(-4).map((evnt) => (
-              <div className="eventsMap">
+            {evnts.map((evnt) => (
+              <div className="eventsMap" key={evnt._id}>
+                {/* <div className="buttonFlex"> */}
                 <button className="eventsBtnEdit" onClick={handleEdit}>
                   <p className="editBtnP">Edit</p>
                 </button>
+                {user && (
+                  <button
+                    onClick={() => handleDelete(evnt._id)}
+                    className="eventsBtnEdit"
+                  >
+                    <p className="editBtnP">Delete</p>
+                  </button>
+                )}
+                {/* </div> */}
                 <p className="eventNameP">{evnt.name}</p>
                 <p className="eventVenueP">@ Avenger Studio</p>
                 <div className="eventLocation-wrapper">

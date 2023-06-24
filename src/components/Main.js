@@ -3,8 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import useEvnts from "../Utilities/evnts";
 import useImages from "../Utilities/images";
 import Home from "../pages/Home/Home";
-import ImagesIndex from "../pages/Images/ImagesIndex/ImagesIndex";
-// import ImagesShow from "../pages/Images/ImagesShow/ImageShow";
 import EventShow from "../pages/Evnts/ShowEvent/EventShow";
 import NewEvnt from "../pages/Evnts/NewEvnt/NewEvnt";
 import CreateProfile from "../pages/Profile/CreateProfile/CreateProfile";
@@ -14,13 +12,23 @@ import "./Main.css";
 function Main(props) {
   // Invoke custom hooks
   const { evnts, deleteEvnts, createEvnts } = useEvnts(props);
-  const { images } = useImages(props);
+
+  // console.log(evnts);
 
   return (
     <main className="mainJs">
       <Routes>
-        <Route exact path="/" element={<Home images={images} />} />
-        <Route path="/profile" element={<ProfilePage evnts={evnts} />} />
+        <Route exact path="/" element={<Home evnts={evnts} />} />
+        <Route
+          path="/profile"
+          element={
+            <ProfilePage
+              evnts={evnts}
+              deleteEvnts={deleteEvnts}
+              user={props.user}
+            />
+          }
+        />
         <Route path="/create" element={<CreateProfile user={props.user} />} />
         <Route
           path="/events/new"

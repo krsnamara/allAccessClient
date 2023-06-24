@@ -14,6 +14,8 @@ const useImages = () => {
     setImages(data);
   };
 
+  console.log(`images.js line 17 ${JSON.stringify(images)}`);
+
   const createImages = async (images) => {
     const response = await fetch(URL, {
       method: "POST",

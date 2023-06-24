@@ -3,13 +3,13 @@ import "./DynamicHome.css";
 
 function DynamicHome(props) {
   const loaded = () => {
-    const firstFour = props.images
+    const firstFour = props.evnts
       .slice(0, 4)
-      .map((image) => <ExperienceCard key={image._id} image={image} />);
+      .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
 
-    const lastFour = props.images
+    const lastFour = props.evnts
       .slice(-4)
-      .map((image) => <ExperienceCard key={image._id} image={image} />);
+      .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
 
     return (
       <div className="dynoHomeContainer">
@@ -29,7 +29,7 @@ function DynamicHome(props) {
     return <h1>Loading...</h1>;
   };
 
-  return <section>{props.images ? loaded() : loading()}</section>;
+  return <section>{props.evnts ? loaded() : loading()}</section>;
 }
 
 export default DynamicHome;
