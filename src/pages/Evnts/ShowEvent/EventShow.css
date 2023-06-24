@@ -123,7 +123,11 @@
   gap: 10px;
   margin-bottom: 20px;
 }
-
+.showVenueDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 /*  HOSTED AT SECTION IS STATIC */
 
 .hostedAtWrapper {
@@ -177,6 +181,91 @@
   margin: 0;
   padding: 0;
 }
+
+/* AMENITIES */
+.amenitiesIconWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.amenitiesInner {
+  display: flex;
+  align-items: center;
+}
+
+.amenitiesInner img {
+  margin-right: 35px;
+}
+
+.amenitiesInner p {
+  margin: 15px;
+  padding: 0;
+}
+
+/* REVIEWS */
+.reviewsWrapper {
+  text-align: left;
+  margin-left: -110px;
+}
+
+.reviewsAmount {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.reviewsInner p {
+  margin: 13px 0 40px 0;
+  padding: 0;
+}
+
+.viewAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.viewAllP {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  justify-self: center;
+  align-self: center;
+  color: var(--black-col);
+  margin: 10px 0 10px 0;
+}
+
+.createReviewBtnP {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0px;
+  padding: 0px 20px;
+}
+
+.createReviewBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  margin: 50px 0 20px 20px;
+}
+
+.expCard {
+  width: calc(90% / 2 - 40px);
+  margin: 10px;
+  border-radius: 40px;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 5s, box-shadow 0.3s;
+}
+
+/* .recContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+} */
 
 @media (max-width: 350px) {
   .eventShowWrapper {
