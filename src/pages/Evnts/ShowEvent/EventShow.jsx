@@ -9,15 +9,35 @@ import Tactile from "../../../assets/buttons-icons/amenities-tac.svg";
 import Ramps from "../../../assets/buttons-icons/amenities-ramp.svg";
 import Dogs from "../../../assets/buttons-icons/amenities-dog.svg";
 import LikeButton from "../../../components/LikeButton/LikeButton";
+import { useScrollToTop } from "../../../Utilities/scrollToTop";
 import "./EventShow.css";
 
 function Evnt(props) {
+  useScrollToTop();
+
+  const handleScroll = () => {
+    const scrollToTop = () => {
+      const currentPosition = window.scrollY;
+      if (currentPosition > 0) {
+        window.scrollTo(0, currentPosition - 50); // Adjust the scroll speed by changing the value (e.g., 50)
+        window.requestAnimationFrame(scrollToTop);
+      }
+    };
+
+    window.requestAnimationFrame(scrollToTop);
+  };
+
   const { id } = useParams();
   const evnts = props.evnts;
 
-  const twoSuggestions = props.evnts
-    .slice(4, 6)
-    .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+  const getRandomEvents = (count) => {
+    const shuffled = props.evnts.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
+  const twoSuggestions = getRandomEvents(2).map((evnt) => (
+    <ExperienceCard key={evnt._id} evnt={evnt} />
+  ));
 
   if (evnts === null) {
     return <p>Loading...</p>; // Display a loading state
@@ -167,7 +187,9 @@ function Evnt(props) {
             <div className="recommendWrapper">
               <h3>You Might Also Like:</h3>
               <div className="recContainer">
-                <div className="recCard-container">{twoSuggestions}</div>
+                <div className="recCard-container" onClick={handleScroll}>
+                  {twoSuggestions}{" "}
+                </div>
               </div>
             </div>
           </div>

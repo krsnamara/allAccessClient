@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import LocationIcon from "../../assets/buttons-icons/location.svg";
 import LikeButton from "../LikeButton/LikeButton";
+import { useScrollToTop } from "../../Utilities/scrollToTop";
 import "./ExperienceCard.css";
 
 export default function SingleEvent({ evnt }) {
+  useScrollToTop();
+
   return (
     <div className="expCard">
       <div className="expCard-heart">

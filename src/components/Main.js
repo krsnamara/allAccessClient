@@ -5,13 +5,15 @@ import useImages from "../Utilities/images";
 import Home from "../pages/Home/Home";
 import EventShow from "../pages/Evnts/ShowEvent/EventShow";
 import NewEvnt from "../pages/Evnts/NewEvnt/NewEvnt";
+import UpdateEvnt from "../pages/Evnts/UpdateEvnts/UpdateEvnt";
 import CreateProfile from "../pages/Profile/CreateProfile/CreateProfile";
 import ProfilePage from "../pages/Profile/ProfilePage/ProfilePage";
+import SearchBar from "../components/SearchBar/SearchBar";
 import "./Main.css";
 
 function Main(props) {
   // Invoke custom hooks
-  const { evnts, deleteEvnts, createEvnts } = useEvnts(props);
+  const { evnts, deleteEvnts, createEvnts, updateEvnts } = useEvnts(props);
 
   // console.log(evnts);
 
@@ -44,6 +46,17 @@ function Main(props) {
             />
           }
         />
+        <Route
+          path="/update/:id"
+          element={
+            <UpdateEvnt
+              evnts={evnts}
+              updateEvnts={updateEvnts}
+              user={props.user}
+            />
+          }
+        />
+        <Route path="/searchbar" element={<SearchBar />} />
       </Routes>
     </main>
   );
