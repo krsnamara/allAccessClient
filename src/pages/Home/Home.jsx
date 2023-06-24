@@ -7,9 +7,11 @@ import NavAll from "../../components/NavFilters/NavAll/NavAll.jsx";
 import NavBars from "../../components/NavFilters/NavBars/NavBars.jsx";
 import NavClasses from "../../components/NavFilters/NavClasses/NavClasses.jsx";
 import Next from "../../assets/buttons-icons/nav-filters-next.svg";
+import { useScrollToTop } from "../../Utilities/scrollToTop";
 import "./Home.css";
 
 function Home(props) {
+  useScrollToTop();
   const [showMap, setShowMap] = useState(false);
 
   const handleToggleMap = () => {

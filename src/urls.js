@@ -5,4 +5,5 @@ export const API_URLS = {
   REVIEWS: MAIN_URL + "reviews/",
   EVNTS: MAIN_URL + "events/",
   IMAGES: MAIN_URL + "images/",
+  SEARCH: MAIN_URL + "search/",
 };

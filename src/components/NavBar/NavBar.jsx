@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { IoChevronBackCircleOutline, IoSearchOutline } from "react-icons/io5";
+import { IoChevronBackCircleOutline } from "react-icons/io5";
+import SearchBar from "../SearchBar/SearchBar";
 import Logo from "../../assets/buttons-icons/logo.svg";
 import LoginModal from "../NavLoginModal/NavLoginModal";
 import "./NavBar.css";
@@ -21,12 +22,7 @@ function NavBar({ user }) {
             </Link>
           </div>
           <div className="searchBarWrapper">
-            <div className="navBarSearch">
-              <div className="searchIconLink">
-                <IoSearchOutline size={25} />
-              </div>
-              <p>Location, landmark, or address</p>
-            </div>
+            <SearchBar />
           </div>
           <div className="loginModal">
             <LoginModal user={user} />

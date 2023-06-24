@@ -1,9 +1,12 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
 import LocationIcon from "../../../assets/buttons-icons/location.svg";
+import { useScrollToTop } from "../../../Utilities/scrollToTop";
+
 import "./ProfilePage.css";
 
 const ProfilePage = ({ evnts, user, deleteEvnts }) => {
+  useScrollToTop();
   // console.log(evnts);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -74,10 +77,11 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
           <div className="eventsMapWrapper">
             {evnts.map((evnt) => (
               <div className="eventsMap" key={evnt._id}>
-                {/* <div className="buttonFlex"> */}
-                <button className="eventsBtnEdit" onClick={handleEdit}>
-                  <p className="editBtnP">Edit</p>
-                </button>
+                <Link to={`/update/${evnt._id}`} style={{ color: "black" }}>
+                  <button className="eventsBtnEdit">
+                    <p className="editBtnP">Edit</p>
+                  </button>
+                </Link>
                 {user && (
                   <button
                     onClick={() => handleDelete(evnt._id)}
@@ -86,7 +90,6 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
                     <p className="editBtnP">Delete</p>
                   </button>
                 )}
-                {/* </div> */}
                 <p className="eventNameP">{evnt.name}</p>
                 <p className="eventVenueP">@ Avenger Studio</p>
                 <div className="eventLocation-wrapper">
