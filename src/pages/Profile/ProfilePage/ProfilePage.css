@@ -143,9 +143,16 @@
   transition: transform 5s, box-shadow 0.3s;
 }
 
+.buttonFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .eventsBtnEdit {
   position: relative;
-  left: 85%;
+  left: 78%;
   top: 50%;
   border-radius: 30px;
   background-color: var(--black-col);

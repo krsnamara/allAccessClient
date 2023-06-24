@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import LocationIcon from "../../../assets/buttons-icons/location.svg";
 import EventTypeIcon from "../../../assets/buttons-icons/show-event-type.svg";
 import LikeButton from "../../../components/LikeButton/LikeButton";
@@ -6,21 +6,6 @@ import "./EventShow.css";
 
 function Evnt(props) {
   const { id } = useParams();
-  const navigate = useNavigate();
-
-  const handleDelete = () => {
-    props
-      .deleteEvnts(id)
-      .then(() => {
-        // Handle successful deletion, such as showing a success message or navigating back to a different page
-        navigate("/"); // Navigates back to the EventsIndex page
-        window.location.reload(); // Refresh the page
-      })
-      .catch((error) => {
-        // Handle error during deletion, such as displaying an error message
-        console.error("Error deleting event:", error);
-      });
-  };
 
   const handleEdit = (e) => {
     e.preventDefault();
@@ -100,7 +85,6 @@ function Evnt(props) {
             </div>
           </div>
         </section>
-        {props.user && <button onClick={handleDelete}>Delete</button>}
       </div>
     );
   };

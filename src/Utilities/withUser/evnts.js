@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { API_URLS } from "../urls";
 
-const useEvnts = () => {
+const useEvnts = (props) => {
   const [evnts, setEvnts] = useState(null);
 
   const getEvntsRef = useRef(null);
@@ -14,37 +14,30 @@ const useEvnts = () => {
     setEvnts(data);
   };
 
-  useEffect(() => {
-    const getEvnts = async () => {
-      const response = await fetch(URL);
-      const data = await response.json();
-      setEvnts(data);
-    };
-
-    getEvnts();
-  }, []);
-
-  // console.log(`evnts.js line 17 ${JSON.stringify(evnts)}`);
+  console.log(`evnts.js line 17 ${JSON.stringify(evnts)}`);
   // console.log(`evnts.js line 18 ${URL}`);
 
   const createEvnts = async (evnts) => {
-    const response = await fetch(URL, {
+    if (!props.user) return;
+    const token = await props.user.getIdToken();
+    await fetch(URL, {
       method: "POST",
       headers: {
         "Content-type": "Application/json",
+        Authorization: "Bearer " + token,
       },
       body: JSON.stringify(evnts),
     });
-    if (response.ok) {
-      getEvnts();
-    }
+    getEvnts();
   };
 
   const updateEvnts = async (id, updatedEvnt) => {
-    const response = await fetch(URL + id, {
+    const token = await props.user.getIdToken();
+    await fetch(URL + id, {
       method: "PUT",
       headers: {
         "Content-type": "Application/json",
+        Authorization: "Bearer " + token,
       },
       body: JSON.stringify(updatedEvnt),
     });
@@ -52,8 +45,12 @@ const useEvnts = () => {
   };
 
   const deleteEvnts = async (id) => {
+    const token = await props.user.getIdToken();
     const response = await fetch(URL + id, {
       method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
     });
     if (response.ok) {
       getEvnts();
@@ -65,9 +62,18 @@ const useEvnts = () => {
   });
 
   //without user
+  // useEffect(() => {
+  //   getEvntsRef.current();
+  // }, []);
+
+  // with user
   useEffect(() => {
-    getEvntsRef.current();
-  }, []);
+    if (props.user) {
+      getEvntsRef.current();
+    } else {
+      setEvnts(null);
+    }
+  }, [props.user]);
 
   return {
     evnts,

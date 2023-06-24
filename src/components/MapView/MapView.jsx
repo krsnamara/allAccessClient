@@ -4,7 +4,7 @@ import MapAPI from "../MapAPI/MapAPI";
 import LocationIcon from "../../assets/buttons-icons/location.svg";
 import "./MapView.css";
 
-function MapView({ images }) {
+function MapView({ evnts }) {
   const [visibleCards, setVisibleCards] = useState(3);
 
   const handleLoadMore = () => {
@@ -21,21 +21,21 @@ function MapView({ images }) {
             <MapAPI apiKey={googleMapsApiKey} className="home-map-img" />
           </div>
           <div className="home-card-container">
-            {images.slice(0, visibleCards).map((image) => (
-              <div key={image._id} className="home-card">
+            {evnts.slice(0, visibleCards).map((evnt) => (
+              <div key={evnt._id} className="home-card">
                 <div className="home-card-picture">
                   <img
-                    src={image.imageUrl}
-                    alt={image.imageUrl}
+                    src={evnt.imageUrl}
+                    alt={evnt.imageUrl}
                     className="home-card-img-top"
                   />
                 </div>
                 <div className="home-card-body">
                   <Link
-                    to={`/images/${image._id}`}
+                    to={`/images/${evnt._id}`}
                     style={{ color: "black", textDecoration: "none" }}
                   >
-                    <h5 className="home-card-title">{image.name}</h5>
+                    <h5 className="home-card-title">{evnt.name}</h5>
                     <div className="mapLocationRating">
                       <div className="mapLocation-wrapper">
                         <img
@@ -43,7 +43,7 @@ function MapView({ images }) {
                           alt="locationIcon"
                           className="mapLocationIcon"
                         />
-                        <p className="mapLocationText">{image.address}</p>
+                        <p className="mapLocationText">{evnt.address}</p>
                       </div>
                       <div className="mapRatingWrapper">
                         <p className="mapRatingText">4.0</p>
@@ -54,7 +54,7 @@ function MapView({ images }) {
                 </div>
               </div>
             ))}
-            {visibleCards < images.length && (
+            {visibleCards < evnts.length && (
               <p onClick={handleLoadMore} className="mapLoadMore">
                 Load more
               </p>
@@ -69,7 +69,7 @@ function MapView({ images }) {
     return <h1>Loading...</h1>;
   };
 
-  return <section>{images ? loaded() : loading()}</section>;
+  return <section>{evnts ? loaded() : loading()}</section>;
 }
 
 export default MapView;
