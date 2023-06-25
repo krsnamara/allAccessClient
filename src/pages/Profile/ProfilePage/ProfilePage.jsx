@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { yearJoined } from "../../../Utilities/randomUtils";
 import { formatDateTime } from "../../../Utilities/formatDateTime";
 import { formatGoogleDate } from "../../../Utilities/formatGoogleDate";
+import { randomCityState } from "../../../Utilities/randomCities";
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
 import LocationIcon from "../../../assets/buttons-icons/location.svg";
 import { useScrollToTop } from "../../../Utilities/scrollToTop";
@@ -79,7 +80,7 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
         <div className="profileInfo">
           <h1>{user.displayName}</h1>
           <div className="userInfo">
-            <p>Oakland, CA</p>
+            <p>{randomCityState}</p>
             <p className="verticalLine">&nbsp; | &nbsp;</p>
             {user ? (
               <p>
