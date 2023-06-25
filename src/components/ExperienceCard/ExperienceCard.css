@@ -3,15 +3,16 @@
   height: auto;
   object-fit: cover;
   object-position: top;
+  border-radius: 20px;
 }
 
 .expCard {
   width: calc(100% / 5 - 20px);
   margin: 10px;
-  border-radius: 40px;
-  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
+  /* border-radius: 40px; */
+  /* box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3); */
   overflow: hidden;
-  transition: transform 5s, box-shadow 0.3s;
+  /* transition: transform 5s, box-shadow 0.3s; */
 }
 
 .expCard-container {
@@ -20,10 +21,10 @@
   justify-content: center;
 }
 
-.expCard:hover {
+/* .expCard:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .expCard-heart {
   position: relative;
@@ -39,7 +40,7 @@
 }
 
 .expCard-title {
-  margin-top: 5px;
+  margin-top: 0px;
   margin-bottom: -1px;
   font-size: 18px;
   letter-spacing: 1px;
@@ -73,9 +74,13 @@
 
 .like-button {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 3px;
+  right: 15px;
   z-index: 1;
+}
+
+.expCardType {
+  margin-top: 20px;
 }
 
 /* Media Queries */
@@ -83,7 +88,7 @@
 @media (max-width: 1600px) {
   /* Desktop */
   .expCard {
-    width: calc(100% / 5 - 20px);
+    width: calc(100% / 3 - 20px);
   }
   .expCard-picture {
     height: 60%;
@@ -97,30 +102,17 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 950px) {
   /* Tablet */
   .expCard {
-    width: calc(100% / 3 - 20px);
+    width: calc(100% / 2 - 20px);
   }
   .like-button {
     margin-left: 10px;
   }
-  /* .expCard-picture {
-    height: 43%;
-  }
-  .expCard-body {
-    height: 57%;
-    padding: 10px;
-  }
-  .expCard {
-    height: 400px;
-  }
-  .expCard-body p {
-    margin-top: 0;
-  } */
 }
 
-@media (max-width: 767px) {
+@media (max-width: 780px) {
   /* Mobile */
   .expCard {
     width: calc(100% / 2 - 20px);
@@ -131,10 +123,10 @@
     margin-top: 10px;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 570px) {
   /* Mobile */
   .expCard {
-    width: calc(100% / 2 - 20px);
+    width: 98%;
     height: auto;
   }
   .like-button {

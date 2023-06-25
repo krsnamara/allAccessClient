@@ -11,17 +11,37 @@ function DynamicHome(props) {
       .slice(-4)
       .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
 
+    const firstSix = props.evnts
+      .slice(0, 6)
+      .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+
+    const lastSix = props.evnts
+      .slice(-6)
+      .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+
     return (
-      <div className="dynoHomeContainer">
-        <h1>Upcoming Events</h1>
-        <div className="expContainer">
-          <div className="expCard-container">{firstFour}</div>
+      <>
+        <div className="largeContainer">
+          <h1>Upcoming Events</h1>
+          <div className="expContainer">
+            <div className="expCard-container">{firstSix}</div>
+          </div>
+          <h1>Highest Rated Venues</h1>
+          <div className="expContainer">
+            <div className="expCard-container">{lastSix}</div>
+          </div>
         </div>
-        <h1>Highest Rated Venues</h1>
-        <div className="expContainer">
-          <div className="expCard-container">{lastFour}</div>
+        <div className="dynoHomeContainer">
+          <h1>Upcoming Events</h1>
+          <div className="expContainer">
+            <div className="expCard-container">{firstFour}</div>
+          </div>
+          <h1>Highest Rated Venues</h1>
+          <div className="expContainer">
+            <div className="expCard-container">{lastFour}</div>
+          </div>
         </div>
-      </div>
+      </>
     );
   };
 
