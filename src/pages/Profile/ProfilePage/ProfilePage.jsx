@@ -4,6 +4,7 @@ import { yearJoined } from "../../../Utilities/randomUtils";
 import { formatDateTime } from "../../../Utilities/formatDateTime";
 import { formatGoogleDate } from "../../../Utilities/formatGoogleDate";
 import { randomCityState } from "../../../Utilities/randomCities";
+import { futureFeature } from "../../../Utilities/eventListener/futureFeature";
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
 import LocationIcon from "../../../assets/buttons-icons/location.svg";
 import { useScrollToTop } from "../../../Utilities/scrollToTop";
@@ -59,7 +60,7 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    alert("This feature coming soon!");
+    futureFeature(e);
   };
 
   return (
