@@ -10,6 +10,7 @@
   left: 5px;
   width: 20px;
   height: 20px;
+  pointer-events: none;
 }
 
 .con-like .like {
@@ -19,6 +20,7 @@
   opacity: 0;
   z-index: 20;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .con-like .checkmark {
