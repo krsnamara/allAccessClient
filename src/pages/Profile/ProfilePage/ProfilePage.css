@@ -282,6 +282,21 @@
   color: var(--black-col);
 }
 
+@media (max-width: 626px) {
+  .eventsMapFlexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .profileEventsImg {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+  }
+}
 @media (max-width: 400px) {
   .verticalLine {
     display: none;
