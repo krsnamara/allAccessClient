@@ -20,7 +20,8 @@ export default function SingleEvent({ evnt }) {
         style={{ color: "black", textDecoration: "none" }}
       >
         <div className="expCard-body">
-          <p className="expCard-title">{evnt.name}</p>
+          <h3 className="expCard-title">{evnt.name}</h3>
+          <p className="expCardType">{evnt.eventType}</p>
           <div className="expLocation-wrapper">
             <img
               src={LocationIcon}

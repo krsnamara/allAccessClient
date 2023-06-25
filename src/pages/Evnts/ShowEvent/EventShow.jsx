@@ -188,7 +188,7 @@ function Evnt(props) {
               <h3>You Might Also Like:</h3>
               <div className="recContainer">
                 <div className="recCard-container" onClick={handleScroll}>
-                  {twoSuggestions}{" "}
+                  {twoSuggestions}
                 </div>
               </div>
             </div>

@@ -1,14 +1,15 @@
 /* Like Button */
 .con-like {
   --white: rgb(255, 255, 255, 0.8);
+  --grey: rgb(102, 102, 102, 0.7);
   --softYellow: #ffcc66;
   --softYellowLite: rgb(255, 204, 102, 0.8);
   --red: #ff6666;
   position: relative;
   top: 5px;
   left: 5px;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 .con-like .like {
@@ -29,14 +30,14 @@
 }
 
 .con-like .outline {
-  fill: var(--white);
+  fill: var(--grey);
   stroke: var(--white);
-  stroke-width: 1px;
+  stroke-width: 2px;
   position: absolute;
   transition: fill 0.3s; /* Add transition for smooth color change */
 }
 
-.con-like:hover .outline,
+.outline,
 .con-like .like:checked ~ .checkmark .outline {
   fill: var(--softYellowLite);
 }
@@ -110,8 +111,7 @@
   }
 }
 
-@media (max-width: 991px) {
-  /* Tablet */
+/* @media (max-width: 991px) {
   .con-like {
     top: 0;
     left: 0;
@@ -121,9 +121,8 @@
 }
 
 @media (max-width: 767px) {
-  /* Mobile */
   .con-like {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
-}
+} */
