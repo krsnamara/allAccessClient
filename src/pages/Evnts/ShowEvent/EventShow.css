@@ -290,7 +290,7 @@
   justify-content: center;
   align-items: center;
   gap: 0px;
-  margin: 50px 0 20px 20px;
+  margin: 40px 0 30px 0px;
 }
 
 .recCardMap {
@@ -305,6 +305,15 @@
     margin-top: 0px;
     padding: 20px;
   }
+  .typeWrapper {
+    margin-bottom: 20px;
+  }
+  .eventShowDescription {
+    margin: 20px 0 30px 0;
+  }
+  .showBtnWebsite {
+    margin: 0px 0 10px 0;
+  }
   .locationTypeWrapper {
     display: flex;
     flex-direction: column;
@@ -315,5 +324,11 @@
   .recCardMap {
     flex-direction: column;
     justify-content: space-evenly;
+  }
+  .reviewsInner {
+    margin-left: 0px;
+  }
+  .createReviewBtn {
+    margin: 20px 0 20px 0;
   }
 }
