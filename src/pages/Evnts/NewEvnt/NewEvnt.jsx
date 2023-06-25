@@ -341,7 +341,10 @@ function NewEvnt(props) {
             </div>
           </div>
           {/* LIFESTYLE */}
-          <div className="checkboxGroupings">
+          <div
+            className="checkboxGroupingscursor-pointer"
+            onClick={toggleLifestyle}
+          >
             <h2 className="input-title">Lifestyle</h2>
             <img
               src={DownBracket}
@@ -422,7 +425,10 @@ function NewEvnt(props) {
           )}
 
           {/* DINNING */}
-          <div className="checkboxGroupings">
+          <div
+            className="checkboxGroupings cursor-pointer"
+            onClick={toggleDining}
+          >
             <h2 className="input-title">Dining</h2>
             <img
               src={DownBracket}
@@ -500,7 +506,10 @@ function NewEvnt(props) {
             </>
           )}
           {/* ATTRACTIONS */}
-          <div className="checkboxGroupings">
+          <div
+            className="checkboxGroupingscursor-pointer"
+            onClick={toggleAttractions}
+          >
             <h2 className="input-title">Attractions</h2>
             <img
               src={DownBracket}

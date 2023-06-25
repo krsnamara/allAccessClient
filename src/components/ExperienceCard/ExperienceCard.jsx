@@ -7,6 +7,22 @@ import "./ExperienceCard.css";
 export default function SingleEvent({ evnt }) {
   useScrollToTop();
 
+  const getRandomFloat = (min, max) => {
+    const decimalPlaces = 1;
+    const randomNumber = (Math.random() * (max - min) + min).toFixed(
+      decimalPlaces
+    );
+    return parseFloat(randomNumber);
+  };
+
+  const rating = getRandomFloat(3, 5);
+
+  const getRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  const reviewsNumber = getRandomNumber(4, 236);
+
   return (
     <div className="expCard">
       <div className="expCard-heart">
@@ -20,7 +36,13 @@ export default function SingleEvent({ evnt }) {
         style={{ color: "black", textDecoration: "none" }}
       >
         <div className="expCard-body">
-          <h3 className="expCard-title">{evnt.name}</h3>
+          <div className="nameRatingWrapper">
+            <h3 className="expCard-title">{evnt.name}</h3>
+            <div className="ratingWrapper">
+              <p className="ratingText">{rating}</p>
+              <p className="reviewNumber">({reviewsNumber})</p>
+            </div>
+          </div>
           <p className="expCardType">{evnt.eventType}</p>
           <div className="expLocation-wrapper">
             <img
@@ -29,10 +51,6 @@ export default function SingleEvent({ evnt }) {
               className="expLocationIcon"
             />
             <p className="expLocationText">{evnt.address}</p>
-          </div>
-          <div className="ratingWrapper">
-            <p className="ratingText">4.0</p>
-            <p className="rating-amount">{"(487)"}</p>
           </div>
         </div>
       </Link>

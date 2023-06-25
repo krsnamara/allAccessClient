@@ -9,10 +9,7 @@
 .expCard {
   width: calc(100% / 5 - 20px);
   margin: 10px;
-  /* border-radius: 40px; */
-  /* box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3); */
   overflow: hidden;
-  /* transition: transform 5s, box-shadow 0.3s; */
 }
 
 .expCard-container {
@@ -20,11 +17,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
-/* .expCard:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
-} */
 
 .expCard-heart {
   position: relative;
@@ -62,25 +54,35 @@
   letter-spacing: 0.3px;
   margin: 5px;
 }
+.nameRatingWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.expCardType {
+  margin-top: 20px;
+}
 .ratingWrapper {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 10px;
 }
 .ratingText {
   /* margin-top: 0px; */
   font-weight: 600;
 }
 
+.reviewNumber {
+  font-size: 14px;
+  color: #717171;
+}
+
 .like-button {
   position: absolute;
   top: 3px;
   right: 15px;
-  z-index: 1;
-}
-
-.expCardType {
-  margin-top: 20px;
+  z-index: 10;
 }
 
 /* Media Queries */

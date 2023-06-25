@@ -1,0 +1,83 @@
+.sugCard-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+}
+
+.sugCard {
+  width: 100%;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.sugCard-container {
+  display: flex;
+  justify-content: center;
+}
+
+.sugCard-heart {
+  position: relative;
+  overflow: hidden;
+}
+
+.sugCard-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 10px 10px 10px;
+  background-color: #fff;
+}
+
+.sugCard-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.sugLocation-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+  margin-left: 0px;
+}
+
+.sugLocationIcon {
+  width: 20px;
+  height: 20px;
+}
+.sugLocationText {
+  letter-spacing: 0.3px;
+  margin: 5px;
+}
+.sugnameRatingWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.sugCardType {
+  margin-top: 20px;
+}
+.sugratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sugratingText {
+  /* margin-top: 0px; */
+  font-weight: 600;
+}
+
+.sugreviewNumber {
+  font-size: 14px;
+  color: #717171;
+}
+
+/* Media Queries */
+
+@media (max-width: 450px) {
+}
