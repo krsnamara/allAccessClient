@@ -10,11 +10,13 @@ import Ramps from "../../../assets/buttons-icons/amenities-ramp.svg";
 import Dogs from "../../../assets/buttons-icons/amenities-dog.svg";
 import LikeButton from "../../../components/LikeButton/LikeButton";
 import { rating, reviewsNumber } from "../../../Utilities/randomUtils";
+import { futureFeature } from "../../../Utilities/eventListener/futureFeature";
 import { useScrollToTop } from "../../../Utilities/scrollToTop";
+
 import "./EventShow.css";
 
 function Evnt(props) {
-  // useScrollToTop();
+  useScrollToTop();
 
   const handleScroll = () => {
     const scrollToTop = () => {
@@ -44,9 +46,9 @@ function Evnt(props) {
     return <p>Loading...</p>; // Display a loading state
   }
 
-  const handleEdit = (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
-    alert("This feature coming soon!");
+    futureFeature(e);
   };
 
   // console.log(props);
@@ -98,7 +100,7 @@ function Evnt(props) {
             <h3>Description</h3>
             <p className="eventShowDescription">{evnt.description}</p>
             <div className="buttonFlex">
-              <button className="showBtnWebsite" onClick={handleEdit}>
+              <button className="showBtnWebsite" onClick={handleClick}>
                 <p className="showBtnP">Go to website</p>
               </button>
             </div>
@@ -173,12 +175,12 @@ function Evnt(props) {
                 <p>"Wheelies Kitchen is an absolute gem!" - David R.</p>
               </div>
               <div className="viewAll cursor-pointer">
-                <p className="viewAllP" onClick={handleEdit}>
+                <p className="viewAllP" onClick={handleClick}>
                   View All
                 </p>
               </div>
               <div className="createReviewBtn">
-                <button className="showBtnWebsite" onClick={handleEdit}>
+                <button className="showBtnWebsite" onClick={handleClick}>
                   <p className="createReviewBtnP">Create a review</p>
                 </button>
               </div>

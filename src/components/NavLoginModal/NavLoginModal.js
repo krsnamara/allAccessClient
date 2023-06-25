@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { logout, login } from "../../firebase";
+import { futureFeature } from "../../Utilities/eventListener/futureFeature";
 import LoginHamburger from "../../assets/buttons-icons/login-hamburger.svg";
 import LoginIcon from "../../assets/buttons-icons/logout.svg";
 import ProfileSmallCircle from "../../assets/buttons-icons/profile-img.svg";
@@ -15,6 +16,11 @@ export default function Modal({ user }) {
 
   const toggleModal = () => {
     setModal(!modal);
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    futureFeature(e);
   };
 
   if (modal) {
@@ -102,7 +108,9 @@ export default function Modal({ user }) {
                       alt="settings"
                       className="settings"
                     />
-                    <p className="loginLogout">Settings</p>
+                    <p className="loginLogout" onClick={handleClick}>
+                      Settings
+                    </p>
                   </div>
                   <div className="loginWrapper" onClick={toggleModal}>
                     <img
