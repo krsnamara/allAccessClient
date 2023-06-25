@@ -15,7 +15,7 @@ import "./EventShow.css";
 
 function Evnt(props) {
   // useScrollToTop();
-  console.log(props);
+
   const handleScroll = () => {
     const scrollToTop = () => {
       const currentPosition = window.scrollY;
@@ -178,7 +178,7 @@ function Evnt(props) {
                 </p>
               </div>
               <div className="createReviewBtn">
-                <button className="showBtnWebsite">
+                <button className="showBtnWebsite" onClick={handleEdit}>
                   <p className="createReviewBtnP">Create a review</p>
                 </button>
               </div>
