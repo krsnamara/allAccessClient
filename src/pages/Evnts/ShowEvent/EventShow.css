@@ -302,7 +302,7 @@
 
 @media (max-width: 450px) {
   .eventShowWrapper {
-    margin-top: 90px;
+    margin-top: 0px;
     padding: 20px;
   }
   .locationTypeWrapper {
