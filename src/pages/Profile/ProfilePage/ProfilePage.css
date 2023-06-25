@@ -6,16 +6,38 @@
   align-items: center;
 }
 
+.profileInfo h1 {
+  margin: 0;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* STYLING FOR GOOGLE ACCOUNT IMAGE */
+.profileImgContainer {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid var(--soft-yellow);
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.profileImgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .picCont {
   position: relative;
   height: 25vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-}
-
-.profileImg {
-  left: 35%;
 }
 
 .profileInfo {
@@ -119,9 +141,6 @@
 .createEventWrapper {
   display: flex;
   align-items: center;
-  /* gap: 8px; */
-  /* margin-top: 0; */
-  /* margin-left: -5px; */
 }
 
 .eventsMapWrapper {
@@ -143,6 +162,17 @@
   transition: transform 5s, box-shadow 0.3s;
 }
 
+.eventsMapFlexbox {
+  display: flex;
+  gap: 15px;
+}
+
+.profileEventsImg {
+  width: 40%;
+  height: auto;
+  border-radius: 20px;
+}
+
 .buttonFlex {
   display: flex;
   flex-direction: column;
@@ -150,12 +180,18 @@
   align-items: center;
 }
 
+.profileCardBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  gap: 10px;
+  margin-top: 8px;
+}
+
 .eventsBtnEdit {
-  position: relative;
-  left: 78%;
-  top: 50%;
   border-radius: 30px;
   background-color: var(--black-col);
+  text-decoration: none;
   color: var(--off-white);
   padding: 5px 15px 5px 15px;
   margin: 0px;
@@ -223,11 +259,56 @@
 .moreDetailsHref:hover {
   color: var(--text-dark);
 }
+.sortButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.eventsBtnSort {
+  border-radius: 30px;
+  background-color: var(--black-col);
+  color: var(--off-white);
+  padding: 5px 15px 5px 15px;
+  margin: 0px;
+  border: none;
+  cursor: pointer;
+  z-index: 7;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-@media (max-width: 370px) {
-  .eventsBtnEdit {
-    left: 75%;
-    top: 50%;
-    /* transform: translate(-50%, -50%); */
+.eventsBtnSort:hover {
+  background-color: var(--soft-yellow);
+  color: var(--black-col);
+}
+
+@media (max-width: 626px) {
+  .eventsMapFlexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .profileEventsImg {
+    width: 90%;
+    height: auto;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .verticalLine {
+    display: none;
+  }
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .userInfo p {
+    margin: 5px;
   }
 }

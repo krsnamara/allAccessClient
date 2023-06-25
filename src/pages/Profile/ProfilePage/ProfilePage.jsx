@@ -1,4 +1,9 @@
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { yearJoined } from "../../../Utilities/randomUtils";
+import { formatDateTime } from "../../../Utilities/formatDateTime";
+import { formatGoogleDate } from "../../../Utilities/formatGoogleDate";
+import { randomCityState } from "../../../Utilities/randomCities";
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
 import LocationIcon from "../../../assets/buttons-icons/location.svg";
 import { useScrollToTop } from "../../../Utilities/scrollToTop";
@@ -7,9 +12,30 @@ import "./ProfilePage.css";
 
 const ProfilePage = ({ evnts, user, deleteEvnts }) => {
   useScrollToTop();
-  // console.log(evnts);
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const userCreationTime = user.metadata.creationTime;
+  const formattedTime = formatGoogleDate(userCreationTime);
+
+  const [sortedEvnts, setSortedEvnts] = useState([]);
+  const [sortBy, setSortBy] = useState("name");
+
+  useEffect(() => {
+    if (sortBy === "name") {
+      const sortedByName = [...evnts].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+      setSortedEvnts(sortedByName);
+    } else if (sortBy === "date") {
+      const sortedByDate = [...evnts].sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+      setSortedEvnts(sortedByDate);
+    }
+  }, [evnts, sortBy]);
+
+  // const evntDateTime = formatDateTime(evnt.createdAt);
 
   if (evnts === null) {
     return <p>Loading...</p>; // Display a loading state
@@ -22,12 +48,10 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
     if (confirmDelete) {
       deleteEvnts(evntId)
         .then(() => {
-          // Handle successful deletion, such as showing a success message or navigating back to a different page
-          navigate("/profile"); // Navigates back to the EventsIndex page
-          window.location.reload(); // Refresh the page
+          navigate("/profile");
+          window.location.reload();
         })
         .catch((error) => {
-          // Handle error during deletion, such as displaying an error message
           console.error("Error deleting event:", error);
         });
     }
@@ -42,17 +66,30 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
     <div className="profilePage">
       <div className="profileBody">
         <div className="picCont">
-          <img src={ProfileImg} alt="profile" className="profileImg" />
+          {user ? (
+            <div className="profileImgContainer">
+              <img src={user.photoURL} alt="profile" className="profileImg" />
+            </div>
+          ) : (
+            <img src={ProfileImg} alt="profile" className="profileImg" />
+          )}
           <button className="profileBtnEdit" onClick={handleEdit}>
             <p className="profileP">Edit</p>
           </button>
         </div>
         <div className="profileInfo">
-          <h3>Sophia</h3>
-          <div className="flex-ctr-ctr">
-            <p>Oakland, CA</p>
-            <p>&nbsp; | &nbsp;</p>
-            <p>Joined May 2023</p>
+          <h1>{user.displayName}</h1>
+          <div className="userInfo">
+            <p>{randomCityState}</p>
+            <p className="verticalLine">&nbsp; | &nbsp;</p>
+            {user ? (
+              <p>
+                Joined {formattedTime.gMonth} {formattedTime.gDay},{" "}
+                {formattedTime.gYear} at {formattedTime.gTime}
+              </p>
+            ) : (
+              <p>Joined May {yearJoined}</p>
+            )}
           </div>
         </div>
         <hr style={{ width: "90%", maxWidth: "600px", textAlign: "center" }} />
@@ -74,42 +111,69 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
         <hr style={{ width: "90%", maxWidth: "600px", textAlign: "center" }} />
         <div className="createEventWrapper">
           <p className="eventsP">Events</p>
+          <div className="sortButtons">
+            <button onClick={() => setSortBy("name")} className="eventsBtnSort">
+              Sort by Name
+            </button>
+            <button onClick={() => setSortBy("date")} className="eventsBtnSort">
+              Sort by Date
+            </button>
+          </div>
           <div className="eventsMapWrapper">
-            {evnts.map((evnt) => (
-              <div className="eventsMap" key={evnt._id}>
-                <Link to={`/update/${evnt._id}`} style={{ color: "black" }}>
-                  <button className="eventsBtnEdit">
-                    <p className="editBtnP">Edit</p>
-                  </button>
-                </Link>
-                {user && (
-                  <button
-                    onClick={() => handleDelete(evnt._id)}
-                    className="eventsBtnEdit"
-                  >
-                    <p className="editBtnP">Delete</p>
-                  </button>
-                )}
-                <p className="eventNameP">{evnt.name}</p>
-                <p className="eventVenueP">@ Avenger Studio</p>
-                <div className="eventLocation-wrapper">
-                  <img
-                    src={LocationIcon}
-                    alt="eventIcon"
-                    className="eventIcon"
-                  />
-                  <p className="eventAddress">
-                    {" "}
-                    123 Main Street {evnt.address}
-                  </p>
+            {sortedEvnts.map((evnt) => {
+              const evntDateTime = formatDateTime(evnt.createdAt);
+
+              return (
+                <div className="eventsMap" key={evnt._id}>
+                  <div className="eventsMapFlexbox">
+                    <img
+                      src={evnt.imageUrl}
+                      alt="event"
+                      className="profileEventsImg"
+                    />
+                    <div className="eventsMapText">
+                      <p className="eventNameP">{evnt.name}</p>
+                      <p className="eventVenueP">@ Avenger Studio</p>
+                      <div className="eventLocation-wrapper">
+                        <img
+                          src={LocationIcon}
+                          alt="eventIcon"
+                          className="eventIcon"
+                        />
+                        <p className="eventAddress">
+                          123 Main Street {evnt.address}
+                        </p>
+                      </div>
+                      <div className="profileCardBtns">
+                        <button
+                          className="eventsBtnEdit"
+                          onClick={() => navigate(`/update/${evnt._id}`)}
+                        >
+                          <p className="editBtnP">Edit</p>
+                        </button>
+                        {user && (
+                          <button
+                            onClick={() => handleDelete(evnt._id)}
+                            className="eventsBtnEdit"
+                          >
+                            <p className="editBtnP">Delete</p>
+                          </button>
+                        )}
+                        <p className="eventAddress">
+                          Date Created: {evntDateTime.month}-{evntDateTime.day}-
+                          {evntDateTime.year} at {evntDateTime.time}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="moreDetails">
+                    <Link to={`/events/${evnt._id}`} style={{ color: "black" }}>
+                      <p className="moreDetailsHref">More Details</p>
+                    </Link>
+                  </div>
                 </div>
-                <div className="moreDetails">
-                  <Link to={`/events/${evnt._id}`} style={{ color: "black" }}>
-                    <p className="moreDetailsHref">More Details</p>
-                  </Link>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div className="eventBtn">
             <Link to="/events/new">

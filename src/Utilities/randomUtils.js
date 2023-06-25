@@ -13,3 +13,5 @@ export function getRandomNumber(min, max) {
 export const rating = getRandomFloat(3, 5);
 
 export const reviewsNumber = getRandomNumber(4, 236);
+
+export const yearJoined = getRandomNumber(1999, 2049);
