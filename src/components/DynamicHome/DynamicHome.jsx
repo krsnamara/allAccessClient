@@ -26,13 +26,13 @@ function DynamicHome(props) {
           <div className="expContainer">
             <div className="expCard-container">{firstSix}</div>
           </div>
-          <h1>Highest Rated Venues</h1>
+          <h1 className="homeTitle">Highest Rated Venues</h1>
           <div className="expContainer">
             <div className="expCard-container">{lastSix}</div>
           </div>
         </div>
         <div className="dynoHomeContainer">
-          <h1>Upcoming Events</h1>
+          <h1 className="homeTitle">Upcoming Events</h1>
           <div className="expContainer">
             <div className="expCard-container">{firstFour}</div>
           </div>

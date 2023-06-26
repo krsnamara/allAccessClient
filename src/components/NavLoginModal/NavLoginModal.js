@@ -4,7 +4,6 @@ import { logout, login } from "../../firebase";
 import { futureFeature } from "../../Utilities/eventListener/futureFeature";
 import LoginHamburger from "../../assets/buttons-icons/login-hamburger.svg";
 import LoginIcon from "../../assets/buttons-icons/logout.svg";
-import ProfileSmallCircle from "../../assets/buttons-icons/profile-img.svg";
 import MapView from "../../assets/buttons-icons/map-view.svg";
 import CreateEvent from "../../assets/buttons-icons/create-event.svg";
 import SettingsIcon from "../../assets/buttons-icons/settings.svg";
@@ -23,6 +22,11 @@ export default function Modal({ user }) {
   const handleClick = (e) => {
     e.preventDefault();
     futureFeature(e);
+  };
+
+  const handleProfile = (e) => {
+    e.preventDefault();
+    navigate("/profile");
   };
 
   const handleLogoutMessage = (e) => {
@@ -68,21 +72,24 @@ export default function Modal({ user }) {
             <div className="navBarModalWrapper">
               {user ? (
                 <div className="loginLogoutWrapper">
-                  <div className="profileCircleWrapper" onClick={toggleModal}>
-                    <img
-                      src={ProfileSmallCircle}
-                      alt="profileSmallCircle"
-                      className="profileSmallCircle"
-                    />
-                    <p className="loginLogout">
-                      {" "}
-                      <Link
-                        to="/profile"
-                        style={{ color: "white", textDecoration: "none" }}
-                      >
-                        Profile
-                      </Link>{" "}
-                    </p>
+                  <div className="settingsWrapper" onClick={toggleModal}>
+                    <div className="loginImgContainer">
+                      <img
+                        src={user.photoURL}
+                        alt="profileUrl"
+                        className="cursor-pointer"
+                        onClick={handleProfile}
+                      />
+                    </div>
+                    <Link
+                      to="/profile"
+                      style={{
+                        color: "white",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <p>Profile</p>
+                    </Link>
                   </div>
                   <div className="settingsWrapper" onClick={toggleModal}>
                     <img src={MapView} alt="mapView" className="createEvent" />

@@ -19,7 +19,7 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  console.log(evnts);
+  // console.log(evnts);
 
   const userCreationTime =
     user && user.metadata ? user.metadata.creationTime : null;

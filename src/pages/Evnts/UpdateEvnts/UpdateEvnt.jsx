@@ -150,7 +150,7 @@ function UpdateEvnt(props) {
       });
 
       window.alert("Event has been successfully updated");
-      navigate("/profile");
+      navigate("/");
       window.location.reload(); // Refresh the page
     } catch (error) {
       console.log(error);

@@ -4,7 +4,7 @@
   top: 0%;
   left: 0%;
   z-index: 100;
-  border: 5px solid white;
+  border-top: 10px solid white;
 }
 
 .navBarWrapper {
@@ -61,7 +61,7 @@
 /* CSS for Back Btn */
 
 .eventsNewNav {
-  margin-top: 80px;
+  margin-top: 70px;
   padding: 0px;
   display: flex;
   justify-content: center;
@@ -105,9 +105,3 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
-/* @media (max-width: 480px) {
-  .searchBarWrapper {
-    display: none;
-  }
-} */
