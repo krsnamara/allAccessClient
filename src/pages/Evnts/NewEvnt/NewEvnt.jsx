@@ -108,7 +108,8 @@ function NewEvnt(props) {
 
   const submit = async (event) => {
     event.preventDefault();
-    props.createEvnts(newForm);
+    const uid = props.userID;
+    props.createEvnts(newForm, uid);
     const formData = new FormData();
     formData.append("image", file);
     formData.append("name", newForm.name);

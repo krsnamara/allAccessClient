@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { yearJoined } from "../../../Utilities/randomUtils";
 import {
   formatDateTime,
@@ -16,7 +16,6 @@ import "./ProfilePage.css";
 
 const ProfilePage = ({ evnts, user, deleteEvnts }) => {
   useScrollToTop();
-  const { id } = useParams();
   const navigate = useNavigate();
 
   // console.log(evnts);

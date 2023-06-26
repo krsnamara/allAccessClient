@@ -22,7 +22,7 @@ const useEvnts = () => {
     };
 
     getEvnts();
-  }, []);
+  }, [URL]);
 
   // console.log(`evnts.js line 17 ${JSON.stringify(evnts)}`);
   // console.log(`evnts.js line 18 ${URL}`);
@@ -41,7 +41,7 @@ const useEvnts = () => {
   };
 
   const updateEvnts = async (id, updatedEvnt) => {
-    const response = await fetch(URL + id, {
+    await fetch(URL + id, {
       method: "PUT",
       headers: {
         "Content-type": "Application/json",

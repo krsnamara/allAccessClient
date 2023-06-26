@@ -3,21 +3,28 @@ import "./DynamicHome.css";
 
 function DynamicHome(props) {
   const loaded = () => {
-    const firstFour = props.evnts
-      .slice(0, 4)
-      .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+    let firstFour = [];
+    let lastFour = [];
+    let firstSix = [];
+    let lastSix = [];
 
-    const lastFour = props.evnts
-      .slice(-4)
-      .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+    if (Array.isArray(props.evnts)) {
+      firstFour = props.evnts
+        .slice(0, 4)
+        .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
 
-    const firstSix = props.evnts
-      .slice(0, 6)
-      .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+      lastFour = props.evnts
+        .slice(-4)
+        .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
 
-    const lastSix = props.evnts
-      .slice(-6)
-      .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+      firstSix = props.evnts
+        .slice(0, 6)
+        .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+
+      lastSix = props.evnts
+        .slice(-6)
+        .map((evnt) => <ExperienceCard key={evnt._id} evnt={evnt} />);
+    }
 
     return (
       <>

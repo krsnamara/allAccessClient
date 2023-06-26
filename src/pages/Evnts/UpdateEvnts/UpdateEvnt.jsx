@@ -58,7 +58,7 @@ function UpdateEvnt(props) {
     };
 
     fetchExistingEvent();
-  }, [id]);
+  }, [id, URL]);
 
   useEffect(() => {
     setNewForm(existingEvent);
