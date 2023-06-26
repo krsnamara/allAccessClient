@@ -72,8 +72,8 @@ export default function Modal({ user }) {
             <div className="navBarModalWrapper">
               {user ? (
                 <div className="loginLogoutWrapper">
-                  <div className="settingsWrapper">
-                    <div className="loginImgContainer" onClick={toggleModal}>
+                  <div className="settingsWrapper" onClick={toggleModal}>
+                    <div className="loginImgContainer">
                       <img
                         src={user.photoURL}
                         alt="profileUrl"
