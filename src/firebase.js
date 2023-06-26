@@ -1,11 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { 
-    GoogleAuthProvider,
-    GithubAuthProvider, 
-    getAuth, 
-    signInWithPopup, 
-    signOut } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  GithubAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -16,11 +17,11 @@ const firebaseConfig = {
   projectId: "react-peoples-service-app",
   storageBucket: "react-peoples-service-app.appspot.com",
   messagingSenderId: "6980999759",
-  appId: "1:6980999759:web:a34e6a13eb6585c264283a"
+  appId: "1:6980999759:web:a34e6a13eb6585c264283a",
 };
 
 // Initialize Firebase
-// eslint-disable-next-line 
+// eslint-disable-next-line
 const app = initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
@@ -40,9 +41,9 @@ export function loginWithGitHub() {
 
 // set up auth funcitons
 export function login() {
-    signInWithPopup(auth, provider);
+  signInWithPopup(auth, provider);
 }
 
 export function logout() {
-    return signOut(auth);
+  return signOut(auth);
 }

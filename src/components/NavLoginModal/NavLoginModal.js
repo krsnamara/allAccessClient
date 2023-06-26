@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout, login } from "../../firebase";
 import { futureFeature } from "../../Utilities/eventListener/futureFeature";
 import LoginHamburger from "../../assets/buttons-icons/login-hamburger.svg";
@@ -14,6 +14,8 @@ import "./NavLoginModal.css";
 export default function Modal({ user }) {
   const [modal, setModal] = useState(false);
 
+  const navigate = useNavigate();
+
   const toggleModal = () => {
     setModal(!modal);
   };
@@ -21,6 +23,12 @@ export default function Modal({ user }) {
   const handleClick = (e) => {
     e.preventDefault();
     futureFeature(e);
+  };
+
+  const handleLogoutMessage = (e) => {
+    e.preventDefault();
+    alert("You have successfully logged out!");
+    navigate("/");
   };
 
   if (modal) {
@@ -119,7 +127,13 @@ export default function Modal({ user }) {
                       className="loginLogoutIcon"
                     />
                     <p className="loginLogout" onClick={logout}>
-                      Log out
+                      <Link
+                        to="/"
+                        style={{ color: "white", textDecoration: "none" }}
+                        onClick={handleLogoutMessage}
+                      >
+                        Log out
+                      </Link>
                     </p>
                   </div>
                 </div>
