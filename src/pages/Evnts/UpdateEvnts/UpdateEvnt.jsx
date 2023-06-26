@@ -149,7 +149,7 @@ function UpdateEvnt(props) {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      window.alert("New Event has been successfully created");
+      window.alert("Event has been successfully updated");
       navigate("/profile");
       window.location.reload(); // Refresh the page
     } catch (error) {
@@ -157,7 +157,7 @@ function UpdateEvnt(props) {
     }
   };
 
-  console.log(existingEvent);
+  // console.log(existingEvent);
 
   return (
     <>

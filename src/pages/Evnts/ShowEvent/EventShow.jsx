@@ -12,6 +12,7 @@ import LikeButton from "../../../components/LikeButton/LikeButton";
 import { rating, reviewsNumber } from "../../../Utilities/randomUtils";
 import { futureFeature } from "../../../Utilities/eventListener/futureFeature";
 import { useScrollToTop } from "../../../Utilities/scrollToTop";
+import { reviewsArray } from "../../../Utilities/randomReviews";
 
 import "./EventShow.css";
 
@@ -44,6 +45,15 @@ function Evnt(props) {
 
   if (evnts === null) {
     return <p>Loading...</p>; // Display a loading state
+  }
+
+  const randomReviews = [];
+  while (randomReviews.length < 2) {
+    const randomIndex = Math.floor(Math.random() * reviewsArray.length);
+    const randomReview = reviewsArray[randomIndex];
+    if (!randomReviews.includes(randomReview)) {
+      randomReviews.push(randomReview);
+    }
   }
 
   const handleClick = (e) => {
@@ -171,8 +181,8 @@ function Evnt(props) {
                 <p className="reviewsNumber">({reviewsNumber})</p>
               </div>
               <div className="reviewsInner">
-                <p>"Great staff and accommodations" - Sarah M.</p>
-                <p>"Wheelies Kitchen is an absolute gem!" - David R.</p>
+                <p>{randomReviews[0]}</p>
+                <p>{randomReviews[1]}</p>
               </div>
               <div className="viewAll cursor-pointer">
                 <p className="viewAllP" onClick={handleClick}>

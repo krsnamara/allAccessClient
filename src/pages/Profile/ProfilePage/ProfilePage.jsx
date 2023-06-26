@@ -11,6 +11,7 @@ import { futureFeature } from "../../../Utilities/eventListener/futureFeature";
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
 import LocationIcon from "../../../assets/buttons-icons/location.svg";
 import { useScrollToTop } from "../../../Utilities/scrollToTop";
+import Spinner from "../../../components/Spinner/Spinner";
 import "./ProfilePage.css";
 
 const ProfilePage = ({ evnts, user, deleteEvnts }) => {
@@ -41,11 +42,8 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
     }
   }, [evnts, sortBy]);
 
-  if (evnts === null) {
-    return <p>Loading...</p>; // Display a loading state
-  }
-  if (user === null) {
-    return <p>Loading...</p>;
+  if (evnts === null || user === null) {
+    return <Spinner />; // Display a loading state
   }
 
   const handleDelete = (evntId) => {
