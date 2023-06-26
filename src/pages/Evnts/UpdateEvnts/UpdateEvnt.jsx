@@ -10,6 +10,13 @@ import "./UpdateEvnt.css";
 function UpdateEvnt(props) {
   const { id } = useParams();
   const [existingEvent, setExistingEvent] = useState({});
+  const [newForm, setNewForm] = useState({});
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPhotoSelected, setIsPhotoSelected] = useState(false);
+  const [file, setFile] = useState();
+  const [lifestyleExpanded, setLifestyleExpanded] = useState(false);
+  const [diningExpanded, setDiningExpanded] = useState(false);
+  const [attractionsExpanded, setAttractionsExpanded] = useState(false);
 
   const formFields = {
     name: "",
@@ -23,14 +30,6 @@ function UpdateEvnt(props) {
   };
 
   const URL = API_URLS.IMAGES + `${id}`;
-
-  const [newForm, setNewForm] = useState(formFields);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isPhotoSelected, setIsPhotoSelected] = useState(false);
-  const [file, setFile] = useState();
-  const [lifestyleExpanded, setLifestyleExpanded] = useState(false);
-  const [diningExpanded, setDiningExpanded] = useState(false);
-  const [attractionsExpanded, setAttractionsExpanded] = useState(false);
 
   const toggleLifestyle = () => {
     setLifestyleExpanded(!lifestyleExpanded);
@@ -59,7 +58,7 @@ function UpdateEvnt(props) {
     };
 
     fetchExistingEvent();
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     setNewForm(existingEvent);
@@ -128,7 +127,7 @@ function UpdateEvnt(props) {
 
   const submit = async (event) => {
     event.preventDefault();
-    props.createEvnts(newForm);
+    props.updateEvnts(newForm);
     const formData = new FormData();
     formData.append("image", file);
     formData.append("name", newForm.name);
@@ -146,7 +145,7 @@ function UpdateEvnt(props) {
     setNewForm(formFields);
 
     try {
-      await axios.put(URL + `${id}`, formData, {
+      await axios.put(URL, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -157,6 +156,8 @@ function UpdateEvnt(props) {
       console.log(error);
     }
   };
+
+  console.log(existingEvent);
 
   return (
     <>
@@ -607,7 +608,7 @@ function UpdateEvnt(props) {
           )}
 
           <button type="submit" className="input-submit-button cursor-pointer">
-            <p className="createEventP">Create Event</p>
+            <p className="createEventP">Update Event</p>
           </button>
         </form>
       </section>
