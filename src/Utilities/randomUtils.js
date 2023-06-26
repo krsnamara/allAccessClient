@@ -3,7 +3,7 @@ export function getRandomFloat(min, max) {
   const randomNumber = (Math.random() * (max - min) + min).toFixed(
     decimalPlaces
   );
-  return parseFloat(randomNumber);
+  return parseFloat(randomNumber).toFixed(decimalPlaces);
 }
 
 export function getRandomNumber(min, max) {

@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { yearJoined } from "../../../Utilities/randomUtils";
-import { formatDateTime } from "../../../Utilities/formatDateTime";
+import {
+  formatDateTime,
+  formatedUpdatedDateTime,
+} from "../../../Utilities/formatDateTime";
 import { formatGoogleDate } from "../../../Utilities/formatGoogleDate";
 import { randomCityState } from "../../../Utilities/randomCities";
 import { futureFeature } from "../../../Utilities/eventListener/futureFeature";
 import ProfileImg from "../../../assets/images/profile-sophia.svg";
 import LocationIcon from "../../../assets/buttons-icons/location.svg";
 import { useScrollToTop } from "../../../Utilities/scrollToTop";
-
 import "./ProfilePage.css";
 
 const ProfilePage = ({ evnts, user, deleteEvnts }) => {
@@ -16,7 +18,10 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const userCreationTime = user.metadata.creationTime;
+  console.log(evnts);
+
+  const userCreationTime =
+    user && user.metadata ? user.metadata.creationTime : null;
   const formattedTime = formatGoogleDate(userCreationTime);
 
   const [sortedEvnts, setSortedEvnts] = useState([]);
@@ -36,10 +41,11 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
     }
   }, [evnts, sortBy]);
 
-  // const evntDateTime = formatDateTime(evnt.createdAt);
-
   if (evnts === null) {
     return <p>Loading...</p>; // Display a loading state
+  }
+  if (user === null) {
+    return <p>Loading...</p>;
   }
 
   const handleDelete = (evntId) => {
@@ -123,6 +129,7 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
           <div className="eventsMapWrapper">
             {sortedEvnts.map((evnt) => {
               const evntDateTime = formatDateTime(evnt.createdAt);
+              const updatedDateTime = formatedUpdatedDateTime(evnt.updatedAt);
 
               return (
                 <div className="eventsMap" key={evnt._id}>
@@ -160,6 +167,12 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
                             <p className="editBtnP">Delete</p>
                           </button>
                         )}
+                        <p className="eventAddress">
+                          Date Updated: {updatedDateTime.monthUpdated}-
+                          {updatedDateTime.dayUpdated}-
+                          {updatedDateTime.yearUpdated} at{" "}
+                          {updatedDateTime.timeUpdated}
+                        </p>
                         <p className="eventAddress">
                           Date Created: {evntDateTime.month}-{evntDateTime.day}-
                           {evntDateTime.year} at {evntDateTime.time}
