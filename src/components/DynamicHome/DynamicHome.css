@@ -7,10 +7,14 @@
   margin: 20px 20px 0px 10px;
 }
 
+.homeTitle {
+  margin: 0px 0px 0px 15px;
+}
+
 @media screen and (max-width: 950px) {
   .dynoHomeContainer {
     display: block;
-    margin: 0px 0px 0px 20px !important;
+    margin: 0px 0px 0px 0px !important;
   }
   .largeContainer {
     display: none;
@@ -18,6 +22,6 @@
 }
 @media screen and (max-width: 480px) {
   .dynoHomeContainer {
-    margin: 0px 0px 0px 20px !important;
+    margin: 0px 0px 0px 0px !important;
   }
 }
