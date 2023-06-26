@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URLS } from "../../urls";
-import { BsSearch } from "react-icons/bs";
 import "./SearchBar.css";
 
 export default function Search() {
@@ -28,7 +27,7 @@ export default function Search() {
       }
     };
     search();
-  }, [keyword]);
+  }, [keyword, URL]);
 
   useEffect(() => {
     // Add event listener to handle click outside search results
