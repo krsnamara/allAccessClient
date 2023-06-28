@@ -99,7 +99,7 @@ const ProfilePage = ({ evnts, user, deleteEvnts }) => {
         <hr style={{ width: "90%", maxWidth: "600px", textAlign: "center" }} />
         <div className="reviewsCont">
           <div className="statsBox">
-            <p className="numbersP">1</p>
+            <p className="numbersP">0</p>
             <p className="statsP">Reviews</p>
           </div>
           <div className="statsBox">
