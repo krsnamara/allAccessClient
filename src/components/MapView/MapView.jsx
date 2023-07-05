@@ -32,7 +32,7 @@ function MapView({ evnts }) {
                 </div>
                 <div className="home-card-body">
                   <Link
-                    to={`/images/${evnt._id}`}
+                    to={`/events/${evnt._id}`}
                     style={{ color: "black", textDecoration: "none" }}
                   >
                     <h5 className="home-card-title">{evnt.name}</h5>
