@@ -27,17 +27,32 @@ const useEvnts = () => {
   // console.log(`evnts.js line 17 ${JSON.stringify(evnts)}`);
   // console.log(`evnts.js line 18 ${URL}`);
 
+  // const createEvnts = async (evnts) => {
+  //   const response = await fetch(URL, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-type": "Application/json",
+  //     },
+  //     body: JSON.stringify(evnts),
+  //   });
+  //   if (response.ok) {
+  //     getEvnts();
+  //   }
+  // };
+
   const createEvnts = async (evnts) => {
-    const response = await fetch(URL, {
-      method: "POST",
-      headers: {
-        "Content-type": "Application/json",
-      },
-      body: JSON.stringify(evnts),
-    });
-    if (response.ok) {
-      getEvnts();
+    try {
+      const response = await fetch(URL, {
+        method: "POST",
+        headers: {
+          "Content-type": "Application/json",
+        },
+        body: JSON.stringify(evnts),
+      });
+    } catch (error) {
+      console.log(error);
     }
+    getEvnts();
   };
 
   const updateEvnts = async (id, updatedEvnt) => {

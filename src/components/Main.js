@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 // Import custom hooks
 import useEvnts from "../Utilities/evnts";
-import useImages from "../Utilities/images";
 import Home from "../pages/Home/Home";
 import EventShow from "../pages/Evnts/ShowEvent/EventShow";
 import NewEvnt from "../pages/Evnts/NewEvnt/NewEvnt";

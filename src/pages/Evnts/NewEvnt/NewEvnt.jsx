@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
+import Geocode from "react-geocode";
 import { API_URLS } from "../../../urls";
 import AddPhoto from "../../../assets/buttons-icons/add-photo.svg";
 import AddPhotoHover from "../../../assets/buttons-icons/add-photo-hover.svg";
 import DownBracket from "../../../assets/buttons-icons/down-bracket.svg";
 import "./NewEvnt.css";
+
+Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+
+// console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
 
 function NewEvnt(props) {
   const formFields = {
@@ -19,7 +24,7 @@ function NewEvnt(props) {
     suitability: [], // New field for suitability
   };
 
-  const URL = API_URLS.IMAGES;
+  // const URL = API_URLS.IMAGES;
 
   const [newForm, setNewForm] = useState(formFields);
   const [isHovered, setIsHovered] = useState(false);
@@ -108,27 +113,25 @@ function NewEvnt(props) {
 
   const submit = async (event) => {
     event.preventDefault();
-    props.createEvnts(newForm);
-    const formData = new FormData();
-    formData.append("image", file);
-    formData.append("name", newForm.name);
-    formData.append("eventType", newForm.eventType);
-    formData.append("description", newForm.description);
-    formData.append("reservation", newForm.reservation);
-    formData.append("website", newForm.website);
-    formData.append("address", newForm.address);
-    formData.append("suitability", JSON.stringify(newForm.suitability));
-    formData.append("amenities", JSON.stringify(newForm.amenities));
-    formData.append("categories", JSON.stringify(newForm.categories));
-    formData.append("foodNightlife", JSON.stringify(newForm.foodNightlife));
-    formData.append("attractions", JSON.stringify(newForm.attractions));
-
-    setNewForm(formFields);
 
     try {
-      await axios.post(URL, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const geocodeResponse = await Geocode.fromAddress(newForm.address);
+      const { lat, lng } = geocodeResponse.results[0].geometry.location;
+
+      const formData = {
+        name: newForm.name,
+        address: newForm.address,
+        latitude: lat,
+        longitude: lng,
+        suitability: newForm.suitability,
+        amenities: newForm.amenities,
+        categories: newForm.categories,
+        foodNightlife: newForm.foodNightlife,
+        attractions: newForm.attractions,
+      };
+
+      props.createEvnts(formData);
+      setNewForm(formFields);
 
       window.alert("New Event has been successfully created");
       navigate("/profile");

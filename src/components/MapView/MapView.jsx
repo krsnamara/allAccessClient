@@ -18,7 +18,11 @@ function MapView({ evnts }) {
       <>
         <div className="home-map-container">
           <div className="home-map">
-            <MapAPI apiKey={googleMapsApiKey} className="home-map-img" />
+            <MapAPI
+              apiKey={googleMapsApiKey}
+              evnts={evnts}
+              className="home-map-img"
+            />
           </div>
           <div className="home-card-container">
             {evnts.slice(0, visibleCards).map((evnt) => (
